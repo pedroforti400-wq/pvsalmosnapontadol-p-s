@@ -6,7 +6,7 @@ import { getCheckoutUrl, formatPrice } from '../src/config';
 describe('Página de vendas', () => {
  it('mostra a oferta e todas as seções de navegação', () => { render(<App/>); expect(screen.getByRole('heading', {level:1})).toHaveTextContent('Uma letra mais bonita.Uma fé que floresce.'); for(const id of ['material','beneficios','como-funciona','oferta','faq']) expect(document.getElementById(id)).toBeTruthy(); expect(screen.getByText('R$ 29,90')).toBeInTheDocument(); });
  it('troca a amostra de atividade', () => {render(<App/>); fireEvent.click(screen.getByRole('tab',{name:'Colorir'})); expect(screen.getByRole('tab',{name:'Colorir'})).toHaveAttribute('aria-selected','true'); expect(screen.getByRole('tabpanel')).toHaveTextContent('Toda criação louva'); fireEvent.click(screen.getByRole('button',{name:'Próxima amostra'})); expect(screen.getByRole('tab',{name:'Tracejar'})).toHaveAttribute('aria-selected','true'); });
- it('impede compra sem checkout e permite fechar o aviso', () => {render(<App/>); fireEvent.click(screen.getByRole('button',{name:'Quero conhecer o material'})); expect(screen.getByRole('dialog')).toHaveTextContent('nenhuma cobrança'); fireEvent.click(screen.getByRole('button',{name:'Fechar'})); expect(screen.queryByRole('dialog')).not.toBeInTheDocument(); });
+ it('impede compra sem checkout e permite fechar o aviso', () => {render(<App/>); fireEvent.click(screen.getByRole('button',{name:'Quero meu Salmos na Ponta do Lápis'})); expect(screen.getByRole('dialog')).toHaveTextContent('nenhuma cobrança'); fireEvent.click(screen.getByRole('button',{name:'Fechar'})); expect(screen.queryByRole('dialog')).not.toBeInTheDocument(); });
  it('mantém somente a logo oficial no cabeçalho', () => {
   render(<App/>);
   const header=screen.getByRole('banner');
@@ -49,7 +49,7 @@ describe('Interações da revisão visual', () => {
  });
  it('fecha o aviso por Escape e restaura o foco', () => {
   render(<App/>);
-  const trigger=screen.getByRole('button',{name:'Quero conhecer o material'});
+  const trigger=screen.getByRole('button',{name:'Quero meu Salmos na Ponta do Lápis'});
   trigger.focus(); fireEvent.click(trigger);
   expect(screen.getByRole('button',{name:'Fechar'})).toHaveFocus();
   fireEvent.keyDown(document,{key:'Escape'});

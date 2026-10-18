@@ -1,5 +1,5 @@
 import { BookOpen, Heart, Pencil, FileText, Printer, ArrowDown, Check, Sparkles } from 'lucide-react';
-import { BuyButton, Scene } from '../components/UI';
+import { Scene } from '../components/UI';
 import './Hero.css';
 
 const floatingCards = [
@@ -9,7 +9,7 @@ const floatingCards = [
   { key: 'together', Icon: Heart, title: 'Propósito no papel', text: 'Um momento para viver juntos.', tone: 'green' },
 ];
 
-export default function Hero({ onBuy }) {
+export default function Hero() {
   return <>
     <section className="hero-section hero-refined" id="inicio" aria-labelledby="hero-title">
       <div className="container hero">
@@ -26,7 +26,6 @@ export default function Hero({ onBuy }) {
             <span className="quick-benefit-icon"><BookOpen size={23}/></span>
             <div><strong>ESCRITA, FÉ E APRENDIZADO</strong><p>Versículos dos Salmos, letras para praticar e um tempo precioso para descobrir juntos.</p></div>
           </div>
-          <BuyButton onBuy={onBuy}>Quero conhecer o material</BuyButton>
           <div className="hero-notes"><span><FileText/>Material digital</span><span><Printer/>Para imprimir</span><span><Heart/>Para fazer juntos</span></div>
         </div>
         <div className="hero-art">

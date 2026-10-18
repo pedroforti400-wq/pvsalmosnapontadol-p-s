@@ -92,7 +92,7 @@
   border: 1px solid #eae1c8;
   border-left: 3px solid #e89a38;
   border-radius: 3px 10px 10px 3px;
-  margin-bottom: 22px;
+  margin-bottom: 0;
 }
 .hero-section.hero-refined .quick-benefit-icon {
   display: grid;
@@ -105,15 +105,7 @@
 }
 .hero-section.hero-refined .hero-quick-benefit strong { display: block; color: #50703e; font-size: 10px; font-weight: 900; letter-spacing: .8px; margin-bottom: 4px; }
 .hero-section.hero-refined .hero-quick-benefit p { font-size: 12px; line-height: 1.65; color: #697659; }
-.hero-section.hero-refined .primary {
-  min-width: 320px;
-  font-size: 14px;
-  padding: 17px 25px;
-  background: linear-gradient(130deg, #0084b9, #006b9e);
-  box-shadow: 0 5px 0 #00557b, 0 12px 24px #007cae25;
-}
-.hero-section.hero-refined .primary:hover { background: linear-gradient(130deg, #0074a6, #005b88); box-shadow: 0 5px 0 #004567, 0 16px 26px #007cae30; }
-.hero-section.hero-refined .hero-notes { margin-top: 21px; gap: 19px; font-size: 9px; }
+.hero-section.hero-refined .hero-notes { margin-top: 14px; gap: 19px; font-size: 9px; }
 .hero-section.hero-refined .hero-notes svg { color: #6a8954; }
 .hero-section.hero-refined .hero-art { min-width: 0; min-height: 550px; position: relative; display: flex; align-items: center; padding: 0; }
 .hero-section.hero-refined .hero-art > .scene { width: 100%; margin-left: 0; z-index: 2; filter: drop-shadow(0 20px 16px #6d5c3a1a); }
@@ -176,10 +168,9 @@
   .hero-section.hero-refined .calligraphy-word { font-size: clamp(44px, 14vw, 62px); padding: 27px 24px 0 7px; }
   .hero-section.hero-refined .calligraphy-label { font-size: 6px; left: 13px; letter-spacing: 1.4px; }
   .hero-section.hero-refined .calligraphy-pencil { width: 18px; right: 12px; bottom: 14px; }
-  .hero-section.hero-refined .hero-quick-benefit { text-align: left; margin: 0 auto 21px; padding: 13px 14px; gap: 10px; max-width: 420px; }
+  .hero-section.hero-refined .hero-quick-benefit { text-align: left; margin: 0 auto; padding: 13px 14px; gap: 10px; max-width: 420px; }
   .hero-section.hero-refined .hero-quick-benefit strong { font-size: 9px; letter-spacing: .6px; }
   .hero-section.hero-refined .hero-quick-benefit p { font-size: 12px; }
-  .hero-section.hero-refined .primary { width: min(100%, 350px); min-width: 0; padding: 17px 20px; font-size: 13px; }
   .hero-section.hero-refined .hero-notes { justify-content: center; gap: 13px; font-size: 8px; }
   .hero-section.hero-refined .hero-art { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 10px; width: min(440px, 100%); min-height: 0; margin: 0 auto; padding: 4px 1px 25px; }
   .hero-section.hero-refined .hero-art > .scene { grid-column: 1 / -1; grid-row: 2; width: 100%; margin: -7px 0; }

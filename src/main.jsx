@@ -25,7 +25,7 @@ export default function App() {
     else setDialog(true);
   }
   return <><a className="skip" href="#conteudo">Pular para o conteúdo</a><Header/>
-    <main id="conteudo"><Hero onBuy={buy}/><Material/><VideoSection/><Benefits/><Testimonials/><Audiences/><Discovery/><Offer onBuy={buy}/><Panorama/><HowItWorks/><Guarantee/><FAQ/></main>
+    <main id="conteudo"><Hero/><Material/><VideoSection/><Benefits/><Testimonials/><Audiences/><Discovery/><Offer onBuy={buy}/><Panorama/><HowItWorks/><Guarantee/><FAQ/></main>
     <Footer/>{dialog&&<PurchaseDialog onClose={()=>setDialog(false)}/>}
   </>;
 }
