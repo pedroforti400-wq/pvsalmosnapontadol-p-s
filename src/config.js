@@ -12,6 +12,7 @@ export const product = {
     hero: '/images/biblical-friends.webp', // Imagem real prioritária; vazio usa a ilustração original abaixo.
     cover: '',
     samples: ['', '', ''],
+    comparison: '/images/caligrafia-antes-depois.webp',
     biblicalScene: '/images/biblical-garden.webp',
     writingChild: '/images/child-writing.webp',
     panorama: '/images/biblical-garden.webp',

@@ -1,26 +1,20 @@
-import { useState, useRef } from 'react';
-import { Check, ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react';
-import Worksheet from '../components/Worksheet';
-import { samples } from '../content';
+import { product } from '../config';
+import './Material.css';
 
 export default function Material() {
-  const [sample, setSample] = useState(0);
-  const tabs = useRef([]);
-  function navigateTabs(event, index) {
-    let next;
-    if(event.key === 'ArrowRight') next=(index+1)%samples.length;
-    if(event.key === 'ArrowLeft') next=(index+samples.length-1)%samples.length;
-    if(event.key === 'Home') next=0;
-    if(event.key === 'End') next=samples.length-1;
-    if(next!==undefined) {event.preventDefault();setSample(next);tabs.current[next]?.focus();}
-  }
-  return <section id="material" className="material-section"><div className="container material-grid">
-    <div className="sample-stage"><span className="tape" aria-hidden="true"/><span className="sample-tag">um pedacinho dessa descoberta ↴</span><div className="paper-back"/><Worksheet index={sample}/><span className="sample-caption">Amostra ilustrativa • substitua pela página real do material</span><span className="sample-sticker" aria-hidden="true">feito para<br/><strong>florescer ♡</strong></span></div>
-    <div className="material-copy"><span className="eyebrow">MAIS DO QUE LETRAS NO PAPEL</span><h2>Um encontro entre<br/>o lápis e a <em>Palavra.</em></h2><p>Tem aprendizado que vai além do caderno. Um versículo pode virar conversa, um traço pode virar conquista e alguns minutos juntos podem virar uma memória bonita.</p>
-      <div className="sample-tabs" role="tablist" aria-label="Tipo de atividade">{samples.map((s,i)=><button key={s.label} role="tab" ref={el=>tabs.current[i]=el} id={`tab-${i}`} tabIndex={i===sample?0:-1} aria-controls="sample-description" aria-selected={i===sample} onKeyDown={e=>navigateTabs(e,i)} onClick={()=>setSample(i)}>{s.label}</button>)}</div>
-      <div id="sample-description" role="tabpanel" tabIndex={0} aria-labelledby={`tab-${sample}`}><h3>{samples[sample].title}</h3><p>{samples[sample].task}</p></div>
-      <ul className="checklist"><li><Check/>Caligrafia com pequenos trechos dos Salmos</li><li><Check/>Espaço para a criatividade e boas conversas</li><li><Check/>Uma proposta para aprender com um adulto por perto</li></ul>
-      <div className="material-actions"><a href="#previas" className="text-link">Veja mais de pertinho <ArrowUpRight size={17}/></a><div className="sample-controls"><button aria-label="Amostra anterior" onClick={()=>setSample((sample+2)%3)}><ChevronLeft size={18}/></button><span>0{sample+1} <span>/ 03</span></span><button aria-label="Próxima amostra" onClick={()=>setSample((sample+1)%3)}><ChevronRight size={18}/></button></div></div>
+  return <section id="material" className="material-section material-comparison" aria-label="Salmos na Ponta do Lápis: escrita com propósito">
+    <div className="container comparison-layout">
+      <figure className="comparison-visual">
+        <img src={product.images.comparison} width="1254" height="1254" loading="lazy" decoding="async"
+          alt="Comparação ilustrativa ANTES e DEPOIS: duas folhas de caderno rasgadas, presas com fita adesiva, mostram o trecho O Senhor é o meu pastor em escrita inicial irregular e em cursiva organizada."/>
+        <figcaption>Exemplos ilustrativos de escrita. Não representam um resultado garantido.</figcaption>
+      </figure>
+      <div className="comparison-copy">
+        <p>A rotina é corrida, e entre tantas telas e distrações, encontrar uma atividade que estimule a escrita e também aproxime as crianças da Palavra de Deus pode fazer toda a diferença.</p>
+        <p className="comparison-origin">Foi pensando nisso que nasceu o <strong>Salmos na Ponta do Lápis.</strong></p>
+        <p>Com atividades de caligrafia inspiradas nos <strong>Salmos da Bíblia</strong>, as crianças são convidadas a praticar a escrita cursiva enquanto conhecem mensagens de <strong>fé, amor e sabedoria.</strong></p>
+        <p className="comparison-purpose"><strong><em>Mais do que praticar a letra, é aprender com propósito.</em></strong></p>
+      </div>
     </div>
-  </div></section>;
+  </section>;
 }

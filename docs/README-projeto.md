@@ -40,7 +40,8 @@ Edite `src/config.js`:
 - `isDemo`: mantenha `true` até revisar os dados comerciais e o conteúdo final.
 - `images.hero`, `biblicalScene`, `writingChild`, `panorama`: ilustrações por contexto. Os caminhos atuais apontam para imagens 3D originais em `public/images/`.
 - `images.cover`: capa real opcional. Vazio mantém uma representação identificada como ilustrativa.
-- `images.samples`: três páginas reais para substituir as amostras de tracejar, escrever e colorir.
+- `images.samples`: páginas reais para substituir as amostras usadas nas prévias.
+- `images.comparison`: composição fotográfica ilustrativa ANTES/DEPOIS da segunda seção. O aviso não promete resultado garantido; a imagem não representa um cliente real.
 - `video.src`: MP4/WebM local ou HTTPS. `video.poster`: capa opcional do vídeo. Sem vídeo, aparece a prévia visual com o aviso de que a apresentação ainda não está disponível.
 - `testimonials`: lista de objetos `{ name, role, quote }`, apenas com relatos reais e autorizados. Vazia exibe três cards explicitamente demonstrativos, sem avaliações ou resultados inventados.
 - `guaranteeDays`: informe um prazo apenas se a política estiver confirmada. Vazio exibe orientação para conferir as condições do vendedor.
@@ -51,7 +52,7 @@ Páginas, capa, licença, entrega, faixa de aprendizagem e condições de reembo
 ## Organização
 
 - `src/main.jsx`: composição da aplicação e abertura do aviso de compra.
-- `src/sections/`: hero, apresentação interativa, vídeo, benefícios, depoimentos, públicos, seção amarela, oferta, panorama, etapas, garantia e FAQ.
+- `src/sections/`: hero, comparação ilustrativa de escrita, vídeo, benefícios, depoimentos, públicos, seção amarela, oferta, panorama, etapas, garantia e FAQ.
 - `src/components/`: cabeçalho e rodapé, componentes compartilhados, folha de demonstração e diálogo com gerenciamento de foco.
 - `src/content.js`: textos das atividades, benefícios e perguntas frequentes.
 - `src/styles.css`: identidade visual, fontes locais, estados e adaptações responsivas.
@@ -62,4 +63,4 @@ Páginas, capa, licença, entrega, faixa de aprendizagem e condições de reembo
 
 A linguagem foi ampliada com personagens 3D, sombras suaves, traços decorativos, prévias inclinadas sobre amarelo vibrante, oferta lilás e cenário bíblico panorâmico. A estrutura visual da referência orienta a alternância das seções; seus textos, imagens, identidade e elementos exclusivos não foram reutilizados.
 
-Verificações: 9 testes automatizados, build Vite e revisão em Chromium nas larguras 1440, 1024, 768, 390 e 320 px. Sem erros de JavaScript, arquivos ausentes ou rolagem horizontal nas larguras verificadas. Foram conferidos menu móvel, amostras, janela de compra, Escape, FAQ e aviso de vídeo. As fontes são locais e as imagens usam carregamento adiado fora da primeira dobra.
+Verificações: 8 testes automatizados, build Vite e revisão em Chromium nas larguras 1440, 1024, 768, 390 e 320 px. Sem erros de JavaScript, arquivos ausentes ou rolagem horizontal nas larguras verificadas. Foram conferidos o cabeçalho centralizado, a nova segunda seção, a janela de compra, Escape, FAQ e o aviso de vídeo. As fontes são locais e as imagens usam carregamento adiado fora da primeira dobra.

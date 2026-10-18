@@ -5,7 +5,15 @@ import App from '../src/main';
 import { getCheckoutUrl, formatPrice } from '../src/config';
 describe('Página de vendas', () => {
  it('mostra a oferta e todas as seções de navegação', () => { render(<App/>); expect(screen.getByRole('heading', {level:1})).toHaveTextContent('Uma letra mais bonita.Uma fé que floresce.'); for(const id of ['material','beneficios','como-funciona','oferta','faq']) expect(document.getElementById(id)).toBeTruthy(); expect(screen.getByText('R$ 29,90')).toBeInTheDocument(); });
- it('troca a amostra de atividade', () => {render(<App/>); fireEvent.click(screen.getByRole('tab',{name:'Colorir'})); expect(screen.getByRole('tab',{name:'Colorir'})).toHaveAttribute('aria-selected','true'); expect(screen.getByRole('tabpanel')).toHaveTextContent('Toda criação louva'); fireEvent.click(screen.getByRole('button',{name:'Próxima amostra'})); expect(screen.getByRole('tab',{name:'Tracejar'})).toHaveAttribute('aria-selected','true'); });
+ it('substitui a segunda seção por exemplos ilustrativos de escrita', () => {
+  render(<App/>);
+  const section=document.getElementById('material');
+  expect(document.querySelectorAll('main > section')[1]).toBe(section);
+  expect(within(section).getByRole('img')).toHaveAccessibleName(/Comparação ilustrativa ANTES e DEPOIS/);
+  expect(section).toHaveTextContent('Exemplos ilustrativos de escrita. Não representam um resultado garantido.');
+  expect(within(section).queryByRole('tablist')).not.toBeInTheDocument();
+  expect(within(section).queryByRole('button')).not.toBeInTheDocument();
+ });
  it('impede compra sem checkout e permite fechar o aviso', () => {render(<App/>); fireEvent.click(screen.getByRole('button',{name:'Quero meu Salmos na Ponta do Lápis'})); expect(screen.getByRole('dialog')).toHaveTextContent('nenhuma cobrança'); fireEvent.click(screen.getByRole('button',{name:'Fechar'})); expect(screen.queryByRole('dialog')).not.toBeInTheDocument(); });
  it('mantém somente a logo oficial no cabeçalho', () => {
   render(<App/>);
@@ -35,17 +43,6 @@ describe('Interações da revisão visual', () => {
   render(<App/>);
   fireEvent.click(screen.getByRole('button',{name:'Conhecer a demonstração em vídeo'}));
   expect(screen.getByRole('status')).toHaveTextContent('ainda não está disponível');
- });
- it('permite navegar nas amostras usando as setas do teclado', () => {
-  render(<App/>);
-  const first=screen.getByRole('tab',{name:'Tracejar'});
-  first.focus();
-  fireEvent.keyDown(first,{key:'ArrowRight'});
-  const next=screen.getByRole('tab',{name:'Escrever'});
-  expect(next).toHaveFocus();
-  expect(next).toHaveAttribute('aria-selected','true');
-  fireEvent.keyDown(next,{key:'End'});
-  expect(screen.getByRole('tab',{name:'Colorir'})).toHaveFocus();
  });
  it('fecha o aviso por Escape e restaura o foco', () => {
   render(<App/>);
