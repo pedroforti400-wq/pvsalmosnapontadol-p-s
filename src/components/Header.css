@@ -1,0 +1,20 @@
+/* Somente o cabeçalho: a logo e o restante da página mantêm os arquivos originais. */
+.site-header.site-header-centered {
+  display: grid;
+  place-items: center;
+  padding: 6px 16px;
+  background: #fbf8ef;
+}
+.site-header-centered .brand { margin: 0; justify-self: center; }
+.site-header-centered .brand-logo {
+  display: block;
+  width: 200px;
+  max-width: calc(100vw - 32px);
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+@media (max-width: 600px) {
+  .site-header.site-header-centered { padding-block: 5px; }
+  .site-header-centered .brand-logo { width: 180px; }
+}

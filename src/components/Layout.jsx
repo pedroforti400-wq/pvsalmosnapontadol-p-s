@@ -1,20 +1,10 @@
-import { useState } from 'react';
-import { ArrowUpRight, Menu, X, Heart, Sparkles, ArrowRight } from 'lucide-react';
+import { Heart, ArrowRight } from 'lucide-react';
 import { Brand } from './UI';
 import { product } from '../config';
+import './Header.css';
 
 export function Header() {
-  const [menu, setMenu] = useState(false);
-  return <>
-    <div className="announcement"><Sparkles size={13}/><span>Um lápis na mão. A Palavra no coração.</span><Sparkles size={13}/></div>
-    <header className="site-header"><div className="container nav"><Brand/>
-      <nav id="main-nav" className={menu ? 'open' : ''} aria-label="Navegação principal">
-        {[['O material', '#material'], ['Por que escolher?', '#beneficios'], ['Como funciona', '#como-funciona'], ['Dúvidas', '#faq']].map(([text, url]) => <a key={url} href={url} onClick={() => setMenu(false)}>{text}</a>)}
-      </nav>
-      <a className="nav-cta" href="#oferta">Quero meu material <ArrowUpRight size={16}/></a>
-      <button className="menu-toggle" aria-controls="main-nav" aria-label={menu ? 'Fechar menu' : 'Abrir menu'} aria-expanded={menu} onClick={() => setMenu(!menu)} onKeyDown={e=>{if(e.key==='Escape')setMenu(false);}}>{menu ? <X/> : <Menu/>}</button>
-    </div></header>
-  </>;
+  return <header className="site-header site-header-centered"><Brand/></header>;
 }
 export function Footer() {
   return <>
