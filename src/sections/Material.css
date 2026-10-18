@@ -33,7 +33,7 @@
   margin: 0 0 21px;
 }
 .material-comparison .comparison-copy strong { color: #24553e; font-weight: 900; }
-.material-comparison .comparison-copy .comparison-origin { color: #496552; }
+.material-comparison .comparison-copy .comparison-origin { color: #24553e; font-weight: 900; }
 .material-comparison .comparison-copy .comparison-purpose {
   margin: 26px 0 0;
   padding: 1px 0 1px 18px;

@@ -9,7 +9,7 @@ describe('Página de vendas', () => {
   render(<App/>);
   const section=document.getElementById('material');
   expect(document.querySelectorAll('main > section')[1]).toBe(section);
-  expect(within(section).getByRole('img')).toHaveAccessibleName(/Comparação ilustrativa ANTES e DEPOIS/);
+  expect(within(section).getByRole('img')).toHaveAccessibleName(/Comparação ilustrativa: DEPOIS acima/);
   expect(section).toHaveTextContent('Exemplos ilustrativos de escrita. Não representam um resultado garantido.');
   expect(within(section).queryByRole('tablist')).not.toBeInTheDocument();
   expect(within(section).queryByRole('button')).not.toBeInTheDocument();
