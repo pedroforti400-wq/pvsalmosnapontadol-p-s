@@ -33,6 +33,8 @@ O build está em `dist/` (ignorado pelo Git). Para abrir o preview do build em u
 
 Edite `src/config.js`:
 
+- `logo`: caminho e dimensões da logo oficial. O PNG transparente em `public/images/logo-oficial-salmos.png` é usado integralmente no cabeçalho, rodapé, amostras e capa ilustrativa. O arquivo fornecido foi preservado sem alterações.
+
 - `price`, `currency`, `offerLabel`: preço e identificação da oferta. O preço de R$ 29,90 permanece ilustrativo.
 - `checkoutUrl`: URL HTTPS de compra. Vazio mantém a janela de aviso, sem transação.
 - `isDemo`: mantenha `true` até revisar os dados comerciais e o conteúdo final.

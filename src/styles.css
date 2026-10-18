@@ -45,9 +45,6 @@ p { color: var(--muted); line-height: 1.8; }
 .site-header { position: sticky; top: 0; z-index: 30; background: #fbf8eff2; border-bottom: 1px solid #e8e8dc; backdrop-filter: blur(14px); }
 .nav { height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
 .brand { display: flex; align-items: center; gap: 9px; font: bold 30px Georgia, serif; line-height: 1; flex-shrink: 0; }
-.brand-symbol { width: 43px; height: 46px; border-radius: 13px; background: #f3ce68; color: #24513c; display: grid; place-items: center; transform: rotate(-8deg); box-shadow: 0 3px 0 #cba34b; position: relative; }
-.brand-symbol > span { font-size: 20px; position: absolute; right: -5px; top: -8px; color: #a1703f; }
-.brand-small { display: block; font: 900 7px 'Nunito', sans-serif; letter-spacing: 2px; margin-top: 7px; }
 .nav nav { display: flex; gap: 28px; font-size: 12px; font-weight: 700; }
 .nav nav a { transition: color .2s; }
 .nav nav a:hover { color: #b57748; }
@@ -340,8 +337,6 @@ h1 > span svg { position: absolute; bottom: -10px; left: 0; width: 100%; height:
 .closing-heart { position: absolute; width: 73px; height: 73px; color: #b48d56; left: 40px; top: 40px; stroke-width: 1; transform: rotate(-15deg); }
 .closing-star { position: absolute; font-size: 75px; color: #bea16b; right: 50px; bottom: 10px; }
 footer { background: #164a37; color: #e6edd8; padding: 40px 0 20px; }
-footer .brand-symbol { background: #e7c472; }
-footer .brand-symbol > span { color: #e3bb61; }
 .footer-main { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding-bottom: 32px; }
 .footer-main .brand { font-size: 26px; }
 .footer-main > p { font-size: 11px; color: #c4d3b7; }
@@ -411,9 +406,6 @@ footer .brand-symbol > span { color: #e3bb61; }
   .announcement svg { width: 11px; }
   .nav { height: 74px; gap: 10px; }
   .brand { font-size: 26px; gap: 8px; }
-  .brand-symbol { width: 35px; height: 38px; border-radius: 11px; }
-  .brand-symbol > svg { width: 20px; }
-  .brand-small { font-size: 6px; letter-spacing: 1.4px; margin-top: 6px; }
   .nav-cta { margin-left: auto; padding: 10px 11px; gap: 8px; font-size: 9px; border-radius: 7px; }
   .nav-cta svg { width: 13px; }
   .menu-toggle { display: grid; }
@@ -639,8 +631,6 @@ footer .brand-symbol > span { color: #e3bb61; }
   .container { width: calc(100% - 32px); }
   .nav-cta { font-size: 8px; gap: 5px; padding-inline: 8px; }
   .brand { font-size: 23px; }
-  .brand-small { font-size: 5px; }
-  .brand-symbol { width: 32px; height: 35px; }
   .nav { gap: 5px; }
   h1 { font-size: 34px; }
   .hero-notes { gap: 8px; font-size: 7px; }
@@ -664,4 +654,45 @@ footer .brand-symbol > span { color: #e3bb61; }
 
 @media (min-width: 901px) and (max-width: 1100px) {
   .hero-art > .scene { width: 102%; margin-left: -1%; }
+}
+
+/* Marca oficial: PNG original sem cortes, distorção, filtros ou recoloração. */
+:root {
+  --brand-blue: #009fe5;
+  --brand-blue-deep: #007cae;
+  --brand-yellow: #ffca08;
+  --brand-orange: #f85b37;
+  --brand-green: #41a91b;
+  --header-height: 122px;
+}
+html { scroll-padding-top: calc(var(--header-height) + 14px); }
+.nav { height: var(--header-height); }
+.brand { display: inline-flex; flex: 0 0 auto; line-height: 0; }
+.logo-image { display: block; height: auto; object-fit: contain; }
+.brand-logo { width: 222px; max-height: 111px; }
+.sheet-top .sheet-logo { width: 96px; max-height: 48px; }
+.discovery-preview .sheet-top .sheet-logo { width: 72px; max-height: 36px; }
+.mini-cover .mini-cover-logo { width: 100%; margin: 28px auto 36px; }
+.nav nav a:hover, .text-link:hover { color: var(--brand-blue-deep); }
+.announcement > svg { color: var(--brand-blue-deep); }
+.announcement > svg:last-child { color: #d48213; }
+h1 > span svg { stroke: var(--brand-yellow); }
+.video-overlay > button { background: var(--brand-orange); }
+.ribbon svg { color: var(--brand-blue-deep); }
+.checklist svg { color: #368428; }
+footer .brand-logo { width: 222px; max-height: none; }
+@media (max-width: 900px) {
+  :root { --header-height: 112px; }
+  .brand-logo { width: 202px; max-height: 101px; }
+  .nav nav { top: var(--header-height); }
+  .menu-toggle { min-width: 44px; min-height: 44px; }
+  .discovery-preview .sheet-top .sheet-logo { width: 56px; max-height: 28px; }
+  .mini-cover .mini-cover-logo { margin-block: 24px 30px; }
+}
+@media (max-width: 600px) {
+  :root { --header-height: 104px; }
+  .brand-logo { width: 190px; max-height: 95px; }
+  .nav-cta { display: none; }
+  .menu-toggle { margin-left: auto; }
+  footer .brand-logo { width: 210px; }
 }

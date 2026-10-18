@@ -1,11 +1,15 @@
-import { ArrowRight, Pencil, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import Art from '../Art';
 import { product } from '../config';
 
+export function Logo({ className = '', eager = false }) {
+  return <img className={`logo-image ${className}`} src={product.logo.src}
+    alt={product.name} width={product.logo.width} height={product.logo.height}
+    loading={eager ? 'eager' : 'lazy'} decoding="async"/>;
+}
 export function Brand() {
   return <a href="#inicio" className="brand" aria-label="Salmos na Ponta do Lápis — início">
-    <span className="brand-symbol"><Pencil size={23}/><span aria-hidden="true">✦</span></span>
-    <span>Salmos<span className="brand-small">NA PONTA DO LÁPIS</span></span>
+    <Logo className="brand-logo" eager/>
   </a>;
 }
 export function BuyButton({ children = 'Quero plantar essas sementes', className = '', onBuy }) {

@@ -1,6 +1,7 @@
 // Edite este arquivo para conectar os dados reais antes de publicar.
 export const product = {
   name: 'Salmos na Ponta do Lápis',
+  logo: { src: '/images/logo-oficial-salmos.png', width: 1774, height: 887 },
   price: 29.90,
   currency: 'BRL',
   checkoutUrl: '', // URL HTTPS do seu checkout. Vazio mantém a compra em modo de demonstração.
