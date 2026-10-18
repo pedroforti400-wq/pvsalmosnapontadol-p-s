@@ -7,7 +7,16 @@ export const product = {
   contactEmail: '',
   offerLabel: 'Oferta especial de lançamento',
   isDemo: true, // Desative depois de validar preço, conteúdo e condições comerciais.
-  images: { hero: '', cover: '', samples: ['', '', ''] }, // URLs ou caminhos em /public
+  images: {
+    hero: '/images/biblical-friends.webp', // Imagem real prioritária; vazio usa a ilustração original abaixo.
+    cover: '',
+    samples: ['', '', ''],
+    biblicalScene: '/images/biblical-garden.webp',
+    writingChild: '/images/child-writing.webp',
+    panorama: '/images/biblical-garden.webp',
+  },
+  video: { src: '', poster: '' }, // MP4/WebM local ou HTTPS; vazio mostra o aviso de vídeo em breve.
+  testimonials: [], // { name, role, quote } — apenas depoimentos reais e autorizados.
   guaranteeDays: null, // Defina apenas depois de confirmar sua política de reembolso.
 };
 export const formatPrice = value => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: product.currency }).format(value);

@@ -1,70 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { ArrowRight, ArrowUpRight, BookOpen, Pencil, Heart, Download, Printer, Check, ShieldCheck, Sparkles, Menu, X, Leaf, ChevronLeft, ChevronRight, FileText, Users, Church, LockKeyhole } from 'lucide-react';
-import Art from './Art';
-import { product, formatPrice, getCheckoutUrl } from './config';
+import { Header, Footer } from './components/Layout';
+import PurchaseDialog from './components/PurchaseDialog';
+import Hero from './sections/Hero';
+import Material from './sections/Material';
+import VideoSection from './sections/Video';
+import Benefits from './sections/Benefits';
+import Testimonials from './sections/Testimonials';
+import Audiences from './sections/Audiences';
+import Discovery from './sections/Discovery';
+import Offer from './sections/Offer';
+import Panorama from './sections/Panorama';
+import HowItWorks from './sections/HowItWorks';
+import Guarantee from './sections/Guarantee';
+import FAQ from './sections/FAQ';
+import { product, getCheckoutUrl } from './config';
 import './styles.css';
 
-const samples = [
- { label: 'Tracejar', title: 'Pequenos traços de fé', verse: 'O Senhor é o meu pastor.', ref: 'Salmo 23:1', task: 'Passe o lápis sobre as letras. Depois, tente sozinho!' },
- { label: 'Escrever', title: 'Uma palavra, uma semente', verse: 'Deus é o nosso refúgio.', ref: 'Salmo 46:1', task: 'Leia com um adulto e escreva a frase nas linhas abaixo.' },
- { label: 'Colorir', title: 'Toda criação louva', verse: 'Tudo quanto tem fôlego louve ao Senhor.', ref: 'Salmo 150:6', task: 'Que cores combinam com a alegria? Deixe a imaginação florescer!' },
-];
-const benefits = [
- [Pencil, 'Cada traço, uma descoberta', 'Uma forma delicada de convidar a criança a praticar a escrita, no seu próprio ritmo.', 'peach'],
- [BookOpen, 'A Palavra mais pertinho', 'Pequenos trechos dos Salmos abrem espaço para boas conversas sobre fé e cuidado.', 'lavender'],
- [Heart, 'Tempo que vira memória', 'Troque alguns minutos da rotina por presença, lápis de cor e aprendizado juntos.', 'sage'],
- [Sparkles, 'Aprender com leveza', 'Uma proposta que une criatividade e escrita para tornar o momento mais acolhedor.', 'yellow'],
-];
-const faqs = [
- ['O que é o Salmos na Ponta do Lápis?', 'É uma proposta de material digital que aproxima a prática da escrita e a leitura de trechos dos Salmos. As páginas desta apresentação são exemplos ilustrativos; confira a composição final do produto antes da compra.'],
- ['Vou receber um material físico em casa?', 'Não. A proposta é um produto digital em PDF para você baixar e imprimir. Nenhum item físico é enviado.'],
- ['Para qual idade o material é indicado?', 'Mais do que a idade, considere o momento de aprendizagem da criança. As atividades de traçado e escrita devem ser escolhidas e acompanhadas por um adulto, de acordo com suas habilidades.'],
- ['Preciso de uma impressora colorida?', 'Você pode usar uma impressora doméstica e papel A4. A impressão em preto e branco também permite acrescentar as próprias cores às atividades.'],
- ['Como recebo o acesso após a compra?', 'O envio e o prazo de acesso devem ser informados no checkout do vendedor. Nesta versão de demonstração, nenhuma compra ou entrega é realizada.'],
- ['Posso usar em aulas ou na igreja?', 'A proposta pode inspirar momentos em família e atividades educativas. O uso coletivo e a reprodução dependem da licença definida pelo produtor; confirme as condições antes de compartilhar os arquivos.'],
- ['Existe garantia ou reembolso?', product.guaranteeDays ? `A política configurada informa ${product.guaranteeDays} dias de garantia. Consulte as condições completas no checkout antes de comprar.` : 'As condições de cancelamento e reembolso serão apresentadas pelo vendedor no checkout, respeitando os direitos aplicáveis ao consumidor.'],
-];
-function Brand() { return <a href="#inicio" className="brand" aria-label="Salmos na Ponta do Lápis — início"><span className="brand-symbol"><Pencil size={23}/><span>✦</span></span><span>Salmos<span className="brand-small">NA PONTA DO LÁPIS</span></span></a>; }
-function BuyButton({ children = 'Quero plantar essas sementes', className = '', onBuy }) { return <button className={`button primary ${className}`} onClick={onBuy}>{children}<ArrowRight size={19}/></button>; }
-function Worksheet({ index = 0, compact = false }) { const s = samples[index]; const image = product.images.samples[index]; return <div className={`worksheet ${compact ? 'compact' : ''}`}>{image ? <img src={image} alt={`Página real do material: ${s.label}`}/> : <><div className="sheet-top"><span>Salmos<span>NA PONTA DO LÁPIS</span></span><Pencil size={22}/></div><div className="sheet-label">VAMOS {s.label.toUpperCase()} JUNTOS?</div><h3>{s.title}</h3><p className="sheet-task">{s.task}</p><div className="verse-box"><span>✦</span><p>{s.verse}</p><small>{s.ref}</small></div>{index === 2 ? <div className="color-drawing"><Leaf size={54}/><span>♡</span><Leaf size={54}/></div> : <><p className="trace">{s.verse}</p><div className="writing-lines"><span/><span/><span/></div></>}<div className="sheet-bottom"><span>Feito com fé. Colorido com amor.</span><span>0{index + 1} ♡</span></div></>}</div>; }
-function App() {
- const [menu, setMenu] = useState(false), [sample, setSample] = useState(0), [dialog, setDialog] = useState(false);
- useEffect(() => {
-  if (!dialog) return;
-  const previous = document.activeElement;
-  const oldOverflow = document.body.style.overflow;
-  document.body.style.overflow = 'hidden';
-  function handleKey(e) {
-   if(e.key === 'Escape') setDialog(false);
-   if(e.key === 'Tab') {
-    const buttons = [...document.querySelectorAll('.modal button')];
-    const first = buttons[0], last = buttons.at(-1);
-    if(e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-    else if(!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-   }
+export default function App() {
+  const [dialog, setDialog] = useState(false);
+  function buy() {
+    const checkout=getCheckoutUrl(product.checkoutUrl);
+    if(checkout) window.location.assign(checkout);
+    else setDialog(true);
   }
-  document.addEventListener('keydown', handleKey);
-  return () => { document.body.style.overflow = oldOverflow; document.removeEventListener('keydown', handleKey); previous?.focus(); };
- }, [dialog]);
- const checkout = getCheckoutUrl(product.checkoutUrl);
- function buy() { if (checkout) window.location.assign(checkout); else setDialog(true); }
- return <><a className="skip" href="#conteudo">Pular para o conteúdo</a><div className="announcement"><Sparkles size={13}/><span>Pequenos traços. Grandes sementes de fé.</span><Sparkles size={13}/></div>
- <header><div className="container nav"><Brand/><nav className={menu ? 'open' : ''} aria-label="Navegação principal">{[['O material','#material'],['Por que escolher?','#beneficios'],['Como funciona','#como-funciona'],['Dúvidas','#faq']].map(([text,url])=><a key={url} href={url} onClick={()=>setMenu(false)}>{text}</a>)}</nav><a className="nav-cta" href="#oferta">Quero conhecer <ArrowUpRight size={16}/></a><button className="menu-toggle" aria-label={menu?'Fechar menu':'Abrir menu'} aria-expanded={menu} onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button></div></header>
- <main id="conteudo"><section className="hero container" id="inicio"><div className="hero-copy"><span className="eyebrow"><span/> APRENDER, CRIAR E CRESCER NA FÉ</span><h1>Pequenos traços,<br/>grandes <span>sementes<br className="desktop"/> de fé.<svg viewBox="0 0 330 15" aria-hidden="true"><path d="M3 10Q150-5 325 7"/></svg></span></h1><p>Que tal transformar a hora de escrever em um momento de conexão com Deus?</p><p className="hero-description">Com <strong>Salmos na Ponta do Lápis</strong>, a escrita e a criatividade se encontram com a beleza da Palavra, um traço de cada vez.</p><BuyButton onBuy={buy}>Quero conhecer o material</BuyButton><div className="hero-notes"><span><FileText/>Material digital</span><span><Printer/>Para imprimir</span><span><Heart/>Feito com propósito</span></div></div><div className="hero-art"><div className="art-circle"/><span className="orbit-word">um lápis, infinitas possibilidades</span>{product.images.hero?<img className="custom-hero" src={product.images.hero} alt="Apresentação do Salmos na Ponta do Lápis"/>:<Art/>}<div className="floating-note note-faith"><Heart size={17}/><span>Fé que cresce<br/><strong>com cada descoberta.</strong></span></div><div className="floating-note note-paper"><Pencil size={17}/> Menos telas, mais afeto.</div><span className="art-star">✧</span></div></section>
- <div className="ribbon"><div className="container"><span><BookOpen/>Palavra que inspira</span><i>✦</i><span><Pencil/>Escrita com significado</span><i>✦</i><span><Heart/>Conexão em família</span><i>✦</i><span><Leaf/>Aprender no seu tempo</span></div></div>
- <section id="beneficios" className="section container"><div className="section-heading"><span className="eyebrow">MUITO ALÉM DA CALIGRAFIA</span><h2>O que floresce a cada página?</h2><p>Um convite para aprender com as mãos, a mente e o coração.</p></div><div className="benefits">{benefits.map(([Icon,title,text,color],i)=><article className={`benefit ${color}`} key={title}><span className="benefit-number">0{i+1}</span><span className="icon-box"><Icon/></span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
- <section id="material" className="material-section"><div className="container material-grid"><div className="sample-stage"><span className="sample-tag">UM POUQUINHO DO QUE PODE FLORESCER ↴</span><div className="paper-back"/><Worksheet index={sample}/><span className="sample-caption">Amostra ilustrativa • não é uma página do produto final</span></div><div className="material-copy"><span className="eyebrow">ESPIE COM CARINHO</span><h2>Um encontro entre<br/>o lápis e a <em>Palavra.</em></h2><p>Folhas que convidam a desacelerar, descobrir novas letras e conversar sobre o que realmente importa.</p><div className="sample-tabs" role="tablist" aria-label="Tipo de atividade">{samples.map((s,i)=><button key={s.label} role="tab" id={`tab-${i}`} aria-controls="sample-description" aria-selected={i===sample} onClick={()=>setSample(i)}>{s.label}</button>)}</div><div id="sample-description" role="tabpanel" aria-labelledby={`tab-${sample}`}><h3>{samples[sample].title}</h3><p>{samples[sample].task}</p></div><ul className="checklist"><li><Check/>Proposta para momentos de aprendizado acompanhado</li><li><Check/>Formato pensado para impressão em A4</li><li><Check/>Espaço para escrever, imaginar e conversar</li></ul><div className="sample-controls"><button aria-label="Amostra anterior" onClick={()=>setSample((sample+2)%3)}><ChevronLeft size={18}/></button><span>0{sample+1} <span>/ 03</span></span><button aria-label="Próxima amostra" onClick={()=>setSample((sample+1)%3)}><ChevronRight size={18}/></button></div></div></div></section>
- <section className="section container audiences"><div className="section-heading"><span className="eyebrow">CABE EM TANTOS MOMENTOS</span><h2>Onde tem amor, tem espaço para aprender.</h2></div><div className="audience-grid">{[[Users,'Em família','Para pais e responsáveis que desejam cultivar a fé em pequenos momentos da rotina.'],[Pencil,'Na aprendizagem','Para educadores que buscam uma proposta criativa de escrita com temática bíblica.'],[Church,'Na comunidade','Uma inspiração para encontros infantis, conforme as condições de uso do material.']].map(([Icon,title,text])=><article key={title}><Icon/><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></section>
- <section className="together"><div className="container together-inner"><span className="heart-doodle">♡</span><span className="eyebrow">PRESENÇA É UM PRESENTE</span><h2>O melhor aprendizado começa<br/>com um <em>“vamos fazer juntos?”</em></h2><p>Prepare os lápis, escolha um cantinho e deixe a conversa acontecer.<br/>Não precisa ser perfeito. Precisa ter carinho.</p><a href="#oferta" className="text-link">Quero viver esses momentos <ArrowUpRight size={18}/></a><span className="flower">✳</span></div></section>
- <section id="como-funciona" className="section container"><div className="section-heading"><span className="eyebrow">DO DIGITAL PARA A MESA DE CASA</span><h2>Simples de começar. Especial de viver.</h2></div><div className="steps">{[[Download,'Receba o material','Após a compra, siga as instruções de acesso enviadas pelo vendedor.'],[Printer,'Imprima do seu jeito','Separe papel A4 e imprima as atividades que combinam com o momento.'],[Pencil,'Prepare os lápis','Escolha um espaço tranquilo e acompanhe cada nova descoberta.'],[Heart,'Cultive bons momentos','Leia, escreva e converse. Cada criança floresce no seu próprio tempo.']].map(([Icon,title,text],i)=><article key={title}><div className="step-icon"><Icon/><span>{i+1}</span></div><h3>{title}</h3><p>{text}</p></article>)}</div></section>
- <section id="oferta" className="offer-section"><div className="container offer-grid"><div className="offer-visual"><span className="eyebrow">UM NOVO CAPÍTULO COMEÇA AQUI</span><h2>Fé no coração.<br/>Lápis na mão.</h2><div className="book-mockup">{product.images.cover?<img src={product.images.cover} alt="Capa do material digital"/>:<><span className="book-kicker">APRENDER • CRIAR • CRER</span><h3>Salmos<span>na Ponta<br/>do Lápis</span></h3><Art/><span className="book-footer">Pequenos traços, grandes sementes de fé.</span></>}</div><span className="digital-note">Representação ilustrativa • produto digital</span></div><div className="offer-card"><span className="offer-badge"><Sparkles size={14}/>{product.offerLabel}</span><h3>Um pequeno passo.<br/>Um propósito tão bonito.</h3><p>Leve a proposta Salmos na Ponta do Lápis para os seus momentos de aprendizado.</p><ul className="checklist"><li><Check/>Material digital para baixar</li><li><Check/>Proposta de escrita com temática bíblica</li><li><Check/>Atividades para imprimir e acompanhar</li></ul><div className="price"><span>Pagamento único</span><strong>{formatPrice(product.price)}</strong><span>Sem assinatura ou mensalidade</span></div><BuyButton onBuy={buy}>Quero meu Salmos na Ponta do Lápis</BuyButton><div className="secure-note"><LockKeyhole size={14}/>{checkout?'Você será direcionado ao checkout':'Prévia da oferta • compra ainda não habilitada'}</div>{product.isDemo&&<small className="demo-note">Preço e composição ilustrativos, sujeitos à confirmação do produtor.</small>}</div></div></section>
- <section className="care container"><ShieldCheck size={38}/><div><h3>Uma escolha com tranquilidade</h3><p>{product.guaranteeDays ? `Garantia de ${product.guaranteeDays} dias, conforme as condições do checkout.` : 'Antes de comprar, confira o conteúdo, a licença de uso e as condições de acesso e reembolso no checkout.'}</p></div></section>
- <section id="faq" className="section container faq-section"><div><span className="eyebrow">PODE PERGUNTAR ♡</span><h2>Vamos tirar<br/>suas dúvidas?</h2><p>Para começar essa nova descoberta com tudo bem explicadinho.</p>{product.contactEmail&&<a className="text-link" href={`mailto:${product.contactEmail}`}>Fale com a gente <ArrowUpRight size={18}/></a>}</div><div className="faq-list">{faqs.map(([q,a])=><details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div></section>
- <section className="closing container"><span>✦</span><h2>Grandes histórias começam<br/>com pequenos traços.</h2><a className="button primary" href="#oferta">Vamos começar? <ArrowRight size={18}/></a></section></main>
- <footer><div className="container footer-main"><Brand/><p>Palavra que inspira. Carinho que ensina.</p><a href="#inicio">Voltar ao início ↑</a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} {product.name}.</span><span>Produto digital. Nenhum material físico será enviado.</span></div></footer>
- {dialog&&<div className="modal-backdrop" onClick={()=>setDialog(false)}><section className="modal" role="dialog" aria-modal="true" aria-labelledby="dialog-title" onClick={e=>e.stopPropagation()}><button className="modal-close" autoFocus aria-label="Fechar" onClick={()=>setDialog(false)} onKeyDown={e=>{if(e.key==='Escape')setDialog(false);}}><X/></button><span className="icon-box"><Heart/></span><h2 id="dialog-title">Uma nova descoberta<br/>está chegando.</h2><p>Esta é uma prévia da página. O checkout ainda não foi habilitado e nenhuma cobrança será realizada.</p><button className="button primary" onClick={()=>setDialog(false)}>Continuar conhecendo <ArrowRight size={17}/></button></section></div>}
- </>;
+  return <><a className="skip" href="#conteudo">Pular para o conteúdo</a><Header/>
+    <main id="conteudo"><Hero onBuy={buy}/><Material/><VideoSection/><Benefits/><Testimonials/><Audiences/><Discovery/><Offer onBuy={buy}/><Panorama/><HowItWorks/><Guarantee/><FAQ/></main>
+    <Footer/>{dialog&&<PurchaseDialog onClose={()=>setDialog(false)}/>}
+  </>;
 }
-export default App;
-if (document.getElementById('root')) createRoot(document.getElementById('root')).render(<App/>);
+if(document.getElementById('root')) createRoot(document.getElementById('root')).render(<App/>);

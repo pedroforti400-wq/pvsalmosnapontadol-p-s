@@ -1,64 +1,63 @@
 # Salmos na Ponta do Lápis
 
-Página de vendas em português, criada com React, Vite e CSS. Não foi publicada.
+Página de vendas em React + Vite + CSS, refinada no projeto existente. Não publicada.
 
-## Visualizar
+## Visualizar no GitHub Codespaces
 
-Requer Node.js 20.19+ ou 22.12+.
+Selecione a branch `codex/salmos-sales-page` no GitHub e abra **Code → Codespaces → Create codespace**. A configuração `.devcontainer/devcontainer.json` instala as dependências com `npm ci` e declara o encaminhamento da porta 5173.
 
-```sh
-npm install
-npm run dev
-```
-
-Abra o endereço Local mostrado pelo Vite (normalmente http://localhost:5173). Em um ambiente remoto, encaminhe a porta 5173 pelo painel de portas do seu editor.
-
-```sh
-npm test
-npm run build
-npm run preview
-```
-
-O último comando permite conferir o build em http://localhost:4173. Os arquivos finais ficam em `dist/`.
-
-## Personalizar
-
-Edite `src/config.js`:
-
-- `price`: preço numérico. `currency`: moeda.
-- `checkoutUrl`: endereço HTTPS do checkout. Vazio mantém um aviso de demonstração, sem cobrança. Todos os botões de compra usam este valor.
-- `images.hero`: imagem principal; `images.cover`: capa; `images.samples`: três imagens de demonstração. Coloque arquivos em `public/` e use caminhos como `/produto/capa.webp`.
-- `contactEmail`: e-mail para exibir o link de contato.
-- `offerLabel`, `guaranteeDays`: condições comerciais verificadas. Garantia não definida não exibe promessa de prazo.
-- `isDemo`: mantenha `true` até confirmar todos os dados.
-
-Conteúdo e perguntas frequentes: `src/main.jsx`. Design responsivo: `src/styles.css`. Ilustração vetorial original com sombras e gradientes: `src/Art.jsx`.
-
-A referência foi usada para orientar a hierarquia e a alternância de seções, sem reutilizar suas imagens ou identidade. A capa, as amostras e o preço de R$ 29,90 são ilustrativos. Antes de ativar vendas, substitua por dados e páginas reais e revise também os textos da oferta, entrega, licença, faixa de aprendizagem e reembolso. Os itens apresentados são propostas editoriais, não uma certificação do conteúdo do produto. Não há depoimentos ou contadores fictícios.
-
-A página usa fontes do Google Fonts, com fontes locais de fallback; o restante dos recursos visuais está no projeto. Sem integrações de rastreamento ou armazenamento de dados.
-
-## Verificações
-
-`npm test` cobre alternância das amostras, oferta, modo demonstrativo de compra, menu móvel e validação de URL HTTPS. `npm run build` valida o empacotamento de produção. Resultado nesta execução: 5 testes aprovados, build de produção concluído e servidor local respondendo HTTP 200. A captura em Chromium não concluiu neste ambiente; a revisão visual em desktop e celular continua pendente antes da publicação.
-
-## Prévia em ambiente remoto — diagnóstico e alternativa
-
-O endereço `localhost:5173` mostrado no terminal pertence à máquina remota. Ele não abre a página na sua máquina sem encaminhamento de porta. O Vite deve permanecer ativo:
+No terminal, na pasta que contém `package.json`:
 
 ```sh
 npm run dev -- --host 0.0.0.0 --port 5173
 ```
 
-Nesta sessão do Codex, a execução foi validada em `0.0.0.0:5173`: HTML, cliente Vite, componentes React, configuração e CSS responderam HTTP 200. A sessão não disponibiliza uma ferramenta de encaminhamento nem uma URL de prévia de entrada. Os IPs internos mostrados pelo Vite não são URLs acessíveis ao navegador do usuário. O processo pode terminar quando o ambiente for suspenso.
+Em **Ports → 5173 → Open in Browser**, abra a URL HTTPS encaminhada. Mantenha a visibilidade **Private**. Caso a porta não apareça, use **Forward a Port → 5173**. O servidor e o Codespace precisam permanecer ativos. A abertura de um Codespace pode consumir a franquia ou gerar custos da conta GitHub.
 
-### Alternativa sem publicação: GitHub Codespaces
+`localhost:5173` no terminal pertence à máquina remota, não à sua máquina. A sessão do Codex usada para esta implementação não expõe um serviço de prévia externa. Os IPs internos do Vite não são um link público. Nenhum deploy foi realizado.
 
-Foi incluído `.devcontainer/devcontainer.json`, com dependências instaladas por `npm ci` na criação do contêiner e encaminhamento da porta 5173. Esta configuração se aplica ao Codespaces/Dev Containers; ela não habilita um serviço de prévia na sessão atual do Codex.
+## Desenvolvimento e verificação
 
-1. Com estes arquivos no seu repositório do GitHub, abra **Code → Codespaces → Create codespace**.
-2. No terminal do Codespace, execute o comando Vite acima na pasta do projeto.
-3. Abra a aba **Ports**, selecione **5173** e use **Open in Browser**. Se a porta não aparecer automaticamente, use **Forward a Port** e informe `5173`.
-4. Use a URL HTTPS exibida pelo Codespaces. Mantenha a visibilidade da porta como **Private** e entre com sua conta do GitHub.
+Requer Node.js 20.19+ ou 22.12+.
 
-A URL encaminha o servidor de desenvolvimento remoto e funciona enquanto o Codespace e o Vite estiverem ativos. Isso não publica um site de produção. A criação de um Codespace pode consumir a franquia ou gerar custos da sua conta GitHub. Nenhum Codespace foi criado por esta tarefa.
+```sh
+npm ci
+npm test
+npm run build
+npm run preview -- --host 0.0.0.0 --port 4173
+```
+
+O build está em `dist/` (ignorado pelo Git). Para abrir o preview do build em um ambiente remoto, encaminhe a porta 4173. Não inclua `node_modules/` no repositório.
+
+## Personalizar os dados reais
+
+Edite `src/config.js`:
+
+- `price`, `currency`, `offerLabel`: preço e identificação da oferta. O preço de R$ 29,90 permanece ilustrativo.
+- `checkoutUrl`: URL HTTPS de compra. Vazio mantém a janela de aviso, sem transação.
+- `isDemo`: mantenha `true` até revisar os dados comerciais e o conteúdo final.
+- `images.hero`, `biblicalScene`, `writingChild`, `panorama`: ilustrações por contexto. Os caminhos atuais apontam para imagens 3D originais em `public/images/`.
+- `images.cover`: capa real opcional. Vazio mantém uma representação identificada como ilustrativa.
+- `images.samples`: três páginas reais para substituir as amostras de tracejar, escrever e colorir.
+- `video.src`: MP4/WebM local ou HTTPS. `video.poster`: capa opcional do vídeo. Sem vídeo, aparece a prévia visual com o aviso de que a apresentação ainda não está disponível.
+- `testimonials`: lista de objetos `{ name, role, quote }`, apenas com relatos reais e autorizados. Vazia exibe três cards explicitamente demonstrativos, sem avaliações ou resultados inventados.
+- `guaranteeDays`: informe um prazo apenas se a política estiver confirmada. Vazio exibe orientação para conferir as condições do vendedor.
+- `contactEmail`: e-mail opcional para o FAQ.
+
+Páginas, capa, licença, entrega, faixa de aprendizagem e condições de reembolso devem ser conferidas pelo produtor antes de ativar vendas. As ilustrações não representam um produto físico enviado ao comprador.
+
+## Organização
+
+- `src/main.jsx`: composição da aplicação e abertura do aviso de compra.
+- `src/sections/`: hero, apresentação interativa, vídeo, benefícios, depoimentos, públicos, seção amarela, oferta, panorama, etapas, garantia e FAQ.
+- `src/components/`: cabeçalho e rodapé, componentes compartilhados, folha de demonstração e diálogo com gerenciamento de foco.
+- `src/content.js`: textos das atividades, benefícios e perguntas frequentes.
+- `src/styles.css`: identidade visual, fontes locais, estados e adaptações responsivas.
+- `src/Art.jsx`: ilustração vetorial original preservada como fallback.
+- `public/images/`: três artes originais geradas para esta página, otimizadas em WebP.
+
+## Revisão visual
+
+A linguagem foi ampliada com personagens 3D, sombras suaves, traços decorativos, prévias inclinadas sobre amarelo vibrante, oferta lilás e cenário bíblico panorâmico. A estrutura visual da referência orienta a alternância das seções; seus textos, imagens, identidade e elementos exclusivos não foram reutilizados.
+
+Verificações: 9 testes automatizados, build Vite e revisão em Chromium nas larguras 1440, 1024, 768, 390 e 320 px. Sem erros de JavaScript, arquivos ausentes ou rolagem horizontal nas larguras verificadas. Foram conferidos menu móvel, amostras, janela de compra, Escape, FAQ e aviso de vídeo. As fontes são locais e as imagens usam carregamento adiado fora da primeira dobra.
