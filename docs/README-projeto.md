@@ -4,13 +4,13 @@ React + Vite + CSS no repositório existente. Nenhuma publicação realizada.
 
 ## Etapa atual
 
-A aplicação renderiza **o cabeçalho com a logo oficial, as seis seções aprovadas e a sétima seção de recebimento por e-mail**. A headline e a subheadline são as fornecidas pelo produtor. O fundo contínuo é #FAF7EF; azul, verde, amarelo e laranja aparecem nos destaques. O laranja do texto recebe um tom mais escuro para preservar contraste e legibilidade.
+A aplicação renderiza **o cabeçalho com a logo oficial, as sete seções aprovadas e a oitava seção de oferta final**. A headline e a subheadline são as fornecidas pelo produtor. O fundo contínuo é #FAF7EF; azul, verde, amarelo e laranja aparecem nos destaques. O laranja do texto recebe um tom mais escuro para preservar contraste e legibilidade.
 
-Os componentes das seções anteriores, suas artes, configurações e `src/styles.css` permanecem no repositório e no histórico, mas não são renderizados nem têm seus estilos importados nesta etapa. Não há oferta comercial, compra ou rodapé nesta etapa. O identificador `#checkout-final` permanece em uma âncora invisível de altura zero, sem mensagens provisórias, caixa visível, preço ou checkout falso. O CTA continua rolando e transferindo o foco para esse destino.
+Os componentes das seções anteriores, suas artes, configurações e `src/styles.css` permanecem no repositório e no histórico, mas não são renderizados nem têm seus estilos importados nesta etapa. A oferta final exibe o preço confirmado de R$ 27,90. O checkout real ainda não está configurado, portanto o botão de compra fica desabilitado. Não há rodapé nesta etapa. O identificador `#checkout-final` pertence à oitava seção; o CTA anterior continua rolando e transferindo o foco para esse destino.
 
 ## Imagem principal oficial
 
-A arte oficial foi localizada na branch `codex/salmos-sales-page`, no commit de upload `ab5b19a`, e está integrada pelo caminho `/images/imagem-principal-salmos-com-bonus.png`. O PNG original tem 1122 × 1402 pixels e foi preservado sem alterações.
+A arte oficial foi localizada na branch `codex/salmos-sales-page`, no commit de upload `ab5b19a`, e está integrada pelo caminho `/images/imagem-principal-salmos-com-bonus.png`. O arquivo atual tem 1199 × 1244 pixels e foi preservado sem alterações.
 
 Arquivo original utilizado:
 
@@ -32,7 +32,7 @@ O Embla Carousel, com o plugin oficial Auto Scroll, fornece movimento horizontal
 
 O movimento automático é lento e constante (0,45 pixel por passo da animação do Embla), sem temporizador para avançar slides, apenas com a seção visível. Ele pausa durante hover com mouse, foco por teclado, arraste, atividade ampliada ou aba oculta. Após a interação, retoma automaticamente, com uma breve espera de 800 ms. Toque e clique não deixam o carrossel bloqueado por foco residual. O player/controle de pausa foi removido. A preferência por movimento reduzido desativa o movimento automático e remove a animação da navegação manual. O botão “Quero garantir agora” rola até `#checkout-final` e transfere o foco ao destino; a rolagem é imediata com movimento reduzido.
 
-Os estilos novos são restritos à segunda seção e ao destino provisório. O cabeçalho, a primeira seção, suas artes e seus estilos permanecem intactos.
+Os estilos da segunda seção permanecem isolados; o destino do CTA agora é a oferta final. O cabeçalho, a primeira seção, suas artes e seus estilos permanecem intactos.
 
 ## Terceira seção: arte oficial ANTES / DEPOIS
 
@@ -42,7 +42,7 @@ A legenda abaixo da arte foi removida integralmente, sem espaço reservado; a me
 
 Tocar ou clicar abre um diálogo com a imagem em tamanho original e rolagem interna horizontal e vertical para explorar os detalhes. O botão de fechar permanece fora da área de rolagem da imagem. Há fechamento por botão, Escape e clique no fundo, retorno de foco à imagem e link para abrir o original em nova aba. A página não ganha rolagem horizontal.
 
-Os estilos são restritos à terceira seção e sua ampliação. Os arquivos das duas seções anteriores não foram alterados. A âncora invisível `#checkout-final` permanece no fim da página, após a sétima seção de recebimento. A quinta seção de públicos vem após os comentários, sem novas seções de oferta.
+Os estilos são restritos à terceira seção e sua ampliação. Os arquivos das duas seções anteriores não foram alterados. O destino `#checkout-final` agora pertence à oferta final, após a sétima seção. A quinta seção de públicos continua após os comentários.
 
 ## Quarta seção: comentários ilustrativos
 
@@ -54,13 +54,13 @@ A faixa usa o mesmo Embla Auto Scroll das atividades e importa os mesmos valores
 
 A segunda passagem dos mesmos quatro cartões dá espaço ao loop; não cria comentários novos e é ignorada pelos leitores de tela e pela ordem de tabulação. Os originais continuam disponíveis por teclado. Clicar ou tocar em qualquer cartão abre seu PNG na resolução nativa, com botão de fechar, Escape, rolagem interna e link para o arquivo original. No celular, isso permite ler os detalhes preservando a imagem inteira na seção.
 
-Os estilos e a fonte cursiva local Lobster Two são restritos à quarta seção. Os arquivos das três seções anteriores, suas artes e a velocidade das atividades ficaram intactos. A âncora invisível `#checkout-final` permanece após a sétima seção de recebimento, sem outras seções de vendas além das sete planejadas.
+Os estilos e a fonte cursiva local Lobster Two são restritos à quarta seção. Os arquivos das três seções anteriores, suas artes e a velocidade das atividades ficaram intactos. O destino `#checkout-final` pertence à oitava seção de oferta; não há seções extras além das oito planejadas.
 
 ## Quinta seção: para quem é o material
 
 O componente antigo `src/sections/Audiences.jsx`, que estava fora da renderização atual, foi substituído. Agora há uma única seção `#para-quem` imediatamente após os comentários. A headline, o texto superior e a subheadline usam os textos solicitados. Famílias, educadores e ministérios infantis são os três públicos confirmados pelo produtor.
 
-São três cards com cenas 3D originais em cenários completos: casa com pais e crianças, sala de aula com professora e encontro de ministério infantil. As ilustrações seguem uma direção comum de luz dourada, cores da marca e proporção horizontal 3:2; são imagens ilustrativas, não fotos de clientes. Imagens, textos e descrições acessíveis ficam centralizados em `src/audiences.js`. Os estilos de `Audiences.css` usam classes próprias para preservar as quatro seções anteriores. Há três colunas a partir de 900 px e uma coluna em telas menores, sem carrossel ou novos botões. A âncora invisível `#checkout-final` continua no final da página, depois da sétima seção de recebimento.
+São três cards com cenas 3D originais em cenários completos: casa com pais e crianças, sala de aula com professora e encontro de ministério infantil. As ilustrações seguem uma direção comum de luz dourada, cores da marca e proporção horizontal 3:2; são imagens ilustrativas, não fotos de clientes. Imagens, textos e descrições acessíveis ficam centralizados em `src/audiences.js`. Os estilos de `Audiences.css` usam classes próprias para preservar as quatro seções anteriores. Há três colunas a partir de 900 px e uma coluna em telas menores, sem carrossel ou novos botões. A oferta final com identificador `#checkout-final` aparece depois da sétima seção de recebimento.
 
 Nenhuma arte, texto, medida ou lógica dos quatro componentes aprovados foi alterada. A revisão compara DOM, medidas e estilos das quatro seções e do cabeçalho em 320, 375, 390, 768 e 1440 px. Não há seção duplicada, novo checkout ou publicação.
 
@@ -72,7 +72,7 @@ As quatro capas foram criadas do zero como ilustrações 3D originais, em PNG de
 
 Textos, caminhos e preços individuais informados pelo produtor ficam em `src/bonuses.js`: R$ 12,99, R$ 17,99, R$ 25,49 e R$ 15,99. Os valores são mantidos em centavos inteiros e o total de R$ 72,46 é calculado a partir dos quatro itens. Cada card mostra o preço riscado, “Por: GRÁTIS” e “Incluso na sua compra”. O resumo final usa a copy solicitada, sem criar um novo checkout ou alterar o preço do produto principal.
 
-São quatro colunas a partir de 1200 px, duas entre 640 e 1199 px e uma em telas menores. `Bonuses.css` usa classes restritas à seção. As cinco seções aprovadas, suas artes e a lógica dos carrosséis não foram modificadas. A âncora invisível de checkout permanece no final da página, agora depois das instruções de recebimento.
+São quatro colunas a partir de 1200 px, duas entre 640 e 1199 px e uma em telas menores. `Bonuses.css` usa classes restritas à seção. As cinco seções aprovadas, suas artes e a lógica dos carrosséis não foram modificadas. A oferta final aparece depois das instruções de recebimento e recebe o identificador `#checkout-final`.
 
 ## Sétima seção: recebimento por e-mail
 
@@ -80,7 +80,22 @@ O componente antigo `HowItWorks.jsx`, que estava fora da página atual, foi adap
 
 Cinco cards explicam compra, recebimento por e-mail, download dos PDFs, impressão e armazenamento dos arquivos no próprio dispositivo. Os ícones são carrinho, envelope, download, impressora e infinito. A entrega por e-mail ocorre após confirmação do pagamento, sem promessa de envio instantâneo ou prazo específico. O último card fala dos arquivos guardados localmente, sem inventar prazo de acesso a uma plataforma.
 
-O visual usa fundo creme, cards em branco quente, títulos verde-escuro, etiquetas douradas, ícones circulares, sombras suaves e borda dourada no último card. São cinco colunas a partir de 1100 px, três entre 768 e 1099 px e uma coluna no celular. Os efeitos discretos de hover respeitam movimento reduzido. As classes de `HowItWorks.css` são restritas à nova seção, preservando as seis anteriores. O destino invisível `#checkout-final` continua no fim da página; nenhuma seção de oferta ou checkout foi criada.
+O visual usa fundo creme, cards em branco quente, títulos verde-escuro, etiquetas douradas, ícones circulares, sombras suaves e borda dourada no último card. São cinco colunas a partir de 1100 px, três entre 768 e 1099 px e uma coluna no celular. Os efeitos discretos de hover respeitam movimento reduzido. As classes de `HowItWorks.css` são restritas à nova seção, preservando as seis anteriores. A seção de oferta com identificador `#checkout-final` aparece imediatamente depois das instruções, sem alterar estes cinco cards.
+
+## Oitava seção: oferta final
+
+O componente antigo `Offer.jsx`, que não estava renderizado, foi substituído por uma única oferta imediatamente após `#como-funciona`. O identificador `#checkout-final` foi transferido do destino invisível para a seção real, com foco programático preservado. O botão amarelo das atividades não foi alterado.
+
+A oferta usa fundo #FFDA00, transição ondulada a partir do creme, estrelas e coração discretos, composição grande do kit e quadro claro com preço e botão verde. As cinco imagens existentes são usadas integralmente, sem recorte, geração ou conversão: o material principal em `/images/imagem-principal-salmos-com-bonus.png` (1199 × 1244 px) e os quatro PNGs de capas de bônus (1024 × 1536 px). O principal aparece maior ao centro no desktop e acima dos bônus no celular. Perspectiva, bordas e sombras são feitas somente com CSS. Os links das imagens abrem os arquivos originais para ampliar.
+
+Preço e compra são configuráveis em `src/config.js`:
+
+- `product.price: 27.90`: preço atual e texto do botão, formatados juntos em reais.
+- `product.referencePrice: 99.90`: referência comercial confirmada explicitamente pelo produtor nesta etapa.
+- `product.referencePriceConfirmed: true`: permite exibir o valor riscado. Sem confirmação, o componente não apresenta esse valor.
+- `product.checkoutUrl: ''`: **falta preencher com a URL HTTPS real do checkout**. Enquanto estiver vazio ou inválido, o botão permanece desabilitado e a página informa “Compra ainda não habilitada.”. Nenhum link de pagamento foi inventado. Configurar a URL habilita o link de compra automaticamente.
+
+A seção usa os textos fornecidos, informa recebimento por e-mail após confirmação do pagamento e não promete envio instantâneo, acesso vitalício ou garantia não confirmada. Não foi adicionado serviço de pagamento ou envio de e-mail. `Offer.css` tem classes próprias para preservar as sete seções aprovadas. Não há nova dependência ou publicação.
 
 ## Atualizar a prévia no GitHub Codespaces
 
@@ -91,7 +106,7 @@ git switch codex/salmos-sales-page
 git pull --ff-only
 ```
 
-Esta etapa adiciona a fonte local da quarta seção. Pare o servidor existente com Ctrl+C, instale as dependências e reinicie:
+Para uma instalação nova, instale as dependências e inicie o servidor. No Codespace já preparado, basta atualizar a branch e recarregar a prévia; reinicie o servidor se estiver parado:
 
 ```sh
 npm ci
@@ -109,9 +124,9 @@ npm test
 npm run build
 ```
 
-Validação desta etapa: 19 testes aprovados e build Vite concluído. Chromium conferido em 320, 375, 390, 768 e 1440 px, com a logo centralizada, sem rolagem horizontal e sem erros de JavaScript. O link de pular para o conteúdo também foi conferido por teclado.
+Validação desta etapa: 22 testes aprovados e build Vite concluído. Chromium conferido em 320, 375, 390, 768 e 1440 px, com a logo centralizada, sem rolagem horizontal e sem erros de JavaScript. O link de pular para o conteúdo também foi conferido por teclado.
 
-Os testes cobrem a copy exata e a preservação da primeira seção, a presença de somente sete seções e do destino invisível de checkout, o cabeçalho contendo somente a logo, o link de ampliação e a ausência de mensagem provisória quando o arquivo não carrega. O carrossel também tem testes para setas, indicadores, loop, início/parada e retomada do movimento contínuo, ausência do player, foco por teclado, movimento reduzido, ampliação e CTA. A revisão visual compara o cabeçalho, a primeira seção, o título da segunda seção e o CTA com a base anterior em cada largura. A navegação por setas, a ampliação e o destino do CTA permanecem disponíveis. A revisão no Chromium mediu deslocamento constante de 0,45 pixel entre quadros e uma volta completa com 6.000 quadros monitorados, sem lacunas. Foram aprovadas as retomadas após hover, clique em seta, arraste com mouse, deslize e tap no celular; também foram conferidos o foco por teclado e o movimento reduzido. O cabeçalho, a primeira seção, o título da segunda seção e o CTA ficaram idênticos à base anterior nas cinco larguras, sem erros de JavaScript ou arquivos ausentes.
+Os testes cobrem a copy exata e a preservação da primeira seção, a presença de somente oito seções e do destino único de oferta, o cabeçalho contendo somente a logo, o link de ampliação e a ausência de mensagem provisória quando o arquivo não carrega. O carrossel também tem testes para setas, indicadores, loop, início/parada e retomada do movimento contínuo, ausência do player, foco por teclado, movimento reduzido, ampliação e CTA. A revisão visual compara o cabeçalho, a primeira seção, o título da segunda seção e o CTA com a base anterior em cada largura. A navegação por setas, a ampliação e o destino do CTA permanecem disponíveis. A revisão no Chromium mediu deslocamento constante de 0,45 pixel entre quadros e uma volta completa com 6.000 quadros monitorados, sem lacunas. Foram aprovadas as retomadas após hover, clique em seta, arraste com mouse, deslize e tap no celular; também foram conferidos o foco por teclado e o movimento reduzido. O cabeçalho, a primeira seção, o título da segunda seção e o CTA ficaram idênticos à base anterior nas cinco larguras, sem erros de JavaScript ou arquivos ausentes.
 
 A terceira seção foi conferida com a imagem real nas cinco larguras: proporção, centralização, imagem inteira, ampliação, rolagem interna, fechamento, Escape, foco e continuidade do CTA. A comparação de DOM, medidas e estilos confirmou o cabeçalho e as duas primeiras seções idênticos à base anterior. O hash SHA-256 do PNG é o mesmo no arquivo original e no build: `3625214b7c591667e5930ba17df1e6e1aeead3c13811ae21084b64ee21c34a87`.
 
@@ -119,7 +134,9 @@ Os testes de comentários cobrem os quatro PNGs individuais, as duas passagens d
 
 ## Arquivos desta etapa
 
-- `src/main.jsx`: composição das sete seções, com as seis primeiras preservadas.
+- `src/main.jsx`: composição das oito seções, com as sete primeiras preservadas.
+- `src/sections/Offer.jsx` e `Offer.css`: composição do kit, preço e compra da oferta final.
+- `tests/offer.test.jsx`: referência comercial condicionada à confirmação e integração segura de checkout.
 - `src/sections/HowItWorks.jsx` e `HowItWorks.css`: sétima seção responsiva com cinco cards.
 - `src/delivery.js`: instruções de compra, entrega por e-mail, download, impressão e armazenamento.
 - `src/sections/Bonuses.jsx` e `Bonuses.css`: cards e resumo da seção dos quatro bônus.
@@ -135,5 +152,5 @@ Os testes de comentários cobrem os quatro PNGs individuais, as duas passagens d
 - `src/sections/BeforeAfter.jsx` e `BeforeAfter.css`: terceira seção ampliada no desktop e ampliação acessível.
 - `src/presentation.css`: tipografia local, paleta e responsividade da nova apresentação.
 - `src/components/Header.css`: cabeçalho compacto e logo centralizada.
-- `src/config.js`: caminho editável da imagem; dados anteriores preservados.
+- `src/config.js`: imagens, preço atual, preço de referência confirmado e URL real de checkout.
 - `tests/app.test.jsx`, `tests/carousel.test.jsx` e `tests/before-after.test.jsx` e `tests/comments.test.jsx`: preservação das seções aprovadas, carrosséis e ampliações.

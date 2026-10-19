@@ -10,7 +10,7 @@ const originalArtwork = product.images.productWithBonuses;
 afterEach(() => { product.images.productWithBonuses = originalArtwork; });
 
 describe('Primeira etapa da nova apresentação', () => {
-  it('preserva as seis seções aprovadas e acrescenta uma única seção de recebimento por e-mail', () => {
+  it('preserva as sete seções aprovadas e acrescenta uma única oferta final', () => {
     render(<App/>);
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
       'Mais de 200 atividades bíblicas para desenvolver a caligrafia e cultivar a fé desde a infância!'
@@ -20,7 +20,7 @@ describe('Primeira etapa da nova apresentação', () => {
       'Conheça o Salmos na Ponta do Lápis: um material digital para imprimir, que une exercícios de escrita, criatividade e os ensinamentos dos Salmos.'
     );
     expect(within(intro).getByText(product.name).tagName).toBe('STRONG');
-    expect(document.querySelectorAll('main > section')).toHaveLength(7);
+    expect(document.querySelectorAll('main > section')).toHaveLength(8);
     expect(document.querySelectorAll('main > section')[0]).toHaveAttribute('id', 'inicio');
     expect(document.querySelectorAll('main > section')[1]).toHaveAttribute('id', 'atividades');
     expect(document.querySelectorAll('main > section')[2]).toHaveAttribute('id', 'escrita-com-proposito');
@@ -34,6 +34,9 @@ describe('Primeira etapa da nova apresentação', () => {
     expect(document.querySelectorAll('#como-funciona')).toHaveLength(1);
     expect(document.getElementById('bonus').nextElementSibling).toBe(document.getElementById('como-funciona'));
     expect(document.getElementById('como-funciona').nextElementSibling).toBe(document.getElementById('checkout-final'));
+    expect(document.querySelectorAll('main > section')[7]).toHaveAttribute('id', 'checkout-final');
+    expect(document.querySelectorAll('#checkout-final')).toHaveLength(1);
+    expect(screen.getByRole('region', { name: 'Leve o Salmos na Ponta do Lápis + 4 bônus especiais!' })).toHaveAttribute('id', 'checkout-final');
     const delivery = within(screen.getByRole('region', { name: 'Simples, rápido e pronto para imprimir!' }));
     expect(delivery.getByText('COMO VOCÊ RECEBE')).toBeInTheDocument();
     expect(delivery.getByText('Após a compra, receba o acesso por e-mail, baixe seu material e comece a aproveitar as atividades!')).toBeInTheDocument();
@@ -63,7 +66,7 @@ describe('Primeira etapa da nova apresentação', () => {
       '/images/para-quem-familias.png', '/images/para-quem-educadores.png', '/images/para-quem-ministerios.png',
     ]);
     expect(within(document.getElementById('escrita-com-proposito')).getByRole('img')).toHaveAttribute('src', '/images/terceira-secao-salmos-antes-depois.png');
-    expect(document.getElementById('checkout-final')).toBeEmptyDOMElement();
+    expect(document.getElementById('checkout-final')).toHaveAttribute('aria-labelledby', 'final-offer-title');
     expect(document.getElementById('checkout-final')).toHaveAttribute('tabindex', '-1');
     expect(screen.queryByText('Área de oferta em preparação.')).not.toBeInTheDocument();
     expect(screen.queryByText('Toque ou clique na imagem para ver os detalhes em uma nova aba.')).not.toBeInTheDocument();

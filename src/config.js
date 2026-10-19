@@ -2,9 +2,11 @@
 export const product = {
   name: 'Salmos na Ponta do Lápis',
   logo: { src: '/images/logo-oficial-salmos.png', width: 1774, height: 887 },
-  price: 29.90,
+  price: 27.90,
+  referencePrice: 99.90,
+  referencePriceConfirmed: true, // Referência comercial confirmada pelo produtor nesta oferta.
   currency: 'BRL',
-  checkoutUrl: '', // URL HTTPS do seu checkout. Vazio mantém a compra em modo de demonstração.
+  checkoutUrl: '', // URL HTTPS real do checkout. Vazio ou inválido mantém o botão de compra desabilitado.
   contactEmail: '',
   offerLabel: 'Oferta especial de lançamento',
   isDemo: true, // Desative depois de validar preço, conteúdo e condições comerciais.

@@ -8,6 +8,7 @@ import IllustrativeComments from './sections/IllustrativeComments';
 import Audiences from './sections/Audiences';
 import Bonuses from './sections/Bonuses';
 import HowItWorks from './sections/HowItWorks';
+import Offer from './sections/Offer';
 import './presentation.css';
 
 export default function App() {
@@ -22,7 +23,7 @@ export default function App() {
       <Audiences/>
       <Bonuses/>
       <HowItWorks/>
-      <div id="checkout-final" className="checkout-anchor" tabIndex={-1}/>
+      <Offer/>
     </main>
   </>;
 }

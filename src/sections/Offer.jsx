@@ -1,16 +1,53 @@
-import { Check, LockKeyhole, Sparkles, Download, Printer, Heart, ShieldCheck } from 'lucide-react';
-import { BuyButton, Scene, Logo } from '../components/UI';
+import { Heart, ShoppingCart, Sparkles, Star } from 'lucide-react';
+import { bonuses } from '../bonuses';
 import { product, formatPrice, getCheckoutUrl } from '../config';
+import './Offer.css';
 
-export default function Offer({ onBuy }) {
-  return <section id="oferta" className="offer-section"><div className="container">
-    <div className="offer-heading"><span className="eyebrow"><Sparkles size={14}/>{product.offerLabel}</span><h2>O próximo capítulo<br/>começa com um <em>sim.</em></h2></div>
-    <div className="offer-grid"><div className="offer-card"><span className="offer-badge"><BookBadge/> SALMOS NA PONTA DO LÁPIS</span><h3>Um pequeno investimento.<br/><span>Um propósito tão bonito.</span></h3><p>Leve a caligrafia com os Salmos para os seus momentos de aprendizado em família.</p>
-      <ul className="checklist"><li><Check/>Material digital para baixar</li><li><Check/>Proposta de escrita com temática bíblica</li><li><Check/>Atividades para imprimir e acompanhar</li></ul>
-      <div className="price"><span>Pagamento único</span><strong>{formatPrice(product.price)}</strong><span>Sem assinatura ou mensalidade</span></div>
-      <BuyButton onBuy={onBuy}>Quero meu Salmos na Ponta do Lápis</BuyButton><div className="secure-note"><LockKeyhole size={13}/>{getCheckoutUrl(product.checkoutUrl)?'Você será direcionado ao checkout':'Prévia da oferta • compra ainda não habilitada'}</div>{product.isDemo&&<small className="demo-note">Preço e composição ilustrativos, sujeitos à confirmação do produtor.</small>}
-    </div><div className="offer-visual"><div className="offer-orbit"/><Scene type="writingChild" alt="Criança em 3D escrevendo em seu caderno, com uma ovelhinha ao lado"/><div className="offer-note"><Heart size={21}/><span>Hoje, uma descoberta.<br/><strong>Uma memória para guardar.</strong></span></div><div className="mini-cover">{product.images.cover?<img src={product.images.cover} alt="Capa real do produto" loading="lazy"/>:<><span>APRENDER • CRIAR • CRER</span><Logo className="mini-cover-logo"/><small>Representação ilustrativa</small></>}</div><span className="offer-spark" aria-hidden="true">✧</span></div></div>
-    <div className="offer-perks"><span><Download size={16}/>Do digital para sua rotina</span><span><Printer size={16}/>Imprima no seu tempo</span><span><ShieldCheck size={16}/>Confira as condições no checkout</span></div>
-  </div></section>;
+export default function Offer() {
+  const checkout = getCheckoutUrl(product.checkoutUrl);
+  const price = formatPrice(product.price);
+  const showReference = product.referencePriceConfirmed && Number.isFinite(product.referencePrice) && product.referencePrice > product.price;
+  const buttonContent = <><ShoppingCart size={25} aria-hidden="true"/><span>QUERO GARANTIR MEU KIT POR {price}!</span></>;
+
+  return <section id="checkout-final" className="final-offer" aria-labelledby="final-offer-title" tabIndex={-1}>
+    <svg className="final-offer-wave" viewBox="0 0 1440 50" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h1440v10C1100 65 860 8 600 28S230 55 0 13Z" fill="#FAF7EF"/></svg>
+    <Star className="final-offer-star final-offer-star--one" size={40} aria-hidden="true"/>
+    <Star className="final-offer-star final-offer-star--two" size={26} aria-hidden="true"/>
+    <Heart className="final-offer-heart" size={30} aria-hidden="true"/>
+
+    <div className="final-offer-container">
+      <div className="final-offer-heading">
+        <p className="final-offer-eyebrow"><Sparkles size={16} aria-hidden="true"/>OFERTA ESPECIAL PARA VOCÊ!</p>
+        <h2 id="final-offer-title">Leve o <span className="final-offer-name">Salmos na Ponta do Lápis</span> + <span className="final-offer-bonuses">4 bônus especiais!</span></h2>
+        <p className="final-offer-subheadline">Mais de 200 atividades bíblicas para imprimir, acompanhadas de quatro materiais extras para enriquecer o aprendizado, a criatividade e a fé das crianças!</p>
+      </div>
+
+      <div className="final-offer-kit" role="group" aria-label="Kit completo: material principal e quatro bônus digitais">
+        {product.images.productWithBonuses && <figure className="final-kit-main">
+          <a className="final-kit-main-cover" href={product.images.productWithBonuses} target="_blank" rel="noopener noreferrer" aria-label="Ampliar apresentação do material principal em uma nova aba">
+            <img src={product.images.productWithBonuses} alt="Salmos na Ponta do Lápis: apresentação original do material principal, tablet e páginas de atividades" width="1199" height="1244" loading="lazy" decoding="async"/>
+          </a>
+          <figcaption>MATERIAL PRINCIPAL</figcaption>
+        </figure>}
+        {bonuses.map((bonus, index) => <figure key={bonus.id} className={`final-kit-bonus final-kit-bonus--${index + 1}`}>
+          <a className="final-kit-cover" href={bonus.image} target="_blank" rel="noopener noreferrer" aria-label={`Ampliar capa de ${bonus.title} na oferta em uma nova aba`}>
+            <img src={bonus.image} alt={bonus.alt} width="1024" height="1536" loading="lazy" decoding="async"/>
+          </a>
+          <figcaption><span>BÔNUS {index + 1}</span><strong>{bonus.title}</strong></figcaption>
+        </figure>)}
+      </div>
+
+      <div className="final-offer-price-card">
+        {showReference && <p className="final-offer-reference">De <del>{formatPrice(product.referencePrice)}</del></p>}
+        <p className="final-offer-only">Por apenas</p>
+        <p className="final-offer-price"><strong>{price}</strong></p>
+        {checkout
+          ? <a className="final-offer-buy" href={checkout}>{buttonContent}</a>
+          : <button className="final-offer-buy" type="button" disabled aria-describedby="final-checkout-note">{buttonContent}</button>}
+        {!checkout && <p className="final-offer-checkout-note" id="final-checkout-note">Compra ainda não habilitada.</p>}
+        <p className="final-offer-digital">Produto 100% digital <span aria-hidden="true">•</span> Recebimento por e-mail após confirmação do pagamento</p>
+        <p className="final-offer-included">Mais de 200 atividades bíblicas + 4 bônus digitais inclusos</p>
+      </div>
+    </div>
+  </section>;
 }
-function BookBadge(){return <Sparkles size={13}/>;}
