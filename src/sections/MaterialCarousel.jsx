@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import { ArrowRight, ChevronLeft, ChevronRight, Crown, Heart, Pause, Play, X } from 'lucide-react';
+import AutoScroll from 'embla-carousel-auto-scroll';
+import { ArrowRight, ChevronLeft, ChevronRight, Crown, Heart, X } from 'lucide-react';
 import { activities } from '../activities';
 import './MaterialCarousel.css';
 
-export const AUTOPLAY_DELAY = 4500;
+export const CONTINUOUS_SPEED = 0.45;
+export const RESUME_DELAY = 800;
 
 function useReducedMotion() {
   const [reduced, setReduced] = useState(() => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false);
@@ -57,10 +59,14 @@ function ActivityLightbox({ index, onClose }) {
 
 export default function MaterialCarousel() {
   const reduced = useReducedMotion();
-  const [viewport, api] = useEmblaCarousel({ loop: true, align: 'start', duration: 35 });
+  const [autoScroll] = useState(() => AutoScroll({
+    speed: CONTINUOUS_SPEED, startDelay: 0, playOnInit: false,
+    stopOnInteraction: true, stopOnFocusIn: false,
+  }));
+  const [viewport, api] = useEmblaCarousel({ loop: true, dragFree: true, align: 'start', duration: 35 }, [autoScroll]);
   const section = useRef(null);
+  const pointerFocus = useRef(false);
   const [selected, setSelected] = useState(0);
-  const [paused, setPaused] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const [dragging, setDragging] = useState(false);
@@ -72,11 +78,12 @@ export default function MaterialCarousel() {
   useEffect(() => {
     if (!api) return;
     const update = () => setSelected(api.selectedScrollSnap());
+    const reinitialize = () => { update(); setInteraction(value => value + 1); };
     const startDrag = () => setDragging(true);
-    const endDrag = () => setDragging(false);
+    const endDrag = () => { setDragging(false); setInteraction(value => value + 1); };
     update();
-    api.on('select', update).on('reInit', update).on('pointerDown', startDrag).on('pointerUp', endDrag);
-    return () => { api.off('select', update).off('reInit', update).off('pointerDown', startDrag).off('pointerUp', endDrag); };
+    api.on('select', update).on('reInit', reinitialize).on('pointerDown', startDrag).on('pointerUp', endDrag);
+    return () => { api.off('select', update).off('reInit', reinitialize).off('pointerDown', startDrag).off('pointerUp', endDrag); };
   }, [api]);
 
   useEffect(() => {
@@ -92,15 +99,18 @@ export default function MaterialCarousel() {
     return () => document.removeEventListener('visibilitychange', update);
   }, []);
 
-  const autoplay = !reduced && !paused && !hovered && !focused && !dragging && !hidden && visible && enlarged === null;
+  const moving = !reduced && !hovered && !focused && !dragging && !hidden && visible && enlarged === null;
   useEffect(() => {
-    if (!api || !autoplay) return;
-    const timer = window.setInterval(() => api.scrollNext(), AUTOPLAY_DELAY);
-    return () => window.clearInterval(timer);
-  }, [api, autoplay, interaction]);
+    const motion = api?.plugins().autoScroll;
+    if (!motion) return;
+    motion.stop();
+    if (moving) motion.play(interaction ? RESUME_DELAY : 0);
+    return () => motion.stop();
+  }, [api, moving, interaction]);
 
   const navigate = useCallback((direction, index) => {
     if (!api) return;
+    api.plugins().autoScroll?.stop();
     if (direction === 'next') api.scrollNext(reduced);
     else if (direction === 'previous') api.scrollPrev(reduced);
     else api.scrollTo(index, reduced);
@@ -126,8 +136,15 @@ export default function MaterialCarousel() {
     </div>
 
     <div className="activity-carousel" role="region" aria-roledescription="carrossel" aria-label="Prévias das seis atividades"
-      onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-      onFocusCapture={() => setFocused(true)}
+      onPointerEnter={event => { if (event.pointerType !== 'touch' && event.pointerType !== 'pen') setHovered(true); }}
+      onPointerLeave={event => {
+        if (event.pointerType !== 'touch' && event.pointerType !== 'pen') {
+          setHovered(false); setInteraction(value => value + 1);
+        }
+      }}
+      onPointerDownCapture={() => { pointerFocus.current = true; setFocused(false); }}
+      onKeyDownCapture={() => { pointerFocus.current = false; setFocused(true); }}
+      onFocusCapture={() => { if (!pointerFocus.current) setFocused(true); }}
       onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}
       onKeyDown={event => {
         if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
@@ -156,11 +173,8 @@ export default function MaterialCarousel() {
             aria-label={`Ir para atividade ${index + 1}`} aria-current={selected === index ? 'true' : undefined}
             onClick={() => navigate('index', index)}><span/></button>)}
         </div>
-        <button type="button" className="activity-autoplay" disabled={reduced} aria-pressed={paused || reduced}
-          aria-label={reduced ? 'Movimento automático desativado pela sua preferência' : paused ? 'Retomar movimento automático' : 'Pausar movimento automático'}
-          onClick={() => setPaused(value => !value)}>{paused || reduced ? <Play size={14}/> : <Pause size={14}/>}</button>
       </div>
-      <span className="activity-sr-only" aria-live={autoplay ? 'off' : 'polite'} aria-atomic="true">Atividade {selected + 1} de {activities.length}</span>
+      <span className="activity-sr-only" aria-live={moving ? 'off' : 'polite'} aria-atomic="true">Atividade {selected + 1} de {activities.length}</span>
     </div>
 
     <div className="activity-cta-row"><Rays/>

@@ -44,8 +44,6 @@
 .activity-dot { display: grid; place-items: center; width: 30px; height: 36px; padding: 0; border: 0; background: transparent; cursor: pointer; border-radius: 50%; }
 .activity-dot span { display: block; width: 10px; height: 10px; border-radius: 50%; background: #c8c8c5; transition: background .2s, transform .2s; }
 .activity-dot.is-selected span { background: #FFDA00; box-shadow: 0 2px 9px #ffda0066; transform: scale(1.2); }
-.activity-autoplay { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid #c6c4ba; border-radius: 50%; color: #5d625b; background: transparent; cursor: pointer; }
-.activity-autoplay:disabled { cursor: default; opacity: .6; }
 .activity-cta-row { display: flex; align-items: center; justify-content: center; gap: 18px; margin: 25px 20px 0; }
 .activity-cta {
   display: inline-flex; align-items: center; justify-content: center; gap: 20px;
