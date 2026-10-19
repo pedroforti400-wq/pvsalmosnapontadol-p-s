@@ -14,11 +14,10 @@ describe('Primeira etapa da nova apresentação', () => {
       'Mais de 200 atividades bíblicas para desenvolver a caligrafia e cultivar a fé desde a infância!'
     );
     const intro = screen.getByText(/Conheça o/, { selector: 'p' });
-    expect(intro).toHaveTextContent(
-      'Conheça o Salmos na Ponta do Lápis: um material digital para imprimir, que une exercícios de escrita, criatividade e os ensinamentos dos Salmos. E para tornar essa experiência ainda mais completa, você recebe 4 bônus especiais para enriquecer o aprendizado dos pequenos!'
+    expect(intro.textContent.trim()).toBe(
+      'Conheça o Salmos na Ponta do Lápis: um material digital para imprimir, que une exercícios de escrita, criatividade e os ensinamentos dos Salmos.'
     );
     expect(within(intro).getByText(product.name).tagName).toBe('STRONG');
-    expect(within(intro).getByText('4 bônus especiais').tagName).toBe('STRONG');
     expect(document.querySelectorAll('main > section')).toHaveLength(1);
     expect(screen.queryByRole('contentinfo')).not.toBeInTheDocument();
     expect(screen.queryByRole('button')).not.toBeInTheDocument();

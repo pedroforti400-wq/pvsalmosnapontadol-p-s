@@ -25,7 +25,7 @@ export default function ProductPresentation() {
         Mais de <span className="headline-blue">200 atividades bíblicas</span> para desenvolver a caligrafia e <span className="headline-orange">cultivar a fé</span> desde a infância!
       </h1>
       <p className="presentation-subheadline">
-        Conheça o <strong>Salmos na Ponta do Lápis</strong>: um material digital para imprimir, que une exercícios de escrita, criatividade e os ensinamentos dos Salmos. E para tornar essa experiência ainda mais completa, você recebe <strong className="bonus-highlight">4 bônus especiais</strong> para enriquecer o aprendizado dos pequenos!
+        Conheça o <strong>Salmos na Ponta do Lápis</strong>: um material digital para imprimir, que une exercícios de escrita, criatividade e os ensinamentos dos Salmos.
       </p>
     </div>
     <ProductArtwork key={product.images.productWithBonuses} src={product.images.productWithBonuses}/>
