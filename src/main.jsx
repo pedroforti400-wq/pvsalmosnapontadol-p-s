@@ -5,6 +5,7 @@ import ProductPresentation from './sections/ProductPresentation';
 import MaterialCarousel from './sections/MaterialCarousel';
 import BeforeAfter from './sections/BeforeAfter';
 import IllustrativeComments from './sections/IllustrativeComments';
+import Audiences from './sections/Audiences';
 import './presentation.css';
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
       <MaterialCarousel/>
       <BeforeAfter/>
       <IllustrativeComments/>
+      <Audiences/>
       <div id="checkout-final" className="checkout-anchor" tabIndex={-1}/>
     </main>
   </>;

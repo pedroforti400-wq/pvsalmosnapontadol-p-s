@@ -4,7 +4,7 @@ React + Vite + CSS no repositório existente. Nenhuma publicação realizada.
 
 ## Etapa atual
 
-A aplicação renderiza **o cabeçalho com a logo oficial, as três seções aprovadas e a quarta seção de comentários ilustrativos**. A headline e a subheadline são as fornecidas pelo produtor. O fundo contínuo é #FAF7EF; azul, verde, amarelo e laranja aparecem nos destaques. O laranja do texto recebe um tom mais escuro para preservar contraste e legibilidade.
+A aplicação renderiza **o cabeçalho com a logo oficial, as quatro seções aprovadas e a quinta seção de públicos**. A headline e a subheadline são as fornecidas pelo produtor. O fundo contínuo é #FAF7EF; azul, verde, amarelo e laranja aparecem nos destaques. O laranja do texto recebe um tom mais escuro para preservar contraste e legibilidade.
 
 Os componentes das seções anteriores, suas artes, configurações e `src/styles.css` permanecem no repositório e no histórico, mas não são renderizados nem têm seus estilos importados nesta etapa. Não há oferta comercial, compra ou rodapé nesta etapa. O identificador `#checkout-final` permanece em uma âncora invisível de altura zero, sem mensagens provisórias, caixa visível, preço ou checkout falso. O CTA continua rolando e transferindo o foco para esse destino.
 
@@ -42,7 +42,7 @@ A legenda abaixo da arte foi removida integralmente, sem espaço reservado; a me
 
 Tocar ou clicar abre um diálogo com a imagem em tamanho original e rolagem interna horizontal e vertical para explorar os detalhes. O botão de fechar permanece fora da área de rolagem da imagem. Há fechamento por botão, Escape e clique no fundo, retorno de foco à imagem e link para abrir o original em nova aba. A página não ganha rolagem horizontal.
 
-Os estilos são restritos à terceira seção e sua ampliação. Os arquivos das duas seções anteriores não foram alterados. A âncora invisível `#checkout-final` permanece no fim da página, após a quarta seção. Não foi criada uma quinta seção.
+Os estilos são restritos à terceira seção e sua ampliação. Os arquivos das duas seções anteriores não foram alterados. A âncora invisível `#checkout-final` permanece no fim da página, após a quinta seção. A quinta seção de públicos vem após os comentários, sem novas seções de oferta.
 
 ## Quarta seção: comentários ilustrativos
 
@@ -54,7 +54,15 @@ A faixa usa o mesmo Embla Auto Scroll das atividades e importa os mesmos valores
 
 A segunda passagem dos mesmos quatro cartões dá espaço ao loop; não cria comentários novos e é ignorada pelos leitores de tela e pela ordem de tabulação. Os originais continuam disponíveis por teclado. Clicar ou tocar em qualquer cartão abre seu PNG na resolução nativa, com botão de fechar, Escape, rolagem interna e link para o arquivo original. No celular, isso permite ler os detalhes preservando a imagem inteira na seção.
 
-Os estilos e a fonte cursiva local Lobster Two são restritos à quarta seção. Os arquivos das três seções anteriores, suas artes e a velocidade das atividades ficaram intactos. A âncora invisível `#checkout-final` permanece após a quarta seção, sem quinta seção de vendas.
+Os estilos e a fonte cursiva local Lobster Two são restritos à quarta seção. Os arquivos das três seções anteriores, suas artes e a velocidade das atividades ficaram intactos. A âncora invisível `#checkout-final` permanece após a quinta seção, sem outras seções de vendas além das cinco planejadas.
+
+## Quinta seção: para quem é o material
+
+O componente antigo `src/sections/Audiences.jsx`, que estava fora da renderização atual, foi substituído. Agora há uma única seção `#para-quem` imediatamente após os comentários. A headline, o texto superior e a subheadline usam os textos solicitados. Famílias, educadores e ministérios infantis são os três públicos confirmados pelo produtor.
+
+São três cards com cenas 3D originais em cenários completos: casa com pais e crianças, sala de aula com professora e encontro de ministério infantil. As ilustrações seguem uma direção comum de luz dourada, cores da marca e proporção horizontal 3:2; são imagens ilustrativas, não fotos de clientes. Imagens, textos e descrições acessíveis ficam centralizados em `src/audiences.js`. Os estilos de `Audiences.css` usam classes próprias para preservar as quatro seções anteriores. Há três colunas a partir de 900 px e uma coluna em telas menores, sem carrossel ou novos botões. A âncora invisível `#checkout-final` continua no final da página, depois da quinta seção.
+
+Nenhuma arte, texto, medida ou lógica dos quatro componentes aprovados foi alterada. A revisão compara DOM, medidas e estilos das quatro seções e do cabeçalho em 320, 375, 390, 768 e 1440 px. Não há seção duplicada, novo checkout ou publicação.
 
 ## Atualizar a prévia no GitHub Codespaces
 
@@ -85,15 +93,17 @@ npm run build
 
 Validação desta etapa: 19 testes aprovados e build Vite concluído. Chromium conferido em 320, 375, 390, 768 e 1440 px, com a logo centralizada, sem rolagem horizontal e sem erros de JavaScript. O link de pular para o conteúdo também foi conferido por teclado.
 
-Os testes cobrem a copy exata e a preservação da primeira seção, a presença de somente quatro seções e do destino invisível de checkout, o cabeçalho contendo somente a logo, o link de ampliação e a ausência de mensagem provisória quando o arquivo não carrega. O carrossel também tem testes para setas, indicadores, loop, início/parada e retomada do movimento contínuo, ausência do player, foco por teclado, movimento reduzido, ampliação e CTA. A revisão visual compara o cabeçalho, a primeira seção, o título da segunda seção e o CTA com a base anterior em cada largura. A navegação por setas, a ampliação e o destino do CTA permanecem disponíveis. A revisão no Chromium mediu deslocamento constante de 0,45 pixel entre quadros e uma volta completa com 6.000 quadros monitorados, sem lacunas. Foram aprovadas as retomadas após hover, clique em seta, arraste com mouse, deslize e tap no celular; também foram conferidos o foco por teclado e o movimento reduzido. O cabeçalho, a primeira seção, o título da segunda seção e o CTA ficaram idênticos à base anterior nas cinco larguras, sem erros de JavaScript ou arquivos ausentes.
+Os testes cobrem a copy exata e a preservação da primeira seção, a presença de somente cinco seções e do destino invisível de checkout, o cabeçalho contendo somente a logo, o link de ampliação e a ausência de mensagem provisória quando o arquivo não carrega. O carrossel também tem testes para setas, indicadores, loop, início/parada e retomada do movimento contínuo, ausência do player, foco por teclado, movimento reduzido, ampliação e CTA. A revisão visual compara o cabeçalho, a primeira seção, o título da segunda seção e o CTA com a base anterior em cada largura. A navegação por setas, a ampliação e o destino do CTA permanecem disponíveis. A revisão no Chromium mediu deslocamento constante de 0,45 pixel entre quadros e uma volta completa com 6.000 quadros monitorados, sem lacunas. Foram aprovadas as retomadas após hover, clique em seta, arraste com mouse, deslize e tap no celular; também foram conferidos o foco por teclado e o movimento reduzido. O cabeçalho, a primeira seção, o título da segunda seção e o CTA ficaram idênticos à base anterior nas cinco larguras, sem erros de JavaScript ou arquivos ausentes.
 
 A terceira seção foi conferida com a imagem real nas cinco larguras: proporção, centralização, imagem inteira, ampliação, rolagem interna, fechamento, Escape, foco e continuidade do CTA. A comparação de DOM, medidas e estilos confirmou o cabeçalho e as duas primeiras seções idênticos à base anterior. O hash SHA-256 do PNG é o mesmo no arquivo original e no build: `3625214b7c591667e5930ba17df1e6e1aeead3c13811ae21084b64ee21c34a87`.
 
-Os testes de comentários cobrem os quatro recortes, as duas passagens do loop, copy exata, classificação ilustrativa, pausa e retomada, movimento reduzido, navegação por teclado, ampliação e ausência de player. No Chromium real, foram monitorados 1.150 quadros atravessando uma volta completa, sem lacunas; o deslocamento medido ficou entre 0,44 e 0,46 pixel por quadro. Passaram hover, arraste, toque, retomada, ampliação móvel e movimento reduzido. O topo permaneceu estático; não houve erros de JavaScript ou arquivos ausentes. A comparação de DOM, medidas e estilos confirmou que o cabeçalho e as três seções aprovadas continuam idênticos nas larguras 320, 375, 390, 768 e 1440 px.
+Os testes de comentários cobrem os quatro PNGs individuais, as duas passagens do loop, copy exata, classificação ilustrativa, pausa e retomada, movimento reduzido, navegação por teclado, ampliação e ausência de player. No Chromium real, foram monitorados 1.150 quadros atravessando uma volta completa, sem lacunas; o deslocamento medido ficou entre 0,44 e 0,46 pixel por quadro. Passaram hover, arraste, toque, retomada, ampliação móvel e movimento reduzido. O topo permaneceu estático; não houve erros de JavaScript ou arquivos ausentes. A comparação de DOM, medidas e estilos confirmou que o cabeçalho e as três seções aprovadas continuam idênticos nas larguras 320, 375, 390, 768 e 1440 px.
 
 ## Arquivos desta etapa
 
-- `src/main.jsx`: composição restrita à etapa atual.
+- `src/main.jsx`: composição das cinco seções, com as quatro primeiras preservadas.
+- `src/sections/Audiences.jsx` e `Audiences.css`: quinta seção responsiva com três públicos.
+- `src/audiences.js`: textos, caminhos e descrições das três cenas 3D.
 - `src/sections/ProductPresentation.jsx`: primeira seção aprovada, preservada.
 - `src/sections/MaterialCarousel.jsx` e `MaterialCarousel.css`: carrossel e ampliação da segunda seção.
 - `src/activities.js`: caminhos e descrições das seis atividades.

@@ -10,7 +10,7 @@ const originalArtwork = product.images.productWithBonuses;
 afterEach(() => { product.images.productWithBonuses = originalArtwork; });
 
 describe('Primeira etapa da nova apresentação', () => {
-  it('preserva as seções aprovadas e acrescenta somente a quarta seção de comentários', () => {
+  it('preserva as quatro seções aprovadas e acrescenta uma única quinta seção de públicos', () => {
     render(<App/>);
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
       'Mais de 200 atividades bíblicas para desenvolver a caligrafia e cultivar a fé desde a infância!'
@@ -20,11 +20,21 @@ describe('Primeira etapa da nova apresentação', () => {
       'Conheça o Salmos na Ponta do Lápis: um material digital para imprimir, que une exercícios de escrita, criatividade e os ensinamentos dos Salmos.'
     );
     expect(within(intro).getByText(product.name).tagName).toBe('STRONG');
-    expect(document.querySelectorAll('main > section')).toHaveLength(4);
+    expect(document.querySelectorAll('main > section')).toHaveLength(5);
     expect(document.querySelectorAll('main > section')[0]).toHaveAttribute('id', 'inicio');
     expect(document.querySelectorAll('main > section')[1]).toHaveAttribute('id', 'atividades');
     expect(document.querySelectorAll('main > section')[2]).toHaveAttribute('id', 'escrita-com-proposito');
     expect(document.querySelectorAll('main > section')[3]).toHaveAttribute('id', 'comentarios-ilustrativos');
+    expect(document.querySelectorAll('main > section')[4]).toHaveAttribute('id', 'para-quem');
+    expect(document.querySelectorAll('#para-quem')).toHaveLength(1);
+    expect(document.getElementById('para-quem').nextElementSibling).toBe(document.getElementById('checkout-final'));
+    const audiences = within(screen.getByRole('region', { name: 'Para quem é o Salmos na Ponta do Lápis?' }));
+    expect(audiences.getByText('FEITO COM AMOR E PROPÓSITO')).toBeInTheDocument();
+    expect(audiences.getByText('Um material especial para quem acredita que aprender a escrever também pode ser uma oportunidade de crescer na fé.')).toBeInTheDocument();
+    expect(audiences.getAllByRole('article')).toHaveLength(3);
+    expect(audiences.getAllByRole('img').map(image => image.getAttribute('src'))).toEqual([
+      '/images/para-quem-familias.png', '/images/para-quem-educadores.png', '/images/para-quem-ministerios.png',
+    ]);
     expect(within(document.getElementById('escrita-com-proposito')).getByRole('img')).toHaveAttribute('src', '/images/terceira-secao-salmos-antes-depois.png');
     expect(document.getElementById('checkout-final')).toBeEmptyDOMElement();
     expect(document.getElementById('checkout-final')).toHaveAttribute('tabindex', '-1');

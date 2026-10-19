@@ -43,3 +43,7 @@ Artes originais geradas para o projeto Salmos na Ponta do Lápis:
 - `caligrafia-antes-depois.webp`: composição fotográfica original gerada para a segunda seção, com folhas rasgadas, etiqueta azul DEPOIS na folha superior e etiqueta vermelha ANTES na inferior. A cursiva firme de cima contrasta com a escrita fictícia infantil tremida e insegura de baixo. Exemplos ilustrativos, sem promessa de resultado garantido.
 
 São imagens ilustrativas, não fotografias de clientes, páginas reais do material ou prova de resultados. Não foram extraídas da referência. Os originais PNG permanecem preservados fora do repositório; estes arquivos WebP foram otimizados para a página. Configure as substituições em `src/config.js`.
+
+# Cenas 3D da quinta seção
+
+`para-quem-familias.png`, `para-quem-educadores.png` e `para-quem-ministerios.png` são ilustrações 3D originais criadas para o projeto. Representam, respectivamente, uma família praticando escrita em casa, uma professora com crianças em sala de aula e um encontro de ministério infantil. Todas têm 1536 × 1024 px (3:2), cenários completos e luz dourada acolhedora. Os PNGs são usados integralmente, sem recortes, preservando a qualidade. Não são fotografias ou relatos de clientes. Os caminhos e descrições ficam em `src/audiences.js`.

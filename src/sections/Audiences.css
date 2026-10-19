@@ -1,0 +1,56 @@
+.audiences-section {
+  position: relative;
+  padding: 76px 0 88px;
+  background: radial-gradient(ellipse at 50% 48%, #ffedba24, transparent 65%), #FAF7EF;
+  color: #165740;
+}
+.audiences-container { width: min(100% - 64px, 1240px); margin: 0 auto; }
+.audiences-heading { max-width: 960px; margin: 0 auto 42px; text-align: center; }
+.audiences-eyebrow { margin: 0 0 16px; color: #966b20; font-size: 12px; font-weight: 850; letter-spacing: .18em; line-height: 1.6; }
+.audiences-heading h2 { margin: 0; color: #183e35; font-size: clamp(32px, 3.6vw, 50px); font-weight: 900; line-height: 1.16; letter-spacing: -.035em; text-wrap: balance; }
+.audiences-name-green { color: #165740; }
+.audiences-name-blue { color: #067CB6; }
+.audiences-subheadline { max-width: 710px; margin: 22px auto 0; color: #58675e; font-size: 18px; line-height: 1.75; text-wrap: pretty; }
+.audiences-flourish { display: flex; align-items: center; justify-content: center; gap: 13px; margin-top: 22px; color: #c39239; }
+.audiences-flourish > span { width: 48px; height: 1px; background: #d6b778; }
+.audiences-flourish > svg { fill: #f5d789; stroke-width: 1.5; }
+.audiences-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+.audiences-card { --audience-accent: #165740; --audience-tint: #eef3e8; min-width: 0; border: 1px solid #e8e2d4; border-radius: 26px; background: #fffdf8; box-shadow: 0 14px 36px #69522d0d, 0 3px 8px #69522d05; }
+.audiences-card--educators { --audience-accent: #067CB6; --audience-tint: #edf5f8; }
+.audiences-card--ministries { --audience-accent: #a4671d; --audience-tint: #fcf2de; }
+.audiences-image { position: relative; border-radius: 25px 25px 0 0; }
+.audiences-image img { width: 100%; aspect-ratio: 3 / 2; height: auto; object-fit: contain; border-radius: inherit; }
+.audiences-emblem { position: absolute; bottom: -24px; left: 26px; display: grid; place-items: center; width: 54px; height: 54px; border: 5px solid #fffdf8; border-radius: 50%; background: var(--audience-tint); color: var(--audience-accent); box-shadow: 0 4px 12px #69522d0a; }
+.audiences-copy { padding: 42px 26px 30px; }
+.audiences-copy h3 { max-width: 280px; min-height: 2.6em; margin: 0; color: #165740; font-size: 24px; font-weight: 850; letter-spacing: -.025em; line-height: 1.3; text-wrap: balance; }
+.audiences-copy p { margin: 15px 0 0; color: #5b675f; font-size: 16px; line-height: 1.75; text-wrap: pretty; }
+
+@media (max-width: 1023px) {
+  .audiences-container { width: calc(100% - 48px); }
+  .audiences-grid { gap: 18px; }
+  .audiences-copy { padding: 38px 20px 25px; }
+  .audiences-copy h3 { font-size: 22px; }
+  .audiences-emblem { left: 20px; }
+}
+@media (max-width: 899px) {
+  .audiences-grid { grid-template-columns: minmax(0, 1fr); max-width: 560px; margin: 0 auto; gap: 28px; }
+  .audiences-copy { padding: 40px 26px 30px; }
+  .audiences-copy h3 { max-width: none; min-height: 0; font-size: 25px; }
+  .audiences-emblem { left: 26px; }
+}
+@media (max-width: 639px) {
+  .audiences-section { padding: 46px 0 56px; }
+  .audiences-container { width: calc(100% - 32px); }
+  .audiences-heading { margin-bottom: 30px; }
+  .audiences-eyebrow { font-size: 10px; letter-spacing: .15em; margin-bottom: 14px; }
+  .audiences-heading h2 { font-size: clamp(30px, 7.7vw, 40px); line-height: 1.18; }
+  .audiences-subheadline { margin-top: 18px; font-size: 16px; line-height: 1.75; }
+  .audiences-flourish { margin-top: 18px; }
+  .audiences-grid { gap: 24px; }
+  .audiences-card { border-radius: 22px; }
+  .audiences-image { border-radius: 21px 21px 0 0; }
+  .audiences-copy { padding: 38px 22px 27px; }
+  .audiences-copy h3 { font-size: 23px; }
+  .audiences-copy p { margin-top: 12px; font-size: 16px; }
+  .audiences-emblem { left: 22px; }
+}
