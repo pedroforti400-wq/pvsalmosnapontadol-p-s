@@ -32,12 +32,13 @@ beforeEach(() => {
 afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); });
 
 describe('Quarta seção: comentários ilustrativos', () => {
-  it('apresenta a copy, os quatro PNGs individuais e a identificação de conteúdo ilustrativo criado com IA', () => {
+  it('preserva a copy e os quatro PNGs individuais, sem a frase inferior removida', () => {
     render(<IllustrativeComments/>);
     expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Quem vê, se encanta. Quem usa, recomenda.');
     expect(screen.getByText('Conheça o estilo dos comentários e experiências que inspiraram nossa apresentação do Salmos na Ponta do Lápis.')).toBeInTheDocument();
     expect(screen.queryByText('COMENTÁRIOS ILUSTRATIVOS')).not.toBeInTheDocument();
-    expect(screen.getByRole('region', { name: 'Quatro comentários ilustrativos' })).toHaveAccessibleDescription('Comentários e perfis criados com IA para fins ilustrativos. Não são avaliações autênticas verificadas.');
+    expect(screen.queryByText('Comentários e perfis criados com IA para fins ilustrativos. Não são avaliações autênticas verificadas.')).not.toBeInTheDocument();
+    expect(screen.getByRole('region', { name: 'Quatro comentários ilustrativos' })).not.toHaveAttribute('aria-describedby');
     expect(comments.map(comment => comment.src)).toEqual([
       '/images/depoimento-joely-cardoso.png',
       '/images/depoimento-juliana-ferreira.png',
@@ -91,12 +92,12 @@ describe('Quarta seção: comentários ilustrativos', () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
-  it('mantém as ilustrações fora da esteira e não cria player visível', () => {
+  it('remove as ilustrações laterais do topo e não cria player visível', () => {
     render(<IllustrativeComments/>);
-    expect(document.querySelectorAll('.comments-heading img')).toHaveLength(2);
+    expect(document.querySelectorAll('.comments-heading img')).toHaveLength(0);
     expect(document.querySelector('.comments-book')).toBeNull();
-    expect(document.querySelector('.comments-girl')).not.toBeNull();
-    expect(document.querySelector('.comments-botanical')).not.toBeNull();
+    expect(document.querySelector('.comments-girl')).toBeNull();
+    expect(document.querySelector('.comments-botanical')).toBeNull();
     expect(document.querySelector('.comments-track .comments-girl')).toBeNull();
     expect(screen.queryByRole('button', { name: /pausar|retomar|play/i })).not.toBeInTheDocument();
   });

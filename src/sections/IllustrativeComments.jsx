@@ -42,8 +42,6 @@ export default function IllustrativeComments() {
 
   return <section id="comentarios-ilustrativos" className="comments-section" aria-labelledby="comments-title">
     <div className="comments-heading">
-      <img className="comments-girl" src="/images/comentarios/menina-flores.png" width="430" height="275" alt="" aria-hidden="true" loading="lazy"/>
-      <img className="comments-botanical" src="/images/comentarios/folhagem.png" width="168" height="274" alt="" aria-hidden="true" loading="lazy"/>
       <div className="comments-heading-copy">
         <h2 id="comments-title"><span>Quem vê, se encanta.</span>{' '}<span>Quem usa, recomenda.</span></h2>
         <div className="comments-heart-divider" aria-hidden="true"><span/><Heart size={18}/><span/></div>
@@ -52,7 +50,7 @@ export default function IllustrativeComments() {
     </div>
 
     <div ref={container} className="comments-carousel" role="region" aria-roledescription="carrossel"
-      aria-label="Quatro comentários ilustrativos" aria-describedby="comments-notice" tabIndex={0} {...interactionProps}>
+      aria-label="Quatro comentários ilustrativos" tabIndex={0} {...interactionProps}>
       <div ref={viewport} className="comments-viewport">
         <div className="comments-track">
           {slides.map((comment, index) => {
@@ -72,8 +70,6 @@ export default function IllustrativeComments() {
         </div>
       </div>
     </div>
-
-    <p id="comments-notice" className="comments-notice">Comentários e perfis criados com IA para fins ilustrativos. Não são avaliações autênticas verificadas.</p>
 
     <svg className="comments-meadow" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 35C230-35 280 80 530 47s280-49 470-4 250-34 440-8v35H0Z" fill="#e7ebd6"/></svg>
     <Heart className="comments-bottom-heart" size={18} aria-hidden="true"/>
