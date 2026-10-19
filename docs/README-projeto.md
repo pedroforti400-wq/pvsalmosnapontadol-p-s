@@ -36,7 +36,7 @@ Os estilos novos são restritos à segunda seção e ao destino provisório. O c
 
 ## Terceira seção: arte oficial ANTES / DEPOIS
 
-A seção `#escrita-com-proposito` aparece imediatamente após o carrossel e seu CTA. Utiliza diretamente `/images/terceira-secao-salmos-antes-depois.png`, enviada pelo produtor no commit `28bbf31`, sem recortes, conversão, moldura, filtros ou recriação dos textos. O PNG original tem 1672 × 941 pixels e aparece centralizado, proporcional e ocupando a largura disponível no desktop até 1672 px, sem ampliar além da resolução original. No celular, são preservadas margens de 12 px em cada lado e a imagem permanece inteira.
+A seção `#escrita-com-proposito` aparece imediatamente após o carrossel e seu CTA. Utiliza diretamente `/images/terceira-secao-salmos-antes-depois.png`, enviada pelo produtor no commit `28bbf31`, sem recortes, conversão, moldura, filtros ou recriação dos textos. O PNG original tem 1672 × 941 pixels e aparece centralizado, proporcional e ocupando 100% da largura disponível tanto no desktop quanto no celular, até o limite nativo de 1672 px. As margens laterais extras do celular foram removidas; a imagem permanece inteira e a ampliação por toque foi preservada.
 
 A legenda abaixo da arte foi removida integralmente, sem espaço reservado; a mesma frase também não aparece na ampliação. O texto alternativo descritivo preserva a identificação de simulação criada com IA. Não há novos textos de venda repetindo os que já fazem parte da imagem.
 

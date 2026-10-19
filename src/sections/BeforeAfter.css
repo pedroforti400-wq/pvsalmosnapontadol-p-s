@@ -22,7 +22,6 @@
 
 @media (max-width: 639px) {
   .before-after-section { padding-bottom: 24px; }
-  .before-after-figure { width: calc(100% - 24px); }
   .before-after-dialog-content { padding: 12px; }
   .before-after-dialog-header { gap: 12px; }
   .before-after-dialog-header h2 { font-size: 16px; }
