@@ -9,15 +9,18 @@ beforeEach(() => {
 });
 
 describe('Terceira seção: imagem original e ampliação', () => {
-  it('mantém a arte original, identifica a simulação e permite ampliar e fechar pelo botão', () => {
+  it('mantém a arte original sem legenda visível e permite ampliar e fechar pelo botão', () => {
     render(<BeforeAfter/>);
     const section = screen.getByRole('region', { name: 'Caligrafia e aprendizado com propósito' });
     expect(within(section).getByRole('img')).toHaveAttribute('src', '/images/terceira-secao-salmos-antes-depois.png');
-    expect(section).toHaveTextContent('Simulação de escrita criada com IA. Não representa resultados reais nem garante evolução.');
+    expect(within(section).getByRole('img')).toHaveAccessibleName(/Simulação de escrita criada com IA/);
+    expect(section.querySelector('figcaption')).toBeNull();
+    expect(screen.queryByText('Simulação de escrita criada com IA. Não representa resultados reais nem garante evolução.')).not.toBeInTheDocument();
     expect(within(section).queryByRole('heading')).not.toBeInTheDocument();
     const trigger = screen.getByRole('button', { name: 'Ampliar comparação ilustrativa de escrita' });
     trigger.focus(); fireEvent.click(trigger);
     const dialog = screen.getByRole('dialog', { name: 'Comparação ilustrativa de escrita' });
+    expect(within(dialog).queryByText('Simulação de escrita criada com IA. Não representa resultados reais nem garante evolução.')).not.toBeInTheDocument();
     expect(within(dialog).getByRole('img')).toHaveAttribute('width', '1672');
     expect(within(dialog).getByRole('region', { name: /Imagem ampliada/ })).toHaveAttribute('tabindex', '0');
     expect(within(dialog).getByRole('link', { name: 'Abrir imagem original' })).toHaveAttribute('href', '/images/terceira-secao-salmos-antes-depois.png');

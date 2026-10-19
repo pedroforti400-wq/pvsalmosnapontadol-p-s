@@ -8,7 +8,6 @@ const image = {
   height: 941,
   alt: 'Simulação de escrita criada com IA: folhas de caderno com caligrafia irregular em ANTES e cursiva organizada em DEPOIS, com o Salmo 27. À direita, textos sobre praticar a caligrafia com aprendizado, fé e propósito.',
 };
-const disclosure = 'Simulação de escrita criada com IA. Não representa resultados reais nem garante evolução.';
 
 function ComparisonLightbox({ onClose }) {
   const dialog = useRef(null);
@@ -27,7 +26,6 @@ function ComparisonLightbox({ onClose }) {
   }, []);
 
   return <dialog ref={dialog} className="before-after-dialog" aria-labelledby="before-after-dialog-title"
-    aria-describedby="before-after-dialog-note"
     onCancel={event => { event.preventDefault(); onClose(); }}
     onClick={event => { if (event.target === event.currentTarget) onClose(); }}>
     <div className="before-after-dialog-content">
@@ -38,7 +36,6 @@ function ComparisonLightbox({ onClose }) {
       <div className="before-after-zoom" role="region" aria-label="Imagem ampliada; role para explorar os detalhes" tabIndex={0}>
         <img src={image.src} alt={image.alt} width={image.width} height={image.height}/>
       </div>
-      <p id="before-after-dialog-note" className="before-after-note">{disclosure}</p>
       <a className="before-after-original" href={image.src} target="_blank" rel="noopener noreferrer">
         Abrir imagem original <ArrowUpRight size={16} aria-hidden="true"/>
       </a>
@@ -56,7 +53,6 @@ export default function BeforeAfter() {
         <img className="before-after-image" src={image.src} alt={image.alt} width={image.width} height={image.height}
           loading="lazy" decoding="async"/>
       </button>
-      <figcaption className="before-after-note">{disclosure}</figcaption>
     </figure>
     {enlarged && <ComparisonLightbox onClose={() => setEnlarged(false)}/>}
   </section>;

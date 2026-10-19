@@ -36,9 +36,9 @@ Os estilos novos são restritos à segunda seção e ao destino provisório. O c
 
 ## Terceira seção: arte oficial ANTES / DEPOIS
 
-A seção `#escrita-com-proposito` aparece imediatamente após o carrossel e seu CTA. Utiliza diretamente `/images/terceira-secao-salmos-antes-depois.png`, enviada pelo produtor no commit `28bbf31`, sem recortes, conversão, moldura, filtros ou recriação dos textos. O PNG original tem 1672 × 941 pixels e aparece centralizado, proporcional e com largura máxima de 1320 px.
+A seção `#escrita-com-proposito` aparece imediatamente após o carrossel e seu CTA. Utiliza diretamente `/images/terceira-secao-salmos-antes-depois.png`, enviada pelo produtor no commit `28bbf31`, sem recortes, conversão, moldura, filtros ou recriação dos textos. O PNG original tem 1672 × 941 pixels e aparece centralizado, proporcional e ocupando a largura disponível no desktop até 1672 px, sem ampliar além da resolução original. No celular, são preservadas margens de 12 px em cada lado e a imagem permanece inteira.
 
-Uma identificação discreta informa: “Simulação de escrita criada com IA. Não representa resultados reais nem garante evolução.” Não há novos textos de venda repetindo os que já fazem parte da imagem.
+A legenda abaixo da arte foi removida integralmente, sem espaço reservado; a mesma frase também não aparece na ampliação. O texto alternativo descritivo preserva a identificação de simulação criada com IA. Não há novos textos de venda repetindo os que já fazem parte da imagem.
 
 Tocar ou clicar abre um diálogo com a imagem em tamanho original e rolagem interna horizontal e vertical para explorar os detalhes. O botão de fechar permanece fora da área de rolagem da imagem. Há fechamento por botão, Escape e clique no fundo, retorno de foco à imagem e link para abrir o original em nova aba. A página não ganha rolagem horizontal.
 
@@ -83,7 +83,7 @@ A terceira seção foi conferida com a imagem real nas cinco larguras: proporç�
 - `src/sections/ProductPresentation.jsx`: primeira seção aprovada, preservada.
 - `src/sections/MaterialCarousel.jsx` e `MaterialCarousel.css`: carrossel e ampliação da segunda seção.
 - `src/activities.js`: caminhos e descrições das seis atividades.
-- `src/sections/BeforeAfter.jsx` e `BeforeAfter.css`: terceira seção, identificação ilustrativa e ampliação acessível.
+- `src/sections/BeforeAfter.jsx` e `BeforeAfter.css`: terceira seção ampliada no desktop e ampliação acessível.
 - `src/presentation.css`: tipografia local, paleta e responsividade da nova apresentação.
 - `src/components/Header.css`: cabeçalho compacto e logo centralizada.
 - `src/config.js`: caminho editável da imagem; dados anteriores preservados.

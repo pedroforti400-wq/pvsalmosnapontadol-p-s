@@ -1,8 +1,7 @@
 .before-after-section { padding: 0 0 36px; background: #FAF7EF; }
-.before-after-figure { width: min(100% - 48px, 1320px); margin: 0 auto; }
+.before-after-figure { width: min(100%, 1672px); margin: 0 auto; }
 .before-after-trigger { display: block; width: 100%; margin: 0; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
 .before-after-image { display: block; width: 100%; height: auto; }
-.before-after-note { max-width: 720px; margin: 12px auto 0; color: #636b62; font-size: 12px; line-height: 1.65; text-align: center; }
 
 .before-after-dialog {
   width: min(96vw, 1440px); max-width: 96vw; max-height: 94dvh; padding: 0;
@@ -19,13 +18,11 @@
 }
 .before-after-zoom { height: 70dvh; min-height: 120px; overflow: auto; overscroll-behavior: contain; }
 .before-after-zoom img { display: block; width: 1672px; max-width: none; height: auto; }
-.before-after-dialog .before-after-note { margin: 0 auto; flex-shrink: 0; }
 .before-after-original { display: inline-flex; align-items: center; justify-content: center; align-self: center; gap: 6px; flex-shrink: 0; font-size: 13px; font-weight: 800; }
 
 @media (max-width: 639px) {
   .before-after-section { padding-bottom: 24px; }
   .before-after-figure { width: calc(100% - 24px); }
-  .before-after-note { padding-inline: 8px; }
   .before-after-dialog-content { padding: 12px; }
   .before-after-dialog-header { gap: 12px; }
   .before-after-dialog-header h2 { font-size: 16px; }
