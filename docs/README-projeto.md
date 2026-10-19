@@ -8,19 +8,19 @@ A aplicação renderiza **somente o cabeçalho com a logo oficial e a primeira s
 
 Os componentes das seções anteriores, suas artes, configurações e `src/styles.css` permanecem no repositório e no histórico, mas não são renderizados nem têm seus estilos importados nesta etapa. Não há oferta, compra, rodapé ou novas seções na página atual.
 
-## Arquivo original necessário
+## Imagem principal oficial
 
-A arte completa do produto com os quatro bônus foi mostrada no chat, mas **não está disponível como arquivo neste ambiente nem na branch**. Nenhuma arte substituta foi criada.
+O caminho solicitado para a arte oficial é `/images/imagem-principal-salmos-com-bonus.png`. Na última atualização e consulta ao GitHub, o arquivo ainda não apareceu na branch `codex/salmos-sales-page` nem na `main` do repositório conectado. Nenhuma arte substituta foi criada.
 
 Envie o arquivo original, sem cortes nem alterações, para:
 
 ```
-public/images/produto-com-quatro-bonus.png
+public/images/imagem-principal-salmos-com-bonus.png
 ```
 
 Esse endereço já está configurado em `product.images.productWithBonuses` no arquivo `src/config.js`. Se o original tiver outra extensão, preserve seu formato e atualize esse campo para corresponder ao arquivo. Não basta renomear uma extensão diferente para PNG.
 
-Depois de adicionar o arquivo, atualize o navegador. A imagem será exibida inteira, com largura responsiva e altura automática, sem sobreposição. Clicar ou tocar abre o próprio original em uma nova aba para ampliar. Enquanto ela estiver ausente, aparece apenas um aviso discreto de pendência, sem imagem genérica ou ícone quebrado.
+Depois de adicionar o arquivo, atualize o navegador. A imagem será exibida inteira, com largura responsiva e altura automática, sem sobreposição. Clicar ou tocar abre o próprio original em uma nova aba para ampliar. A mensagem provisória e sua caixa pontilhada foram removidas. Se o arquivo não carregar, a página não exibe imagem genérica, ícone quebrado ou espaço reservado.
 
 A logo oficial `public/images/logo-oficial-salmos.png` foi mantida intacta.
 
@@ -53,7 +53,7 @@ npm run build
 
 Validação desta etapa: 6 testes aprovados e build Vite concluído. Chromium conferido em 320, 375, 390, 768 e 1440 px, com a logo centralizada, sem rolagem horizontal e sem erros de JavaScript. O link de pular para o conteúdo também foi conferido por teclado.
 
-Os testes cobrem a copy exata, a presença de apenas uma seção, o cabeçalho contendo somente a logo, o link de ampliação e o tratamento da arte ausente. A revisão visual foi feita com o aviso de imagem pendente. A aparência da arte original só poderá ser validada após seu envio.
+Os testes cobrem a copy exata, a presença de apenas uma seção, o cabeçalho contendo somente a logo, o link de ampliação e a ausência de mensagem provisória quando o arquivo não carrega. A revisão visual desta alteração foi feita sem a arte, pois o arquivo ainda não está acessível. A logo, a copy, a tipografia, as cores e a organização da primeira seção foram preservadas. A aparência da arte original só poderá ser validada após seu envio.
 
 ## Arquivos desta etapa
 

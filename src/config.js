@@ -9,8 +9,8 @@ export const product = {
   offerLabel: 'Oferta especial de lançamento',
   isDemo: true, // Desative depois de validar preço, conteúdo e condições comerciais.
   images: {
-    // Envie a arte ORIGINAL completa para este caminho. Sem ela, a prévia avisa a pendência.
-    productWithBonuses: '/images/produto-com-quatro-bonus.png',
+    // Imagem original completa do produto com os quatro bônus, sem recriação ou cortes.
+    productWithBonuses: '/images/imagem-principal-salmos-com-bonus.png',
     hero: '/images/biblical-friends.webp', // Imagem real prioritária; vazio usa a ilustração original abaixo.
     cover: '',
     samples: ['', '', ''],

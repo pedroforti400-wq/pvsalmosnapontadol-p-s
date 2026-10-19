@@ -76,25 +76,14 @@ a { color: inherit; }
   box-shadow: 0 12px 42px #16574012;
 }
 .product-artwork figcaption { margin-top: 18px; font-size: 13px; line-height: 1.6; color: #606C64; }
-.product-artwork-pending {
-  margin: 42px auto 0;
-  max-width: 1122px;
-  padding: 44px 24px;
-  border: 1px dashed #16574038;
-  border-radius: 20px;
-  background: #FFFFFF80;
-}
-.product-artwork-pending p { margin: 0 0 8px; font-size: 18px; font-weight: 800; }
-.product-artwork-pending span { font-size: 14px; color: #606C64; line-height: 1.6; }
 
 @media (max-width: 767px) {
   .product-presentation { width: calc(100% - 40px); padding: 24px 0 40px; }
   .presentation-copy h1 { font-size: clamp(1.875rem, 5.8vw, 2.5rem); line-height: 1.2; letter-spacing: -0.025em; }
   .presentation-subheadline { margin-top: 22px; font-size: 17px; line-height: 1.75; }
-  .product-artwork, .product-artwork-pending { margin-top: 30px; }
+  .product-artwork { margin-top: 30px; }
   .product-artwork-link, .product-artwork img { border-radius: 12px; }
   .product-artwork figcaption { padding-inline: 8px; font-size: 12px; }
-  .product-artwork-pending { padding: 30px 20px; border-radius: 12px; }
 }
 
 @media (max-width: 359px) {

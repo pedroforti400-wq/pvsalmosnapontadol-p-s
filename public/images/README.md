@@ -1,6 +1,6 @@
 # Arte da apresentação atual
 
-Adicione a imagem ORIGINAL do produto principal com os quatro bônus em `produto-com-quatro-bonus.png`. O arquivo foi mostrado no chat, mas ainda não está disponível no repositório. Se o formato original for outro, preserve a extensão e ajuste `product.images.productWithBonuses` em `src/config.js`.
+Adicione a imagem ORIGINAL do produto principal com os quatro bônus em `imagem-principal-salmos-com-bonus.png`. O arquivo ainda não foi localizado na última atualização da branch pelo ambiente; o caminho solicitado já está configurado. Se o formato original for outro, preserve a extensão e ajuste `product.images.productWithBonuses` em `src/config.js`.
 
 A aplicação não recria essa arte nem usa uma imagem genérica em seu lugar. A logo oficial `logo-oficial-salmos.png` é usada integralmente e sem alterações.
 

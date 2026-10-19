@@ -4,12 +4,7 @@ import { product } from '../config';
 function ProductArtwork({ src }) {
   const [unavailable, setUnavailable] = useState(!src);
 
-  if (unavailable) {
-    return <div className="product-artwork-pending" role="status">
-      <p>A imagem original do material com os 4 bônus será exibida aqui.</p>
-      <span>Aguardando o arquivo original para completar esta apresentação.</span>
-    </div>;
-  }
+  if (unavailable) return null;
 
   return <figure className="product-artwork">
     <a className="product-artwork-link" href={src} target="_blank" rel="noopener noreferrer"

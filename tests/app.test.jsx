@@ -43,26 +43,30 @@ describe('Primeira etapa da nova apresentação', () => {
   it('usa a arte original configurada e permite abrir sua resolução completa', () => {
     render(<App/>);
     const link = screen.getByRole('link', { name: /Ampliar a imagem do produto/ });
-    expect(link).toHaveAttribute('href', originalArtwork);
+    expect(link).toHaveAttribute('href', '/images/imagem-principal-salmos-com-bonus.png');
     expect(link).toHaveAttribute('target', '_blank');
     expect(link).toHaveAttribute('rel', 'noopener noreferrer');
     expect(within(link).getByRole('img')).toHaveAttribute('src', originalArtwork);
     expect(within(link).queryByRole('button')).not.toBeInTheDocument();
+    expect(screen.queryByRole('status')).not.toBeInTheDocument();
+    expect(document.querySelector('.product-artwork-pending')).toBeNull();
   });
 
-  it('informa a ausência da arte sem trocar por uma imagem genérica', () => {
+  it('não mostra mensagem provisória, caixa vazia ou imagem genérica se o arquivo falhar', () => {
     render(<App/>);
     fireEvent.error(screen.getByRole('img', { name: /produto principal, tablet/ }));
-    expect(screen.getByRole('status')).toHaveTextContent('Aguardando o arquivo original');
+    expect(screen.queryByRole('status')).not.toBeInTheDocument();
+    expect(document.querySelector('.product-artwork-pending')).toBeNull();
+    expect(screen.queryByText(/A imagem original do material/)).not.toBeInTheDocument();
     expect(screen.queryByRole('img', { name: /produto principal, tablet/ })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: /Ampliar a imagem do produto/ })).not.toBeInTheDocument();
     expect(screen.getAllByRole('img')).toHaveLength(1);
   });
 
-  it('trata uma configuração vazia da imagem com transparência', () => {
+  it('não cria um espaço reservado quando o caminho da imagem está vazio', () => {
     product.images.productWithBonuses = '';
     render(<App/>);
-    expect(screen.getByRole('status')).toHaveTextContent('A imagem original do material');
+    expect(screen.queryByRole('status')).not.toBeInTheDocument();
     expect(screen.getAllByRole('img')).toHaveLength(1);
   });
 });
