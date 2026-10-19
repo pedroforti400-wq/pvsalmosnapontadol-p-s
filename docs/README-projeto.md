@@ -4,7 +4,7 @@ React + Vite + CSS no repositório existente. Nenhuma publicação realizada.
 
 ## Etapa atual
 
-A aplicação renderiza **o cabeçalho com a logo oficial, a primeira seção aprovada e a segunda seção com o carrossel das atividades**. A headline e a subheadline são as fornecidas pelo produtor. O fundo contínuo é #FAF7EF; azul, verde, amarelo e laranja aparecem nos destaques. O laranja do texto recebe um tom mais escuro para preservar contraste e legibilidade.
+A aplicação renderiza **o cabeçalho com a logo oficial, as duas seções aprovadas e a terceira seção com a imagem oficial de comparação ilustrativa**. A headline e a subheadline são as fornecidas pelo produtor. O fundo contínuo é #FAF7EF; azul, verde, amarelo e laranja aparecem nos destaques. O laranja do texto recebe um tom mais escuro para preservar contraste e legibilidade.
 
 Os componentes das seções anteriores, suas artes, configurações e `src/styles.css` permanecem no repositório e no histórico, mas não são renderizados nem têm seus estilos importados nesta etapa. Não há oferta comercial, compra ou rodapé nesta etapa. O identificador `#checkout-final` permanece em uma âncora invisível de altura zero, sem mensagens provisórias, caixa visível, preço ou checkout falso. O CTA continua rolando e transferindo o foco para esse destino.
 
@@ -34,6 +34,16 @@ O movimento automático é lento e constante (0,45 pixel por passo da animação
 
 Os estilos novos são restritos à segunda seção e ao destino provisório. O cabeçalho, a primeira seção, suas artes e seus estilos permanecem intactos.
 
+## Terceira seção: arte oficial ANTES / DEPOIS
+
+A seção `#escrita-com-proposito` aparece imediatamente após o carrossel e seu CTA. Utiliza diretamente `/images/terceira-secao-salmos-antes-depois.png`, enviada pelo produtor no commit `28bbf31`, sem recortes, conversão, moldura, filtros ou recriação dos textos. O PNG original tem 1672 × 941 pixels e aparece centralizado, proporcional e com largura máxima de 1320 px.
+
+Uma identificação discreta informa: “Simulação de escrita criada com IA. Não representa resultados reais nem garante evolução.” Não há novos textos de venda repetindo os que já fazem parte da imagem.
+
+Tocar ou clicar abre um diálogo com a imagem em tamanho original e rolagem interna horizontal e vertical para explorar os detalhes. O botão de fechar permanece fora da área de rolagem da imagem. Há fechamento por botão, Escape e clique no fundo, retorno de foco à imagem e link para abrir o original em nova aba. A página não ganha rolagem horizontal.
+
+Os estilos são restritos à terceira seção e sua ampliação. Os arquivos das duas seções anteriores não foram alterados. A âncora invisível `#checkout-final` continua no fim da página, depois da terceira seção; não foi criada uma quarta seção.
+
 ## Atualizar a prévia no GitHub Codespaces
 
 No Codespace existente, na pasta com `package.json`, confirme a branch e atualize:
@@ -43,7 +53,7 @@ git switch codex/salmos-sales-page
 git pull --ff-only
 ```
 
-Esta etapa adiciona o plugin `embla-carousel-auto-scroll` ao Embla Carousel. Pare o servidor existente com Ctrl+C, instale as dependências e reinicie:
+Esta etapa não adiciona dependências. Se o Vite já estiver ativo, basta recarregar a prévia após o pull. Para iniciar um servidor parado:
 
 ```sh
 npm ci
@@ -61,9 +71,11 @@ npm test
 npm run build
 ```
 
-Validação desta etapa: 12 testes aprovados e build Vite concluído. Chromium conferido em 320, 375, 390, 768 e 1440 px, com a logo centralizada, sem rolagem horizontal e sem erros de JavaScript. O link de pular para o conteúdo também foi conferido por teclado.
+Validação desta etapa: 14 testes aprovados e build Vite concluído. Chromium conferido em 320, 375, 390, 768 e 1440 px, com a logo centralizada, sem rolagem horizontal e sem erros de JavaScript. O link de pular para o conteúdo também foi conferido por teclado.
 
-Os testes cobrem a copy exata e a preservação da primeira seção, a presença de somente duas seções de vendas e do destino provisório, o cabeçalho contendo somente a logo, o link de ampliação e a ausência de mensagem provisória quando o arquivo não carrega. O carrossel também tem testes para setas, indicadores, loop, início/parada e retomada do movimento contínuo, ausência do player, foco por teclado, movimento reduzido, ampliação e CTA. A revisão visual compara o cabeçalho, a primeira seção, o título da segunda seção e o CTA com a base anterior em cada largura. A navegação por setas, a ampliação e o destino do CTA permanecem disponíveis. A revisão no Chromium mediu deslocamento constante de 0,45 pixel entre quadros e uma volta completa com 6.000 quadros monitorados, sem lacunas. Foram aprovadas as retomadas após hover, clique em seta, arraste com mouse, deslize e tap no celular; também foram conferidos o foco por teclado e o movimento reduzido. O cabeçalho, a primeira seção, o título da segunda seção e o CTA ficaram idênticos à base anterior nas cinco larguras, sem erros de JavaScript ou arquivos ausentes.
+Os testes cobrem a copy exata e a preservação da primeira seção, a presença de somente três seções e do destino invisível de checkout, o cabeçalho contendo somente a logo, o link de ampliação e a ausência de mensagem provisória quando o arquivo não carrega. O carrossel também tem testes para setas, indicadores, loop, início/parada e retomada do movimento contínuo, ausência do player, foco por teclado, movimento reduzido, ampliação e CTA. A revisão visual compara o cabeçalho, a primeira seção, o título da segunda seção e o CTA com a base anterior em cada largura. A navegação por setas, a ampliação e o destino do CTA permanecem disponíveis. A revisão no Chromium mediu deslocamento constante de 0,45 pixel entre quadros e uma volta completa com 6.000 quadros monitorados, sem lacunas. Foram aprovadas as retomadas após hover, clique em seta, arraste com mouse, deslize e tap no celular; também foram conferidos o foco por teclado e o movimento reduzido. O cabeçalho, a primeira seção, o título da segunda seção e o CTA ficaram idênticos à base anterior nas cinco larguras, sem erros de JavaScript ou arquivos ausentes.
+
+A terceira seção foi conferida com a imagem real nas cinco larguras: proporção, centralização, imagem inteira, ampliação, rolagem interna, fechamento, Escape, foco e continuidade do CTA. A comparação de DOM, medidas e estilos confirmou o cabeçalho e as duas primeiras seções idênticos à base anterior. O hash SHA-256 do PNG é o mesmo no arquivo original e no build: `3625214b7c591667e5930ba17df1e6e1aeead3c13811ae21084b64ee21c34a87`.
 
 ## Arquivos desta etapa
 
@@ -71,7 +83,8 @@ Os testes cobrem a copy exata e a preservação da primeira seção, a presença
 - `src/sections/ProductPresentation.jsx`: primeira seção aprovada, preservada.
 - `src/sections/MaterialCarousel.jsx` e `MaterialCarousel.css`: carrossel e ampliação da segunda seção.
 - `src/activities.js`: caminhos e descrições das seis atividades.
+- `src/sections/BeforeAfter.jsx` e `BeforeAfter.css`: terceira seção, identificação ilustrativa e ampliação acessível.
 - `src/presentation.css`: tipografia local, paleta e responsividade da nova apresentação.
 - `src/components/Header.css`: cabeçalho compacto e logo centralizada.
 - `src/config.js`: caminho editável da imagem; dados anteriores preservados.
-- `tests/app.test.jsx` e `tests/carousel.test.jsx`: preservação da apresentação e interações do carrossel.
+- `tests/app.test.jsx`, `tests/carousel.test.jsx` e `tests/before-after.test.jsx`: preservação das seções aprovadas, carrossel e ampliação da comparação ilustrativa.

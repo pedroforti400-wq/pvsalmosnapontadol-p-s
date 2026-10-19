@@ -10,7 +10,7 @@ const originalArtwork = product.images.productWithBonuses;
 afterEach(() => { product.images.productWithBonuses = originalArtwork; });
 
 describe('Primeira etapa da nova apresentação', () => {
-  it('preserva a primeira seção e acrescenta somente o carrossel e o destino provisório', () => {
+  it('preserva as seções aprovadas e acrescenta a terceira seção com a arte oficial', () => {
     render(<App/>);
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
       'Mais de 200 atividades bíblicas para desenvolver a caligrafia e cultivar a fé desde a infância!'
@@ -20,9 +20,11 @@ describe('Primeira etapa da nova apresentação', () => {
       'Conheça o Salmos na Ponta do Lápis: um material digital para imprimir, que une exercícios de escrita, criatividade e os ensinamentos dos Salmos.'
     );
     expect(within(intro).getByText(product.name).tagName).toBe('STRONG');
-    expect(document.querySelectorAll('main > section')).toHaveLength(2);
+    expect(document.querySelectorAll('main > section')).toHaveLength(3);
     expect(document.querySelectorAll('main > section')[0]).toHaveAttribute('id', 'inicio');
     expect(document.querySelectorAll('main > section')[1]).toHaveAttribute('id', 'atividades');
+    expect(document.querySelectorAll('main > section')[2]).toHaveAttribute('id', 'escrita-com-proposito');
+    expect(within(document.getElementById('escrita-com-proposito')).getByRole('img')).toHaveAttribute('src', '/images/terceira-secao-salmos-antes-depois.png');
     expect(document.getElementById('checkout-final')).toBeEmptyDOMElement();
     expect(document.getElementById('checkout-final')).toHaveAttribute('tabindex', '-1');
     expect(screen.queryByText('Área de oferta em preparação.')).not.toBeInTheDocument();

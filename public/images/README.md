@@ -10,6 +10,10 @@ A aplicação não recria essa arte nem usa uma imagem genérica em seu lugar. A
 
 `referencia-carrossel.png` orienta a composição visual, mas não é usada como imagem estática no site.
 
+# Terceira seção oficial
+
+`terceira-secao-salmos-antes-depois.png` é o PNG original enviado pelo produtor no commit `28bbf31`, com 1672 × 941 pixels. É exibido inteiro e sem alterações. A comparação de escrita foi criada com IA e é uma simulação ilustrativa; não representa resultados reais ou garantia de evolução. A página e a ampliação identificam essa condição.
+
 # Artes anteriores preservadas
 
 As ilustrações abaixo permanecem disponíveis para recuperar versões anteriores; não aparecem na apresentação atual.
