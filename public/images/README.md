@@ -4,6 +4,12 @@
 
 A aplicação não recria essa arte nem usa uma imagem genérica em seu lugar. A logo oficial `logo-oficial-salmos.png` é usada integralmente e sem alterações.
 
+# Atividades da segunda seção
+
+`atividade-01.webp` a `atividade-06.webp` são os seis arquivos originais fornecidos pelo produtor no commit `d0ba215`. São exibidos como cartões individuais, inteiros e proporcionais, sem conversão ou recriação. Os caminhos e descrições ficam em `src/activities.js`.
+
+`referencia-carrossel.png` orienta a composição visual, mas não é usada como imagem estática no site.
+
 # Artes anteriores preservadas
 
 As ilustrações abaixo permanecem disponíveis para recuperar versões anteriores; não aparecem na apresentação atual.

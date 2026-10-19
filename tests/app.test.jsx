@@ -1,14 +1,16 @@
 import React from 'react';
-import { describe, it, expect, afterEach } from 'vitest';
+import { describe, it, expect, afterEach, vi } from 'vitest';
 import { render, screen, fireEvent, within } from '@testing-library/react';
 import App from '../src/main';
 import { product, getCheckoutUrl } from '../src/config';
+
+vi.mock('embla-carousel-react', () => ({ default: () => [() => {}, undefined] }));
 
 const originalArtwork = product.images.productWithBonuses;
 afterEach(() => { product.images.productWithBonuses = originalArtwork; });
 
 describe('Primeira etapa da nova apresentação', () => {
-  it('renderiza apenas o cabeçalho e a primeira seção com a copy exata', () => {
+  it('preserva a primeira seção e acrescenta somente o carrossel e o destino provisório', () => {
     render(<App/>);
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
       'Mais de 200 atividades bíblicas para desenvolver a caligrafia e cultivar a fé desde a infância!'
@@ -18,9 +20,12 @@ describe('Primeira etapa da nova apresentação', () => {
       'Conheça o Salmos na Ponta do Lápis: um material digital para imprimir, que une exercícios de escrita, criatividade e os ensinamentos dos Salmos.'
     );
     expect(within(intro).getByText(product.name).tagName).toBe('STRONG');
-    expect(document.querySelectorAll('main > section')).toHaveLength(1);
+    expect(document.querySelectorAll('main > section')).toHaveLength(2);
+    expect(document.querySelectorAll('main > section')[0]).toHaveAttribute('id', 'inicio');
+    expect(document.querySelectorAll('main > section')[1]).toHaveAttribute('id', 'atividades');
+    expect(document.getElementById('checkout-final')).toHaveTextContent('Área de oferta em preparação.');
     expect(screen.queryByRole('contentinfo')).not.toBeInTheDocument();
-    expect(screen.queryByRole('button')).not.toBeInTheDocument();
+    expect(within(document.getElementById('inicio')).queryByRole('button')).not.toBeInTheDocument();
     for (const id of ['material', 'beneficios', 'oferta', 'faq']) {
       expect(document.getElementById(id)).toBeNull();
     }
@@ -59,14 +64,14 @@ describe('Primeira etapa da nova apresentação', () => {
     expect(screen.queryByText(/A imagem original do material/)).not.toBeInTheDocument();
     expect(screen.queryByRole('img', { name: /produto principal, tablet/ })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: /Ampliar a imagem do produto/ })).not.toBeInTheDocument();
-    expect(screen.getAllByRole('img')).toHaveLength(1);
+    expect(within(document.getElementById('inicio')).queryByRole('img')).not.toBeInTheDocument();
   });
 
   it('não cria um espaço reservado quando o caminho da imagem está vazio', () => {
     product.images.productWithBonuses = '';
     render(<App/>);
     expect(screen.queryByRole('status')).not.toBeInTheDocument();
-    expect(screen.getAllByRole('img')).toHaveLength(1);
+    expect(within(document.getElementById('inicio')).queryByRole('img')).not.toBeInTheDocument();
   });
 });
 
