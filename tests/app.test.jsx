@@ -10,7 +10,7 @@ const originalArtwork = product.images.productWithBonuses;
 afterEach(() => { product.images.productWithBonuses = originalArtwork; });
 
 describe('Primeira etapa da nova apresentação', () => {
-  it('preserva as quatro seções aprovadas e acrescenta uma única quinta seção de públicos', () => {
+  it('preserva as cinco seções aprovadas e acrescenta uma única seção de bônus', () => {
     render(<App/>);
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
       'Mais de 200 atividades bíblicas para desenvolver a caligrafia e cultivar a fé desde a infância!'
@@ -20,14 +20,27 @@ describe('Primeira etapa da nova apresentação', () => {
       'Conheça o Salmos na Ponta do Lápis: um material digital para imprimir, que une exercícios de escrita, criatividade e os ensinamentos dos Salmos.'
     );
     expect(within(intro).getByText(product.name).tagName).toBe('STRONG');
-    expect(document.querySelectorAll('main > section')).toHaveLength(5);
+    expect(document.querySelectorAll('main > section')).toHaveLength(6);
     expect(document.querySelectorAll('main > section')[0]).toHaveAttribute('id', 'inicio');
     expect(document.querySelectorAll('main > section')[1]).toHaveAttribute('id', 'atividades');
     expect(document.querySelectorAll('main > section')[2]).toHaveAttribute('id', 'escrita-com-proposito');
     expect(document.querySelectorAll('main > section')[3]).toHaveAttribute('id', 'comentarios-ilustrativos');
     expect(document.querySelectorAll('main > section')[4]).toHaveAttribute('id', 'para-quem');
     expect(document.querySelectorAll('#para-quem')).toHaveLength(1);
-    expect(document.getElementById('para-quem').nextElementSibling).toBe(document.getElementById('checkout-final'));
+    expect(document.querySelectorAll('main > section')[5]).toHaveAttribute('id', 'bonus');
+    expect(document.querySelectorAll('#bonus')).toHaveLength(1);
+    expect(document.getElementById('para-quem').nextElementSibling).toBe(document.getElementById('bonus'));
+    expect(document.getElementById('bonus').nextElementSibling).toBe(document.getElementById('checkout-final'));
+    const bonusSection = within(screen.getByRole('region', { name: 'E ainda tem mais: 4 bônus especiais para enriquecer a experiência das crianças!' }));
+    expect(bonusSection.getAllByRole('article')).toHaveLength(4);
+    expect(bonusSection.getAllByText('GRÁTIS')).toHaveLength(4);
+    expect(bonusSection.getAllByText('Incluso na sua compra')).toHaveLength(4);
+    expect([...document.querySelectorAll('#bonus del')].map(price => price.textContent.replace(/\s/g, ' '))).toEqual(['R$ 12,99', 'R$ 17,99', 'R$ 25,49', 'R$ 15,99']);
+    expect(document.querySelector('.bonuses-summary')).toHaveTextContent('Você recebe R$ 72,46 em bônus inclusos sem custo adicional.');
+    expect(bonusSection.getAllByRole('img').map(image => image.getAttribute('src'))).toEqual([
+      '/images/bonus-bible-goods.png', '/images/bonus-proverbios-na-ponta-do-lapis.png', '/images/bonus-tabuada-com-noe.png', '/images/bonus-emociobook.png',
+    ]);
+    expect(document.querySelector('img[src="/images/referencia-quatro-bonus-salmos.png"]')).toBeNull();
     const audiences = within(screen.getByRole('region', { name: 'Para quem é o Salmos na Ponta do Lápis?' }));
     expect(audiences.getByText('FEITO COM AMOR E PROPÓSITO')).toBeInTheDocument();
     expect(audiences.getByText('Um material especial para quem acredita que aprender a escrever também pode ser uma oportunidade de crescer na fé.')).toBeInTheDocument();

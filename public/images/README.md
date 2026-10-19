@@ -47,3 +47,16 @@ São imagens ilustrativas, não fotografias de clientes, páginas reais do mater
 # Cenas 3D da quinta seção
 
 `para-quem-familias.png`, `para-quem-educadores.png` e `para-quem-ministerios.png` são ilustrações 3D originais criadas para o projeto. Representam, respectivamente, uma família praticando escrita em casa, uma professora com crianças em sala de aula e um encontro de ministério infantil. Todas têm 1536 × 1024 px (3:2), cenários completos e luz dourada acolhedora. Os PNGs são usados integralmente, sem recortes, preservando a qualidade. Não são fotografias ou relatos de clientes. Os caminhos e descrições ficam em `src/audiences.js`.
+
+# Capas originais da sexta seção: quatro bônus
+
+`referencia-quatro-bonus-salmos.png` (commit `86d1b0f`) foi usada somente como referência de conceito e identificação dos bônus. Não foi recortada e não é renderizada como arte final.
+
+As capas abaixo foram geradas do zero para o projeto, como arquivos individuais de 1024 × 1536 px (2:3), sem reaproveitar recortes da referência:
+
+- `bonus-bible-goods.png`: tema de colorir, Bíblia, crianças e animais em um jardim.
+- `bonus-proverbios-na-ponta-do-lapis.png`: caligrafia e sabedoria bíblica, com crianças escrevendo.
+- `bonus-tabuada-com-noe.png`: Arca de Noé, animais e números coloridos.
+- `bonus-emociobook.png`: crianças expressando sentimentos, empatia e acolhimento.
+
+Os PNGs originais são exibidos inteiros, com opção de abrir a resolução completa. São capas ilustrativas; a aplicação não gera páginas internas dos bônus. Caminhos e descrições acessíveis ficam em `src/bonuses.js`.
