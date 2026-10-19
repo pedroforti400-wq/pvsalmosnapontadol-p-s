@@ -46,7 +46,7 @@ Os estilos são restritos à terceira seção e sua ampliação. Os arquivos das
 
 ## Quarta seção: comentários ilustrativos
 
-A quarta seção aparece imediatamente depois da comparação de escrita. Usa a headline “Quem vê, se encanta. Quem usa, recomenda.” e a subheadline fornecida. Menina, Bíblia com coração, folhas, flores e detalhes dourados permanecem estáticos; apenas os cartões se deslocam.
+A quarta seção aparece imediatamente depois da comparação de escrita. Usa a headline “Quem vê, se encanta. Quem usa, recomenda.” e a subheadline fornecida. Menina, folhas, flores e detalhes dourados permanecem estáticos; apenas os cartões se deslocam. O conjunto central de Bíblia com coração e o texto superior “COMENTÁRIOS ILUSTRATIVOS” foram removidos, aproximando a headline do início da seção.
 
 O repositório continha apenas `referencia-depoimentos.png` (commit `a3f2df2`), sem cartões separados. Os quatro cartões foram recortados diretamente dessa referência, com nomes, fotos, comentários, rede social e material preservados. As dimensões são 420 × 553, 388 × 553, 389 × 553 e 399 × 553 px. Os WebP são **sem perda**, conferidos pixel a pixel contra os recortes originais. Os arquivos ficam em `public/images/comentarios/`; dados e descrições acessíveis em `src/comments.js`. São comentários ilustrativos fornecidos para a apresentação, não avaliações verificadas.
 

@@ -5,11 +5,9 @@
 .comments-section { position: relative; overflow: hidden; padding: 30px 0 66px; background: #FAF7EF; color: #073767; }
 .comments-heading { position: relative; max-width: 1600px; padding: 0 265px; margin: 0 auto; text-align: center; }
 .comments-heading-copy { position: relative; z-index: 1; }
-.comments-girl, .comments-botanical, .comments-book { pointer-events: none; user-select: none; }
+.comments-girl, .comments-botanical { pointer-events: none; user-select: none; }
 .comments-girl { position: absolute; left: 16px; top: 26px; width: 270px; height: auto; }
 .comments-botanical { position: absolute; right: 22px; top: 12px; width: 150px; height: auto; }
-.comments-book { width: 100px; height: auto; margin: 0 auto 7px; }
-.comments-eyebrow { margin: 0 0 11px; color: #9b721f; font-size: 10px; font-weight: 850; letter-spacing: .18em; }
 .comments-heading h2 { margin: 0; font-family: 'Comments Display', 'Nunito', sans-serif; font-size: clamp(40px, 4.5vw, 72px); font-weight: 700; font-style: italic; line-height: 1.07; letter-spacing: -.015em; }
 .comments-heading h2 > span { display: block; text-wrap: balance; }
 .comments-heading h2 > span:last-child { color: #bf861c; }
@@ -47,7 +45,6 @@
   .comments-heading { padding: 80px 30px 0; }
   .comments-girl { width: 170px; top: 0; left: 12px; }
   .comments-botanical { width: 75px; top: 0; right: 20px; }
-  .comments-book { position: absolute; left: 50%; top: -65px; transform: translateX(-50%); width: 85px; }
   .comments-heading h2 { font-size: clamp(40px, 6.5vw, 58px); }
 }
 @media (max-width: 639px) {
@@ -55,8 +52,6 @@
   .comments-heading { padding: 78px 16px 0; }
   .comments-girl { width: 120px; top: 0; left: 4px; }
   .comments-botanical { width: 48px; top: -2px; right: 12px; }
-  .comments-book { width: 66px; top: -65px; }
-  .comments-eyebrow { font-size: 9px; letter-spacing: .14em; margin-bottom: 12px; }
   .comments-heading h2 { font-size: clamp(30px, 9vw, 43px); line-height: 1.12; }
   .comments-subheadline { margin-top: 12px; font-size: 16px; line-height: 1.65; }
   .comments-carousel { width: calc(100% - 24px); margin-top: 20px; }

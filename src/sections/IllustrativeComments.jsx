@@ -45,8 +45,6 @@ export default function IllustrativeComments() {
       <img className="comments-girl" src="/images/comentarios/menina-flores.png" width="430" height="275" alt="" aria-hidden="true" loading="lazy"/>
       <img className="comments-botanical" src="/images/comentarios/folhagem.png" width="168" height="274" alt="" aria-hidden="true" loading="lazy"/>
       <div className="comments-heading-copy">
-        <img className="comments-book" src="/images/comentarios/biblia-coracao.png" width="198" height="74" alt="" aria-hidden="true" loading="lazy"/>
-        <p className="comments-eyebrow">COMENTÁRIOS ILUSTRATIVOS</p>
         <h2 id="comments-title"><span>Quem vê, se encanta.</span>{' '}<span>Quem usa, recomenda.</span></h2>
         <div className="comments-heart-divider" aria-hidden="true"><span/><Heart size={18}/><span/></div>
         <p className="comments-subheadline">Conheça o estilo dos comentários e experiências que inspiraram nossa apresentação do Salmos na Ponta do Lápis.</p>

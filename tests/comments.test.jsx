@@ -36,7 +36,7 @@ describe('Quarta seção: comentários ilustrativos', () => {
     render(<IllustrativeComments/>);
     expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Quem vê, se encanta. Quem usa, recomenda.');
     expect(screen.getByText('Conheça o estilo dos comentários e experiências que inspiraram nossa apresentação do Salmos na Ponta do Lápis.')).toBeInTheDocument();
-    expect(screen.getByText('COMENTÁRIOS ILUSTRATIVOS')).toBeInTheDocument();
+    expect(screen.queryByText('COMENTÁRIOS ILUSTRATIVOS')).not.toBeInTheDocument();
     expect(screen.getAllByRole('img')).toHaveLength(4);
     comments.forEach(comment => {
       const trigger = screen.getByRole('button', { name: `Ampliar comentário ilustrativo de ${comment.name}` });
@@ -85,7 +85,10 @@ describe('Quarta seção: comentários ilustrativos', () => {
 
   it('mantém as ilustrações fora da esteira e não cria player visível', () => {
     render(<IllustrativeComments/>);
-    expect(document.querySelectorAll('.comments-heading img')).toHaveLength(3);
+    expect(document.querySelectorAll('.comments-heading img')).toHaveLength(2);
+    expect(document.querySelector('.comments-book')).toBeNull();
+    expect(document.querySelector('.comments-girl')).not.toBeNull();
+    expect(document.querySelector('.comments-botanical')).not.toBeNull();
     expect(document.querySelector('.comments-track .comments-girl')).toBeNull();
     expect(screen.queryByRole('button', { name: /pausar|retomar|play/i })).not.toBeInTheDocument();
   });
