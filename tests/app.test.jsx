@@ -52,6 +52,8 @@ describe('Primeira etapa da nova apresentação', () => {
     expect(bonusSection.getAllByRole('article')).toHaveLength(4);
     expect(bonusSection.getAllByText('GRÁTIS')).toHaveLength(4);
     expect(bonusSection.getAllByText('Incluso na sua compra')).toHaveLength(4);
+    expect(bonusSection.getByText('Gostou dos presentes? Então aproveite essa oportunidade!')).toBeInTheDocument();
+    expect(bonusSection.getByRole('link', { name: 'QUERO MEU KIT COMPLETO + 4 BÔNUS!' })).toHaveAttribute('href', '#checkout-final');
     expect([...document.querySelectorAll('#bonus del')].map(price => price.textContent.replace(/\s/g, ' '))).toEqual(['R$ 12,99', 'R$ 17,99', 'R$ 25,49', 'R$ 15,99']);
     expect(document.querySelector('.bonuses-summary')).toHaveTextContent('Você recebe R$ 72,46 em bônus inclusos sem custo adicional.');
     expect(bonusSection.getAllByRole('img').map(image => image.getAttribute('src'))).toEqual([

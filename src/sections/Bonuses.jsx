@@ -1,8 +1,20 @@
-import { ArrowUpRight, Check, Gift } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Check, Gift } from 'lucide-react';
 import { bonuses, bonusTotalCents, formatBonusPrice } from '../bonuses';
 import './Bonuses.css';
 
 export default function Bonuses() {
+  function scrollToOffer(event) {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const target = document.getElementById('checkout-final');
+    if (!target) return;
+    event.preventDefault();
+    const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false;
+    window.history.replaceState(null, '', '#checkout-final');
+    // Alinha o fim da oferta para deixar o preço e o botão de compra visíveis.
+    target.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth', block: 'end' });
+    target.focus({ preventScroll: true });
+  }
+
   return <section id="bonus" className="bonuses-section" aria-labelledby="bonuses-title">
     <div className="bonuses-container">
       <div className="bonuses-heading">
@@ -37,6 +49,15 @@ export default function Bonuses() {
           <p className="bonuses-summary-value">Você recebe <strong>{formatBonusPrice(bonusTotalCents)}</strong> em bônus inclusos sem custo adicional.</p>
           <p className="bonuses-summary-support">Tudo isso já incluso na sua compra, para tornar o aprendizado ainda mais rico e completo.</p>
         </div>
+      </div>
+
+      <div className="bonuses-cta">
+        <p>Gostou dos presentes? Então aproveite essa oportunidade!</p>
+        <a className="bonuses-cta-link" href="#checkout-final" onClick={scrollToOffer}>
+          <Gift className="bonuses-cta-gift" size={29} aria-hidden="true"/>
+          <strong>QUERO MEU KIT COMPLETO + 4 BÔNUS!</strong>
+          <ArrowRight className="bonuses-cta-arrow" size={25} aria-hidden="true"/>
+        </a>
       </div>
     </div>
   </section>;

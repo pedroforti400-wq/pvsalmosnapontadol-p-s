@@ -74,6 +74,8 @@ Textos, caminhos e preços individuais informados pelo produtor ficam em `src/bo
 
 São quatro colunas a partir de 1200 px, duas entre 640 e 1199 px e uma em telas menores. `Bonuses.css` usa classes restritas à seção. As cinco seções aprovadas, suas artes e a lógica dos carrosséis não foram modificadas. A oferta final aparece depois das instruções de recebimento e recebe o identificador `#checkout-final`.
 
+Ao final dos quatro cards e do resumo de R$ 72,46 há um único bloco de CTA, dentro da própria seção dos bônus. Ele mostra “Gostou dos presentes? Então aproveite essa oportunidade!” e o link amarelo “QUERO MEU KIT COMPLETO + 4 BÔNUS!”, sem frase secundária, conforme confirmado pelo produtor. Presente e seta acompanham o texto, com elevação discreta no hover. O destino é exclusivamente interno: `#checkout-final`. O clique alinha o fim da oferta para mostrar preço e botão, atualiza o hash e transfere o foco sem nova rolagem. Movimento reduzido usa deslocamento imediato e desativa as transições; nos demais casos, a rolagem é suave. Não há chamada ao checkout externo. Os quatro cards, imagens, descrições, valores e resumo não foram alterados.
+
 ## Sétima seção: recebimento por e-mail
 
 O componente antigo `HowItWorks.jsx`, que estava fora da página atual, foi adaptado para uma única seção `#como-funciona` imediatamente após os quatro bônus. Os textos são os fornecidos pelo produtor e ficam em `src/delivery.js`. O título é “Simples, rápido e pronto para imprimir!”; o texto superior é “COMO VOCÊ RECEBE”.
@@ -124,7 +126,7 @@ npm test
 npm run build
 ```
 
-Validação desta etapa: 22 testes aprovados e build Vite concluído. Chromium conferido em 320, 375, 390, 768 e 1440 px, com a logo centralizada, sem rolagem horizontal e sem erros de JavaScript. O link de pular para o conteúdo também foi conferido por teclado.
+Validação desta etapa: 24 testes aprovados e build Vite concluído. Chromium conferido em 320, 375, 390, 768 e 1440 px, com a logo centralizada, sem rolagem horizontal e sem erros de JavaScript. O link de pular para o conteúdo também foi conferido por teclado.
 
 Os testes cobrem a copy exata e a preservação da primeira seção, a presença de somente oito seções e do destino único de oferta, o cabeçalho contendo somente a logo, o link de ampliação e a ausência de mensagem provisória quando o arquivo não carrega. O carrossel também tem testes para setas, indicadores, loop, início/parada e retomada do movimento contínuo, ausência do player, foco por teclado, movimento reduzido, ampliação e CTA. A revisão visual compara o cabeçalho, a primeira seção, o título da segunda seção e o CTA com a base anterior em cada largura. A navegação por setas, a ampliação e o destino do CTA permanecem disponíveis. A revisão no Chromium mediu deslocamento constante de 0,45 pixel entre quadros e uma volta completa com 6.000 quadros monitorados, sem lacunas. Foram aprovadas as retomadas após hover, clique em seta, arraste com mouse, deslize e tap no celular; também foram conferidos o foco por teclado e o movimento reduzido. O cabeçalho, a primeira seção, o título da segunda seção e o CTA ficaram idênticos à base anterior nas cinco larguras, sem erros de JavaScript ou arquivos ausentes.
 
@@ -137,6 +139,7 @@ Os testes de comentários cobrem os quatro PNGs individuais, as duas passagens d
 - `src/main.jsx`: composição das oito seções, com as sete primeiras preservadas.
 - `src/sections/Offer.jsx` e `Offer.css`: composição do kit, preço e compra da oferta final.
 - `tests/offer.test.jsx`: referência comercial condicionada à confirmação e integração segura de checkout.
+- `tests/bonus-cta.test.jsx`: CTA interno dos bônus, foco e preferência por movimento reduzido.
 - `src/sections/HowItWorks.jsx` e `HowItWorks.css`: sétima seção responsiva com cinco cards.
 - `src/delivery.js`: instruções de compra, entrega por e-mail, download, impressão e armazenamento.
 - `src/sections/Bonuses.jsx` e `Bonuses.css`: cards e resumo da seção dos quatro bônus.
