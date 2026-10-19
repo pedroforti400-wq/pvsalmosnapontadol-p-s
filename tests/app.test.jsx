@@ -10,7 +10,7 @@ const originalArtwork = product.images.productWithBonuses;
 afterEach(() => { product.images.productWithBonuses = originalArtwork; });
 
 describe('Primeira etapa da nova apresentação', () => {
-  it('preserva as cinco seções aprovadas e acrescenta uma única seção de bônus', () => {
+  it('preserva as seis seções aprovadas e acrescenta uma única seção de recebimento por e-mail', () => {
     render(<App/>);
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
       'Mais de 200 atividades bíblicas para desenvolver a caligrafia e cultivar a fé desde a infância!'
@@ -20,7 +20,7 @@ describe('Primeira etapa da nova apresentação', () => {
       'Conheça o Salmos na Ponta do Lápis: um material digital para imprimir, que une exercícios de escrita, criatividade e os ensinamentos dos Salmos.'
     );
     expect(within(intro).getByText(product.name).tagName).toBe('STRONG');
-    expect(document.querySelectorAll('main > section')).toHaveLength(6);
+    expect(document.querySelectorAll('main > section')).toHaveLength(7);
     expect(document.querySelectorAll('main > section')[0]).toHaveAttribute('id', 'inicio');
     expect(document.querySelectorAll('main > section')[1]).toHaveAttribute('id', 'atividades');
     expect(document.querySelectorAll('main > section')[2]).toHaveAttribute('id', 'escrita-com-proposito');
@@ -30,7 +30,21 @@ describe('Primeira etapa da nova apresentação', () => {
     expect(document.querySelectorAll('main > section')[5]).toHaveAttribute('id', 'bonus');
     expect(document.querySelectorAll('#bonus')).toHaveLength(1);
     expect(document.getElementById('para-quem').nextElementSibling).toBe(document.getElementById('bonus'));
-    expect(document.getElementById('bonus').nextElementSibling).toBe(document.getElementById('checkout-final'));
+    expect(document.querySelectorAll('main > section')[6]).toHaveAttribute('id', 'como-funciona');
+    expect(document.querySelectorAll('#como-funciona')).toHaveLength(1);
+    expect(document.getElementById('bonus').nextElementSibling).toBe(document.getElementById('como-funciona'));
+    expect(document.getElementById('como-funciona').nextElementSibling).toBe(document.getElementById('checkout-final'));
+    const delivery = within(screen.getByRole('region', { name: 'Simples, rápido e pronto para imprimir!' }));
+    expect(delivery.getByText('COMO VOCÊ RECEBE')).toBeInTheDocument();
+    expect(delivery.getByText('Após a compra, receba o acesso por e-mail, baixe seu material e comece a aproveitar as atividades!')).toBeInTheDocument();
+    expect(delivery.getAllByRole('article')).toHaveLength(5);
+    expect(delivery.getAllByRole('heading', { level: 3 }).map(title => title.textContent)).toEqual([
+      'Faça sua compra', 'Receba no seu e-mail', 'Baixe o material', 'Imprima e aproveite', 'Guarde seus arquivos',
+    ]);
+    expect(delivery.getByText('Após a confirmação do pagamento, você receberá no e-mail informado na compra as instruções para acessar seu material.')).toBeInTheDocument();
+    expect(delivery.getByText('PARA SEMPRE')).toBeInTheDocument();
+    expect(delivery.getByText('Salve os PDFs no seu dispositivo para consultar e imprimir novamente quando precisar.')).toBeInTheDocument();
+    expect(delivery.queryByText(/instantâneo|imediato|em \d+ minutos/i)).not.toBeInTheDocument();
     const bonusSection = within(screen.getByRole('region', { name: 'E ainda tem mais: 4 bônus especiais para enriquecer a experiência das crianças!' }));
     expect(bonusSection.getAllByRole('article')).toHaveLength(4);
     expect(bonusSection.getAllByText('GRÁTIS')).toHaveLength(4);
