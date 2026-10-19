@@ -1,56 +1,77 @@
 import React from 'react';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, afterEach } from 'vitest';
 import { render, screen, fireEvent, within } from '@testing-library/react';
 import App from '../src/main';
-import { getCheckoutUrl, formatPrice } from '../src/config';
-describe('Página de vendas', () => {
- it('mostra a oferta e todas as seções de navegação', () => { render(<App/>); expect(screen.getByRole('heading', {level:1})).toHaveTextContent('Uma letra mais bonita.Uma fé que floresce.'); for(const id of ['material','beneficios','como-funciona','oferta','faq']) expect(document.getElementById(id)).toBeTruthy(); expect(screen.getByText('R$ 29,90')).toBeInTheDocument(); });
- it('substitui a segunda seção por exemplos ilustrativos de escrita', () => {
-  render(<App/>);
-  const section=document.getElementById('material');
-  expect(document.querySelectorAll('main > section')[1]).toBe(section);
-  expect(within(section).getByRole('img')).toHaveAccessibleName(/Comparação ilustrativa: DEPOIS acima/);
-  expect(section).toHaveTextContent('Exemplos ilustrativos de escrita. Não representam um resultado garantido.');
-  expect(within(section).queryByRole('tablist')).not.toBeInTheDocument();
-  expect(within(section).queryByRole('button')).not.toBeInTheDocument();
- });
- it('impede compra sem checkout e permite fechar o aviso', () => {render(<App/>); fireEvent.click(screen.getByRole('button',{name:'Quero meu Salmos na Ponta do Lápis'})); expect(screen.getByRole('dialog')).toHaveTextContent('nenhuma cobrança'); fireEvent.click(screen.getByRole('button',{name:'Fechar'})); expect(screen.queryByRole('dialog')).not.toBeInTheDocument(); });
- it('mantém somente a logo oficial no cabeçalho', () => {
-  render(<App/>);
-  const header=screen.getByRole('banner');
-  expect(within(header).getByRole('img',{name:'Salmos na Ponta do Lápis'})).toHaveAttribute('src','/images/logo-oficial-salmos.png');
-  expect(header.textContent).toBe('');
-  expect(within(header).queryByRole('navigation')).not.toBeInTheDocument();
-  expect(within(header).queryByRole('button')).not.toBeInTheDocument();
-  expect(screen.queryByText('Um lápis na mão. A Palavra no coração.')).not.toBeInTheDocument();
- });
- it('aceita somente checkout HTTPS válido', () => {expect(getCheckoutUrl('')).toBeNull();expect(getCheckoutUrl('javascript:alert(1)')).toBeNull();expect(getCheckoutUrl('http://loja.example')).toBeNull();expect(getCheckoutUrl('https://loja.example/comprar')).toBe('https://loja.example/comprar');expect(formatPrice(29.9)).toMatch(/29,90/);});
+import { product, getCheckoutUrl } from '../src/config';
+
+const originalArtwork = product.images.productWithBonuses;
+afterEach(() => { product.images.productWithBonuses = originalArtwork; });
+
+describe('Primeira etapa da nova apresentação', () => {
+  it('renderiza apenas o cabeçalho e a primeira seção com a copy exata', () => {
+    render(<App/>);
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
+      'Mais de 200 atividades bíblicas para desenvolver a caligrafia e cultivar a fé desde a infância!'
+    );
+    const intro = screen.getByText(/Conheça o/, { selector: 'p' });
+    expect(intro).toHaveTextContent(
+      'Conheça o Salmos na Ponta do Lápis: um material digital para imprimir, que une exercícios de escrita, criatividade e os ensinamentos dos Salmos. E para tornar essa experiência ainda mais completa, você recebe 4 bônus especiais para enriquecer o aprendizado dos pequenos!'
+    );
+    expect(within(intro).getByText(product.name).tagName).toBe('STRONG');
+    expect(within(intro).getByText('4 bônus especiais').tagName).toBe('STRONG');
+    expect(document.querySelectorAll('main > section')).toHaveLength(1);
+    expect(screen.queryByRole('contentinfo')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button')).not.toBeInTheDocument();
+    for (const id of ['material', 'beneficios', 'oferta', 'faq']) {
+      expect(document.getElementById(id)).toBeNull();
+    }
+  });
+
+  it('mantém somente a arte oficial no cabeçalho', () => {
+    render(<App/>);
+    const header = screen.getByRole('banner');
+    expect(within(header).getByRole('img', { name: product.name })).toHaveAttribute(
+      'src', '/images/logo-oficial-salmos.png'
+    );
+    expect(header.textContent).toBe('');
+    expect(within(header).queryByRole('navigation')).not.toBeInTheDocument();
+    expect(within(header).queryByRole('button')).not.toBeInTheDocument();
+    expect(document.querySelector('.skip')).toHaveAttribute('href', '#conteudo');
+    expect(document.getElementById('conteudo')).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('usa a arte original configurada e permite abrir sua resolução completa', () => {
+    render(<App/>);
+    const link = screen.getByRole('link', { name: /Ampliar a imagem do produto/ });
+    expect(link).toHaveAttribute('href', originalArtwork);
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+    expect(within(link).getByRole('img')).toHaveAttribute('src', originalArtwork);
+    expect(within(link).queryByRole('button')).not.toBeInTheDocument();
+  });
+
+  it('informa a ausência da arte sem trocar por uma imagem genérica', () => {
+    render(<App/>);
+    fireEvent.error(screen.getByRole('img', { name: /produto principal, tablet/ }));
+    expect(screen.getByRole('status')).toHaveTextContent('Aguardando o arquivo original');
+    expect(screen.queryByRole('img', { name: /produto principal, tablet/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: /Ampliar a imagem do produto/ })).not.toBeInTheDocument();
+    expect(screen.getAllByRole('img')).toHaveLength(1);
+  });
+
+  it('trata uma configuração vazia da imagem com transparência', () => {
+    product.images.productWithBonuses = '';
+    render(<App/>);
+    expect(screen.getByRole('status')).toHaveTextContent('A imagem original do material');
+    expect(screen.getAllByRole('img')).toHaveLength(1);
+  });
 });
 
-describe('Interações da revisão visual', () => {
- it('abre somente uma resposta de FAQ por vez', () => {
-  render(<App/>);
-  const initial=screen.getByRole('button',{name:/O que é o Salmos na Ponta do Lápis/});
-  const next=screen.getByRole('button',{name:/Vou receber um material físico/});
-  expect(initial).toHaveAttribute('aria-expanded','true');
-  fireEvent.click(next);
-  expect(initial).toHaveAttribute('aria-expanded','false');
-  expect(next).toHaveAttribute('aria-expanded','true');
-  fireEvent.click(next);
-  expect(next).toHaveAttribute('aria-expanded','false');
- });
- it('informa com transparência que o vídeo ainda não foi fornecido', () => {
-  render(<App/>);
-  fireEvent.click(screen.getByRole('button',{name:'Conhecer a demonstração em vídeo'}));
-  expect(screen.getByRole('status')).toHaveTextContent('ainda não está disponível');
- });
- it('fecha o aviso por Escape e restaura o foco', () => {
-  render(<App/>);
-  const trigger=screen.getByRole('button',{name:'Quero meu Salmos na Ponta do Lápis'});
-  trigger.focus(); fireEvent.click(trigger);
-  expect(screen.getByRole('button',{name:'Fechar'})).toHaveFocus();
-  fireEvent.keyDown(document,{key:'Escape'});
-  expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-  expect(trigger).toHaveFocus();
- });
+describe('Configuração preservada para as próximas etapas', () => {
+  it('continua rejeitando URLs de checkout inseguras', () => {
+    expect(getCheckoutUrl('')).toBeNull();
+    expect(getCheckoutUrl('javascript:alert(1)')).toBeNull();
+    expect(getCheckoutUrl('http://loja.example')).toBeNull();
+    expect(getCheckoutUrl('https://loja.example/comprar')).toBe('https://loja.example/comprar');
+  });
 });

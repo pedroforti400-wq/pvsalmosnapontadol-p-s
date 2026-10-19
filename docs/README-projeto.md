@@ -1,66 +1,65 @@
-# Salmos na Ponta do Lápis
+# Salmos na Ponta do Lápis — reconstrução por etapas
 
-Página de vendas em React + Vite + CSS, refinada no projeto existente. Não publicada.
+React + Vite + CSS no repositório existente. Nenhuma publicação realizada.
 
-## Visualizar no GitHub Codespaces
+## Etapa atual
 
-Selecione a branch `codex/salmos-sales-page` no GitHub e abra **Code → Codespaces → Create codespace**. A configuração `.devcontainer/devcontainer.json` instala as dependências com `npm ci` e declara o encaminhamento da porta 5173.
+A aplicação renderiza **somente o cabeçalho com a logo oficial e a primeira seção de apresentação**. A headline e a subheadline são as fornecidas pelo produtor. O fundo contínuo é #FAF7EF; azul, verde, amarelo e laranja aparecem nos destaques. O laranja do texto recebe um tom mais escuro para preservar contraste e legibilidade.
 
-No terminal, na pasta que contém `package.json`:
+Os componentes das seções anteriores, suas artes, configurações e `src/styles.css` permanecem no repositório e no histórico, mas não são renderizados nem têm seus estilos importados nesta etapa. Não há oferta, compra, rodapé ou novas seções na página atual.
 
-```sh
-npm run dev -- --host 0.0.0.0 --port 5173
+## Arquivo original necessário
+
+A arte completa do produto com os quatro bônus foi mostrada no chat, mas **não está disponível como arquivo neste ambiente nem na branch**. Nenhuma arte substituta foi criada.
+
+Envie o arquivo original, sem cortes nem alterações, para:
+
+```
+public/images/produto-com-quatro-bonus.png
 ```
 
-Em **Ports → 5173 → Open in Browser**, abra a URL HTTPS encaminhada. Mantenha a visibilidade **Private**. Caso a porta não apareça, use **Forward a Port → 5173**. O servidor e o Codespace precisam permanecer ativos. A abertura de um Codespace pode consumir a franquia ou gerar custos da conta GitHub.
+Esse endereço já está configurado em `product.images.productWithBonuses` no arquivo `src/config.js`. Se o original tiver outra extensão, preserve seu formato e atualize esse campo para corresponder ao arquivo. Não basta renomear uma extensão diferente para PNG.
 
-`localhost:5173` no terminal pertence à máquina remota, não à sua máquina. A sessão do Codex usada para esta implementação não expõe um serviço de prévia externa. Os IPs internos do Vite não são um link público. Nenhum deploy foi realizado.
+Depois de adicionar o arquivo, atualize o navegador. A imagem será exibida inteira, com largura responsiva e altura automática, sem sobreposição. Clicar ou tocar abre o próprio original em uma nova aba para ampliar. Enquanto ela estiver ausente, aparece apenas um aviso discreto de pendência, sem imagem genérica ou ícone quebrado.
 
-## Desenvolvimento e verificação
+A logo oficial `public/images/logo-oficial-salmos.png` foi mantida intacta.
 
-Requer Node.js 20.19+ ou 22.12+.
+## Atualizar a prévia no GitHub Codespaces
+
+No Codespace existente, na pasta com `package.json`, confirme a branch e atualize:
+
+```sh
+git switch codex/salmos-sales-page
+git pull --ff-only
+```
+
+Se o servidor já estiver rodando, recarregue a aba da prévia. Caso contrário:
 
 ```sh
 npm ci
-npm test
-npm run build
-npm run preview -- --host 0.0.0.0 --port 4173
+npm run dev -- --host 0.0.0.0 --port 5173
 ```
 
-O build está em `dist/` (ignorado pelo Git). Para abrir o preview do build em um ambiente remoto, encaminhe a porta 4173. Não inclua `node_modules/` no repositório.
+Abra **Ports → 5173 → Open in Browser**. Se necessário, use **Forward a Port → 5173**. Mantenha a porta Private e o Codespace ativo. Use a URL encaminhada do Codespaces; o localhost da sua máquina não acessa o servidor remoto.
 
-## Personalizar os dados reais
+A configuração `.devcontainer/devcontainer.json` já declara a porta 5173 e instala as dependências. Para criar outro Codespace, selecione esta mesma branch no GitHub e abra **Code → Codespaces**.
 
-Edite `src/config.js`:
+## Verificação
 
-- `logo`: caminho e dimensões da logo oficial. O PNG transparente em `public/images/logo-oficial-salmos.png` é usado integralmente no cabeçalho, rodapé, amostras e capa ilustrativa. O arquivo fornecido foi preservado sem alterações.
+```sh
+npm test
+npm run build
+```
 
-- `price`, `currency`, `offerLabel`: preço e identificação da oferta. O preço de R$ 29,90 permanece ilustrativo.
-- `checkoutUrl`: URL HTTPS de compra. Vazio mantém a janela de aviso, sem transação.
-- `isDemo`: mantenha `true` até revisar os dados comerciais e o conteúdo final.
-- `images.hero`, `biblicalScene`, `writingChild`, `panorama`: ilustrações por contexto. Os caminhos atuais apontam para imagens 3D originais em `public/images/`.
-- `images.cover`: capa real opcional. Vazio mantém uma representação identificada como ilustrativa.
-- `images.samples`: páginas reais para substituir as amostras usadas nas prévias.
-- `images.comparison`: composição fotográfica ilustrativa ANTES/DEPOIS da segunda seção. O aviso não promete resultado garantido; a imagem não representa um cliente real.
-- `video.src`: MP4/WebM local ou HTTPS. `video.poster`: capa opcional do vídeo. Sem vídeo, aparece a prévia visual com o aviso de que a apresentação ainda não está disponível.
-- `testimonials`: lista de objetos `{ name, role, quote }`, apenas com relatos reais e autorizados. Vazia exibe três cards explicitamente demonstrativos, sem avaliações ou resultados inventados.
-- `guaranteeDays`: informe um prazo apenas se a política estiver confirmada. Vazio exibe orientação para conferir as condições do vendedor.
-- `contactEmail`: e-mail opcional para o FAQ.
+Validação desta etapa: 6 testes aprovados e build Vite concluído. Chromium conferido em 320, 375, 390, 768 e 1440 px, com a logo centralizada, sem rolagem horizontal e sem erros de JavaScript. O link de pular para o conteúdo também foi conferido por teclado.
 
-Páginas, capa, licença, entrega, faixa de aprendizagem e condições de reembolso devem ser conferidas pelo produtor antes de ativar vendas. As ilustrações não representam um produto físico enviado ao comprador.
+Os testes cobrem a copy exata, a presença de apenas uma seção, o cabeçalho contendo somente a logo, o link de ampliação e o tratamento da arte ausente. A revisão visual foi feita com o aviso de imagem pendente. A aparência da arte original só poderá ser validada após seu envio.
 
-## Organização
+## Arquivos desta etapa
 
-- `src/main.jsx`: composição da aplicação e abertura do aviso de compra.
-- `src/sections/`: hero, comparação ilustrativa de escrita, vídeo, benefícios, depoimentos, públicos, seção amarela, oferta, panorama, etapas, garantia e FAQ.
-- `src/components/`: cabeçalho e rodapé, componentes compartilhados, folha de demonstração e diálogo com gerenciamento de foco.
-- `src/content.js`: textos das atividades, benefícios e perguntas frequentes.
-- `src/styles.css`: identidade visual, fontes locais, estados e adaptações responsivas.
-- `src/Art.jsx`: ilustração vetorial original preservada como fallback.
-- `public/images/`: três artes originais geradas para esta página, otimizadas em WebP.
-
-## Revisão visual
-
-A linguagem foi ampliada com personagens 3D, sombras suaves, traços decorativos, prévias inclinadas sobre amarelo vibrante, oferta lilás e cenário bíblico panorâmico. A estrutura visual da referência orienta a alternância das seções; seus textos, imagens, identidade e elementos exclusivos não foram reutilizados.
-
-Verificações: 8 testes automatizados, build Vite e revisão em Chromium nas larguras 1440, 1024, 768, 390 e 320 px. Sem erros de JavaScript, arquivos ausentes ou rolagem horizontal nas larguras verificadas. Foram conferidos o cabeçalho centralizado, a nova segunda seção, a janela de compra, Escape, FAQ e o aviso de vídeo. As fontes são locais e as imagens usam carregamento adiado fora da primeira dobra.
+- `src/main.jsx`: composição restrita à etapa atual.
+- `src/sections/ProductPresentation.jsx`: textos e apresentação da imagem original.
+- `src/presentation.css`: tipografia local, paleta e responsividade da nova apresentação.
+- `src/components/Header.css`: cabeçalho compacto e logo centralizada.
+- `src/config.js`: caminho editável da imagem; dados anteriores preservados.
+- `tests/app.test.jsx`: verificações da etapa atual.
