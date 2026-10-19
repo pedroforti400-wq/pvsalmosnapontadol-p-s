@@ -10,7 +10,7 @@ const originalArtwork = product.images.productWithBonuses;
 afterEach(() => { product.images.productWithBonuses = originalArtwork; });
 
 describe('Primeira etapa da nova apresentação', () => {
-  it('preserva as oito seções aprovadas e acrescenta uma única garantia após a oferta', () => {
+  it('preserva as nove seções aprovadas e acrescenta um único FAQ após a garantia', () => {
     render(<App/>);
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
       'Mais de 200 atividades bíblicas para desenvolver a caligrafia e cultivar a fé desde a infância!'
@@ -20,7 +20,7 @@ describe('Primeira etapa da nova apresentação', () => {
       'Conheça o Salmos na Ponta do Lápis: um material digital para imprimir, que une exercícios de escrita, criatividade e os ensinamentos dos Salmos.'
     );
     expect(within(intro).getByText(product.name).tagName).toBe('STRONG');
-    expect(document.querySelectorAll('main > section')).toHaveLength(9);
+    expect(document.querySelectorAll('main > section')).toHaveLength(10);
     expect(document.querySelectorAll('main > section')[0]).toHaveAttribute('id', 'inicio');
     expect(document.querySelectorAll('main > section')[1]).toHaveAttribute('id', 'atividades');
     expect(document.querySelectorAll('main > section')[2]).toHaveAttribute('id', 'escrita-com-proposito');
@@ -39,6 +39,9 @@ describe('Primeira etapa da nova apresentação', () => {
     expect(document.querySelectorAll('#garantia')).toHaveLength(1);
     expect(document.getElementById('checkout-final').nextElementSibling).toBe(document.getElementById('garantia'));
     expect(screen.getByRole('region', { name: 'Sua compra protegida com garantia de 7 dias' })).toHaveAttribute('id', 'garantia');
+    expect(document.querySelectorAll('#faq')).toHaveLength(1);
+    expect(document.getElementById('garantia').nextElementSibling).toBe(document.getElementById('faq'));
+    expect(screen.getByRole('region', { name: 'Perguntas Frequentes' })).toHaveAttribute('id', 'faq');
     expect(screen.getByRole('region', { name: 'Leve o Salmos na Ponta do Lápis + 4 bônus especiais!' })).toHaveAttribute('id', 'checkout-final');
     const delivery = within(screen.getByRole('region', { name: 'Simples, rápido e pronto para imprimir!' }));
     expect(delivery.getByText('COMO VOCÊ RECEBE')).toBeInTheDocument();
@@ -77,7 +80,7 @@ describe('Primeira etapa da nova apresentação', () => {
     expect(screen.queryByText('Toque ou clique na imagem para ver os detalhes em uma nova aba.')).not.toBeInTheDocument();
     expect(screen.queryByRole('contentinfo')).not.toBeInTheDocument();
     expect(within(document.getElementById('inicio')).queryByRole('button')).not.toBeInTheDocument();
-    for (const id of ['material', 'beneficios', 'oferta', 'faq']) {
+    for (const id of ['material', 'beneficios', 'oferta']) {
       expect(document.getElementById(id)).toBeNull();
     }
   });

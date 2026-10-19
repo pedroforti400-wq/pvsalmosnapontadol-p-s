@@ -10,6 +10,7 @@ import Bonuses from './sections/Bonuses';
 import HowItWorks from './sections/HowItWorks';
 import Offer from './sections/Offer';
 import Guarantee from './sections/Guarantee';
+import FAQ from './sections/FAQ';
 import './presentation.css';
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
       <HowItWorks/>
       <Offer/>
       <Guarantee/>
+      <FAQ/>
     </main>
   </>;
 }

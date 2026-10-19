@@ -4,7 +4,7 @@ React + Vite + CSS no repositório existente. Nenhuma publicação realizada.
 
 ## Etapa atual
 
-A aplicação renderiza **o cabeçalho com a logo oficial, as oito seções aprovadas e a nona seção de garantia de satisfação de 7 dias**. A headline e a subheadline são as fornecidas pelo produtor. O fundo contínuo é #FAF7EF; azul, verde, amarelo e laranja aparecem nos destaques. O laranja do texto recebe um tom mais escuro para preservar contraste e legibilidade.
+A aplicação renderiza **o cabeçalho com a logo oficial, as nove seções aprovadas e a décima seção de perguntas frequentes**. A headline e a subheadline são as fornecidas pelo produtor. O fundo contínuo é #FAF7EF; azul, verde, amarelo e laranja aparecem nos destaques. O laranja do texto recebe um tom mais escuro para preservar contraste e legibilidade.
 
 Os componentes das seções anteriores, suas artes, configurações e `src/styles.css` permanecem no repositório e no histórico, mas não são renderizados nem têm seus estilos importados nesta etapa. A oferta final exibe o preço confirmado de R$ 27,90. O checkout real ainda não está configurado, portanto o botão de compra fica desabilitado. Não há rodapé nesta etapa. O identificador `#checkout-final` pertence à oitava seção; o CTA anterior continua rolando e transferindo o foco para esse destino.
 
@@ -109,6 +109,18 @@ A nova arte `public/images/garantia-jesus-criancas.png` é um PNG transparente o
 
 `Guarantee.css` usa somente classes `satisfaction-*`, a paleta e a tipografia existentes. O bloco centralizado tem duas colunas a partir de 800 px e empilha arte, selo e texto nas telas menores, sem altura fixa ou recorte na ilustração. Não há animação nova. Cabeçalho, depoimentos, bônus, oferta e demais seções mantêm seus arquivos e comportamentos.
 
+## Décima seção: perguntas frequentes
+
+A seção `#faq` aparece uma única vez, imediatamente após `#garantia`. O componente antigo `FAQ.jsx`, que não era renderizado, foi substituído por um accordion com as oito perguntas e respostas fornecidas pelo produtor. Os textos estão em `src/faqs.js`, sem alterar o conteúdo compartilhado das seções anteriores.
+
+O cabeçalho usa “AINDA TEM ALGUMA DÚVIDA?”, “Perguntas Frequentes” e “Tudo o que você precisa saber sobre o Salmos na Ponta do Lápis.”. O fundo creme #FAF7EF, títulos verde-escuro #165740, detalhes dourados e fonte arredondada existente acompanham cards brancos com bordas arredondadas e sombras suaves. `FAQ.css` usa somente classes `sales-faq-*`.
+
+Todas as respostas começam recolhidas. Abrir uma pergunta fecha a anterior; clicar novamente recolhe a resposta. O ícone alterna entre + e −. A expansão e o recolhimento usam transição de altura por CSS Grid e opacidade, sem altura fixa ou cortes no texto; movimento reduzido desativa as transições.
+
+Cada pergunta é um botão semântico dentro de um título `h3`, com `aria-expanded` e `aria-controls`. Cada resposta possui identificação única, `role="region"` e `aria-labelledby`. Respostas recolhidas recebem `aria-hidden` e `inert`, ficando fora da árvore de acessibilidade. Mouse, toque, Tab, Shift+Tab, Enter e Espaço usam o comportamento nativo dos botões. Setas para cima/baixo, Home e End também permitem mover o foco entre perguntas sem abri-las. O indicador de foco permanece visível.
+
+Não há dependência, imagem ou serviço novo. As nove seções anteriores, suas artes, configurações, depoimentos, bônus, oferta e garantia foram preservados. A página continua sem publicação.
+
 ## Atualizar a prévia no GitHub Codespaces
 
 No Codespace existente, na pasta com `package.json`, confirme a branch e atualize:
@@ -131,16 +143,20 @@ A configuração `.devcontainer/devcontainer.json` já declara a porta 5173 e in
 
 ## Verificação
 
+Validação atual do FAQ: 29 testes aprovados, build Vite e `git diff --check` concluídos. Chromium em 320, 375, 390, 640, 767, 768, 1024 e 1440 px: dez seções, oito perguntas, todas as respostas abertas e fechadas individualmente sem cortes ou rolagem horizontal, troca exclusiva de resposta e ícones +/− corretos. Conferidos mouse, toque, Tab, Enter, Espaço, setas, Home, End e transição de 240 ms; movimento reduzido elimina as transições. Sem erros de JavaScript ou recursos ausentes.
+
+A comparação com `eb679fb` confirmou DOM, medidas e estilos do cabeçalho e de todos os elementos das nove seções anteriores idênticos nas oito larguras, usando movimento reduzido para estabilizar a comparação. O CTA dos bônus manteve hash e foco em `#checkout-final`; a compra continua desabilitada sem URL de checkout.
+
 ```sh
 npm test
 npm run build
 ```
 
-Validação da garantia: 25 testes aprovados e build Vite concluído. Os testes conferem o prazo confirmado, a copy solicitada, os três pontos de segurança e a posição única após a oferta. Chromium conferido em 320, 375, 390, 640, 768, 799, 800, 1024 e 1440 px: nove seções, arte proporcional inteira, sem sobreposição entre colunas, rolagem horizontal, erros de JavaScript ou recursos ausentes. A comparação com o commit `9bd0a2d` confirmou DOM, medidas e estilos do cabeçalho e de todos os elementos das oito seções anteriores idênticos nas nove larguras, com movimento reduzido para uma comparação estável. O CTA dos bônus manteve hash e foco em `#checkout-final`, e a compra permaneceu desabilitada sem checkout.
+Validação da etapa anterior (garantia): 25 testes aprovados e build Vite concluído. Os testes conferem o prazo confirmado, a copy solicitada, os três pontos de segurança e a posição única após a oferta. Chromium conferido em 320, 375, 390, 640, 768, 799, 800, 1024 e 1440 px: nove seções, arte proporcional inteira, sem sobreposição entre colunas, rolagem horizontal, erros de JavaScript ou recursos ausentes. A comparação com o commit `9bd0a2d` confirmou DOM, medidas e estilos do cabeçalho e de todos os elementos das oito seções anteriores idênticos nas nove larguras, com movimento reduzido para uma comparação estável. O CTA dos bônus manteve hash e foco em `#checkout-final`, e a compra permaneceu desabilitada sem checkout.
 
 Validações visuais registradas nas etapas anteriores: Chromium conferido em 320, 375, 390, 768 e 1440 px, com a logo centralizada, sem rolagem horizontal e sem erros de JavaScript. O link de pular para o conteúdo também foi conferido por teclado.
 
-Os testes cobrem a copy exata e a preservação da primeira seção, a presença de nove seções e do destino único de oferta, o cabeçalho contendo somente a logo, o link de ampliação e a ausência de mensagem provisória quando o arquivo não carrega. O carrossel também tem testes para setas, indicadores, loop, início/parada e retomada do movimento contínuo, ausência do player, foco por teclado, movimento reduzido, ampliação e CTA. A revisão visual compara o cabeçalho, a primeira seção, o título da segunda seção e o CTA com a base anterior em cada largura. A navegação por setas, a ampliação e o destino do CTA permanecem disponíveis. A revisão no Chromium mediu deslocamento constante de 0,45 pixel entre quadros e uma volta completa com 6.000 quadros monitorados, sem lacunas. Foram aprovadas as retomadas após hover, clique em seta, arraste com mouse, deslize e tap no celular; também foram conferidos o foco por teclado e o movimento reduzido. O cabeçalho, a primeira seção, o título da segunda seção e o CTA ficaram idênticos à base anterior nas cinco larguras, sem erros de JavaScript ou arquivos ausentes.
+Os testes cobrem a copy exata e a preservação da primeira seção, a presença de dez seções e do destino único de oferta, o cabeçalho contendo somente a logo, o link de ampliação e a ausência de mensagem provisória quando o arquivo não carrega. O carrossel também tem testes para setas, indicadores, loop, início/parada e retomada do movimento contínuo, ausência do player, foco por teclado, movimento reduzido, ampliação e CTA. A revisão visual compara o cabeçalho, a primeira seção, o título da segunda seção e o CTA com a base anterior em cada largura. A navegação por setas, a ampliação e o destino do CTA permanecem disponíveis. A revisão no Chromium mediu deslocamento constante de 0,45 pixel entre quadros e uma volta completa com 6.000 quadros monitorados, sem lacunas. Foram aprovadas as retomadas após hover, clique em seta, arraste com mouse, deslize e tap no celular; também foram conferidos o foco por teclado e o movimento reduzido. O cabeçalho, a primeira seção, o título da segunda seção e o CTA ficaram idênticos à base anterior nas cinco larguras, sem erros de JavaScript ou arquivos ausentes.
 
 A terceira seção foi conferida com a imagem real nas cinco larguras: proporção, centralização, imagem inteira, ampliação, rolagem interna, fechamento, Escape, foco e continuidade do CTA. A comparação de DOM, medidas e estilos confirmou o cabeçalho e as duas primeiras seções idênticos à base anterior. O hash SHA-256 do PNG é o mesmo no arquivo original e no build: `3625214b7c591667e5930ba17df1e6e1aeead3c13811ae21084b64ee21c34a87`.
 
@@ -148,11 +164,15 @@ Os testes de comentários cobrem os quatro PNGs individuais, as duas passagens d
 
 ## Arquivos desta etapa
 
+- `src/sections/FAQ.jsx` e `FAQ.css`: décima seção, accordion acessível e estilos isolados.
+- `src/faqs.js`: oito perguntas e respostas fornecidas pelo produtor.
+- `tests/faq.test.jsx`: relações ARIA, exclusividade de abertura, recolhimento, conteúdo e navegação por teclado.
+
 - `src/sections/Guarantee.jsx` e `Guarantee.css`: nona seção, copy, selo e layout isolado.
 - `public/images/garantia-jesus-criancas.png`: nova arte decorativa, sem modificar os originais.
 - `tests/guarantee.test.jsx`: prazo, conteúdo e acessibilidade da garantia.
 
-- `src/main.jsx`: composição das nove seções, com as oito primeiras preservadas.
+- `src/main.jsx`: composição das dez seções, com as nove primeiras preservadas.
 - `src/sections/Offer.jsx` e `Offer.css`: composição do kit, preço e compra da oferta final.
 - `tests/offer.test.jsx`: referência comercial condicionada à confirmação e integração segura de checkout.
 - `tests/bonus-cta.test.jsx`: CTA interno dos bônus, foco e preferência por movimento reduzido.

@@ -1,0 +1,41 @@
+.sales-faq-section { padding: 28px 0 88px; color: var(--green); background: var(--cream); }
+.sales-faq-container { width: min(100% - 64px, 920px); margin: 0 auto; }
+.sales-faq-heading { max-width: 780px; margin: 0 auto 40px; text-align: center; }
+.sales-faq-eyebrow { display: flex; align-items: center; justify-content: center; gap: 9px; margin: 0 0 16px; color: #886323; font-size: 11px; font-weight: 850; letter-spacing: .13em; line-height: 1.6; }
+.sales-faq-eyebrow svg { flex-shrink: 0; }
+.sales-faq-heading h2 { margin: 0; font-size: clamp(32px, 3.2vw, 46px); font-weight: 900; line-height: 1.2; letter-spacing: -.035em; text-wrap: balance; }
+.sales-faq-subheadline { margin: 20px 0 0; color: #58675e; font-size: 18px; line-height: 1.8; text-wrap: pretty; }
+.sales-faq-list { display: grid; gap: 14px; }
+.sales-faq-item { min-width: 0; border: 1px solid #e5e7dc; border-radius: 22px; background: #fff; box-shadow: 0 7px 24px #16574007; transition: border-color 180ms ease, box-shadow 180ms ease; }
+.sales-faq-item[data-open="true"] { border-color: #c0d1b8; box-shadow: 0 9px 28px #1657400b; }
+.sales-faq-item h3 { margin: 0; font-size: 19px; font-weight: 850; line-height: 1.5; }
+.sales-faq-question { display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; min-height: 84px; padding: 23px 28px; border: 0; border-radius: 21px; color: inherit; background: transparent; font: inherit; text-align: left; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.sales-faq-question > span:first-child { min-width: 0; }
+.sales-faq-question:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+.sales-faq-toggle { display: grid; place-items: center; flex: 0 0 34px; width: 34px; height: 34px; border: 1px solid #eee0b5; border-radius: 50%; color: var(--green); background: #fff7dc; }
+.sales-faq-item[data-open="true"] .sales-faq-toggle { border-color: #d9e3d1; background: #eff5e9; }
+.sales-faq-answer { display: grid; grid-template-rows: 0fr; opacity: 0; visibility: hidden; transition: grid-template-rows 240ms ease, opacity 180ms ease, visibility 0s 240ms; }
+.sales-faq-answer-inner { min-height: 0; overflow: hidden; }
+.sales-faq-answer p { margin: 0; padding: 0 28px 26px; color: #58675e; font-size: 16px; line-height: 1.8; text-wrap: pretty; }
+.sales-faq-item[data-open="true"] .sales-faq-answer { grid-template-rows: 1fr; opacity: 1; visibility: visible; transition: grid-template-rows 240ms ease, opacity 180ms ease, visibility 0s; }
+
+@media (hover: hover) {
+  .sales-faq-item:hover { border-color: #c0d1b8; box-shadow: 0 9px 28px #1657400b; }
+}
+@media (max-width: 767px) {
+  .sales-faq-section { padding: 24px 0 56px; }
+  .sales-faq-container { width: calc(100% - 32px); }
+  .sales-faq-heading { margin-bottom: 30px; }
+  .sales-faq-eyebrow { font-size: 10px; letter-spacing: .1em; }
+  .sales-faq-heading h2 { font-size: clamp(30px, 6.8vw, 40px); }
+  .sales-faq-subheadline { margin-top: 18px; font-size: 16px; line-height: 1.75; }
+  .sales-faq-list { gap: 12px; }
+  .sales-faq-item { border-radius: 19px; }
+  .sales-faq-item h3 { font-size: 17px; }
+  .sales-faq-question { min-height: 80px; gap: 14px; padding: 21px 19px; border-radius: 18px; }
+  .sales-faq-toggle { flex-basis: 30px; width: 30px; height: 30px; }
+  .sales-faq-answer p { padding: 0 19px 23px; font-size: 16px; line-height: 1.75; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sales-faq-item, .sales-faq-answer, .sales-faq-item[data-open="true"] .sales-faq-answer { transition: none; }
+}
