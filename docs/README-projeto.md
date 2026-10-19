@@ -4,7 +4,7 @@ React + Vite + CSS no repositório existente. Nenhuma publicação realizada.
 
 ## Etapa atual
 
-A aplicação renderiza **o cabeçalho com a logo oficial, as sete seções aprovadas e a oitava seção de oferta final**. A headline e a subheadline são as fornecidas pelo produtor. O fundo contínuo é #FAF7EF; azul, verde, amarelo e laranja aparecem nos destaques. O laranja do texto recebe um tom mais escuro para preservar contraste e legibilidade.
+A aplicação renderiza **o cabeçalho com a logo oficial, as oito seções aprovadas e a nona seção de garantia de satisfação de 7 dias**. A headline e a subheadline são as fornecidas pelo produtor. O fundo contínuo é #FAF7EF; azul, verde, amarelo e laranja aparecem nos destaques. O laranja do texto recebe um tom mais escuro para preservar contraste e legibilidade.
 
 Os componentes das seções anteriores, suas artes, configurações e `src/styles.css` permanecem no repositório e no histórico, mas não são renderizados nem têm seus estilos importados nesta etapa. A oferta final exibe o preço confirmado de R$ 27,90. O checkout real ainda não está configurado, portanto o botão de compra fica desabilitado. Não há rodapé nesta etapa. O identificador `#checkout-final` pertence à oitava seção; o CTA anterior continua rolando e transferindo o foco para esse destino.
 
@@ -54,7 +54,7 @@ A faixa usa o mesmo Embla Auto Scroll das atividades e importa os mesmos valores
 
 A segunda passagem dos mesmos quatro cartões dá espaço ao loop; não cria comentários novos e é ignorada pelos leitores de tela e pela ordem de tabulação. Os originais continuam disponíveis por teclado. Clicar ou tocar em qualquer cartão abre seu PNG na resolução nativa, com botão de fechar, Escape, rolagem interna e link para o arquivo original. No celular, isso permite ler os detalhes preservando a imagem inteira na seção.
 
-Os estilos e a fonte cursiva local Lobster Two são restritos à quarta seção. Os arquivos das três seções anteriores, suas artes e a velocidade das atividades ficaram intactos. O destino `#checkout-final` pertence à oitava seção de oferta; não há seções extras além das oito planejadas.
+Os estilos e a fonte cursiva local Lobster Two são restritos à quarta seção. Os arquivos das três seções anteriores, suas artes e a velocidade das atividades ficaram intactos. O destino `#checkout-final` pertence à oitava seção de oferta; a nona seção de garantia aparece após a oferta, sem alterar os comentários.
 
 ## Quinta seção: para quem é o material
 
@@ -99,6 +99,16 @@ Preço e compra são configuráveis em `src/config.js`:
 
 A seção usa os textos fornecidos, informa recebimento por e-mail após confirmação do pagamento e não promete envio instantâneo, acesso vitalício ou garantia não confirmada. Não foi adicionado serviço de pagamento ou envio de e-mail. `Offer.css` tem classes próprias para preservar as sete seções aprovadas. Não há nova dependência ou publicação.
 
+## Nona seção: garantia de satisfação de 7 dias
+
+A seção `#garantia` aparece uma única vez, imediatamente após `#checkout-final`. O componente antigo de garantia, que não era renderizado, foi substituído. O produtor confirmou a garantia de satisfação de 7 dias; `product.guaranteeDays` agora contém `7`. Os demais campos de configuração e a oferta permanecem iguais.
+
+O título, o texto de apoio e os três pontos de segurança seguem a copy solicitada. O selo circular é texto HTML legível (“7 DIAS DE GARANTIA”), com ícone decorativo de proteção. Não foi criado formulário, canal de atendimento ou processamento de reembolso.
+
+A nova arte `public/images/garantia-jesus-criancas.png` é um PNG transparente original de 1254 × 1254 px, gerado com `atividade-01.webp` como referência de estilo. Mostra Jesus com duas crianças, ovelhinhas, Bíblia aberta, folhagens e flores em cartoon infantil. É decorativa (`alt=""` e região visual escondida de leitores de tela); todas as informações de garantia aparecem no texto acessível. As artes existentes foram preservadas.
+
+`Guarantee.css` usa somente classes `satisfaction-*`, a paleta e a tipografia existentes. O bloco centralizado tem duas colunas a partir de 800 px e empilha arte, selo e texto nas telas menores, sem altura fixa ou recorte na ilustração. Não há animação nova. Cabeçalho, depoimentos, bônus, oferta e demais seções mantêm seus arquivos e comportamentos.
+
 ## Atualizar a prévia no GitHub Codespaces
 
 No Codespace existente, na pasta com `package.json`, confirme a branch e atualize:
@@ -126,9 +136,11 @@ npm test
 npm run build
 ```
 
-Validação desta etapa: 24 testes aprovados e build Vite concluído. Chromium conferido em 320, 375, 390, 768 e 1440 px, com a logo centralizada, sem rolagem horizontal e sem erros de JavaScript. O link de pular para o conteúdo também foi conferido por teclado.
+Validação da garantia: 25 testes aprovados e build Vite concluído. Os testes conferem o prazo confirmado, a copy solicitada, os três pontos de segurança e a posição única após a oferta. Chromium conferido em 320, 375, 390, 640, 768, 799, 800, 1024 e 1440 px: nove seções, arte proporcional inteira, sem sobreposição entre colunas, rolagem horizontal, erros de JavaScript ou recursos ausentes. A comparação com o commit `9bd0a2d` confirmou DOM, medidas e estilos do cabeçalho e de todos os elementos das oito seções anteriores idênticos nas nove larguras, com movimento reduzido para uma comparação estável. O CTA dos bônus manteve hash e foco em `#checkout-final`, e a compra permaneceu desabilitada sem checkout.
 
-Os testes cobrem a copy exata e a preservação da primeira seção, a presença de somente oito seções e do destino único de oferta, o cabeçalho contendo somente a logo, o link de ampliação e a ausência de mensagem provisória quando o arquivo não carrega. O carrossel também tem testes para setas, indicadores, loop, início/parada e retomada do movimento contínuo, ausência do player, foco por teclado, movimento reduzido, ampliação e CTA. A revisão visual compara o cabeçalho, a primeira seção, o título da segunda seção e o CTA com a base anterior em cada largura. A navegação por setas, a ampliação e o destino do CTA permanecem disponíveis. A revisão no Chromium mediu deslocamento constante de 0,45 pixel entre quadros e uma volta completa com 6.000 quadros monitorados, sem lacunas. Foram aprovadas as retomadas após hover, clique em seta, arraste com mouse, deslize e tap no celular; também foram conferidos o foco por teclado e o movimento reduzido. O cabeçalho, a primeira seção, o título da segunda seção e o CTA ficaram idênticos à base anterior nas cinco larguras, sem erros de JavaScript ou arquivos ausentes.
+Validações visuais registradas nas etapas anteriores: Chromium conferido em 320, 375, 390, 768 e 1440 px, com a logo centralizada, sem rolagem horizontal e sem erros de JavaScript. O link de pular para o conteúdo também foi conferido por teclado.
+
+Os testes cobrem a copy exata e a preservação da primeira seção, a presença de nove seções e do destino único de oferta, o cabeçalho contendo somente a logo, o link de ampliação e a ausência de mensagem provisória quando o arquivo não carrega. O carrossel também tem testes para setas, indicadores, loop, início/parada e retomada do movimento contínuo, ausência do player, foco por teclado, movimento reduzido, ampliação e CTA. A revisão visual compara o cabeçalho, a primeira seção, o título da segunda seção e o CTA com a base anterior em cada largura. A navegação por setas, a ampliação e o destino do CTA permanecem disponíveis. A revisão no Chromium mediu deslocamento constante de 0,45 pixel entre quadros e uma volta completa com 6.000 quadros monitorados, sem lacunas. Foram aprovadas as retomadas após hover, clique em seta, arraste com mouse, deslize e tap no celular; também foram conferidos o foco por teclado e o movimento reduzido. O cabeçalho, a primeira seção, o título da segunda seção e o CTA ficaram idênticos à base anterior nas cinco larguras, sem erros de JavaScript ou arquivos ausentes.
 
 A terceira seção foi conferida com a imagem real nas cinco larguras: proporção, centralização, imagem inteira, ampliação, rolagem interna, fechamento, Escape, foco e continuidade do CTA. A comparação de DOM, medidas e estilos confirmou o cabeçalho e as duas primeiras seções idênticos à base anterior. O hash SHA-256 do PNG é o mesmo no arquivo original e no build: `3625214b7c591667e5930ba17df1e6e1aeead3c13811ae21084b64ee21c34a87`.
 
@@ -136,7 +148,11 @@ Os testes de comentários cobrem os quatro PNGs individuais, as duas passagens d
 
 ## Arquivos desta etapa
 
-- `src/main.jsx`: composição das oito seções, com as sete primeiras preservadas.
+- `src/sections/Guarantee.jsx` e `Guarantee.css`: nona seção, copy, selo e layout isolado.
+- `public/images/garantia-jesus-criancas.png`: nova arte decorativa, sem modificar os originais.
+- `tests/guarantee.test.jsx`: prazo, conteúdo e acessibilidade da garantia.
+
+- `src/main.jsx`: composição das nove seções, com as oito primeiras preservadas.
 - `src/sections/Offer.jsx` e `Offer.css`: composição do kit, preço e compra da oferta final.
 - `tests/offer.test.jsx`: referência comercial condicionada à confirmação e integração segura de checkout.
 - `tests/bonus-cta.test.jsx`: CTA interno dos bônus, foco e preferência por movimento reduzido.

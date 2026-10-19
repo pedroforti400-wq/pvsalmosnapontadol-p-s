@@ -23,7 +23,7 @@ export const product = {
   },
   video: { src: '', poster: '' }, // MP4/WebM local ou HTTPS; vazio mostra o aviso de vídeo em breve.
   testimonials: [], // { name, role, quote } — apenas depoimentos reais e autorizados.
-  guaranteeDays: null, // Defina apenas depois de confirmar sua política de reembolso.
+  guaranteeDays: 7, // Garantia de satisfação de 7 dias confirmada pelo produtor.
 };
 export const formatPrice = value => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: product.currency }).format(value);
 export function getCheckoutUrl(value) {
