@@ -4,6 +4,7 @@ import { Header } from './components/Layout';
 import ProductPresentation from './sections/ProductPresentation';
 import MaterialCarousel from './sections/MaterialCarousel';
 import BeforeAfter from './sections/BeforeAfter';
+import IllustrativeComments from './sections/IllustrativeComments';
 import './presentation.css';
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
       <ProductPresentation/>
       <MaterialCarousel/>
       <BeforeAfter/>
+      <IllustrativeComments/>
       <div id="checkout-final" className="checkout-anchor" tabIndex={-1}/>
     </main>
   </>;
