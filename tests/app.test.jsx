@@ -23,7 +23,10 @@ describe('Primeira etapa da nova apresentação', () => {
     expect(document.querySelectorAll('main > section')).toHaveLength(2);
     expect(document.querySelectorAll('main > section')[0]).toHaveAttribute('id', 'inicio');
     expect(document.querySelectorAll('main > section')[1]).toHaveAttribute('id', 'atividades');
-    expect(document.getElementById('checkout-final')).toHaveTextContent('Área de oferta em preparação.');
+    expect(document.getElementById('checkout-final')).toBeEmptyDOMElement();
+    expect(document.getElementById('checkout-final')).toHaveAttribute('tabindex', '-1');
+    expect(screen.queryByText('Área de oferta em preparação.')).not.toBeInTheDocument();
+    expect(screen.queryByText('Toque ou clique na imagem para ver os detalhes em uma nova aba.')).not.toBeInTheDocument();
     expect(screen.queryByRole('contentinfo')).not.toBeInTheDocument();
     expect(within(document.getElementById('inicio')).queryByRole('button')).not.toBeInTheDocument();
     for (const id of ['material', 'beneficios', 'oferta', 'faq']) {

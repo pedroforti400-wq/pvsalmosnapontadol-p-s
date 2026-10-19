@@ -53,8 +53,7 @@
 }
 .activity-cta:hover { transform: translateY(-2px); box-shadow: 0 11px 26px #e8bf0045; }
 .activity-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.checkout-preparation { margin: 0; padding: 20px 24px 34px; background: #FAF7EF; color: #71766e; text-align: center; font-size: 13px; }
-.checkout-preparation p { margin: 0; }
+.checkout-anchor { height: 0; outline: none; }
 
 .activity-lightbox { width: min(96vw, 900px); max-width: 96vw; max-height: 95dvh; padding: 0; border: 0; border-radius: 18px; background: #FAF7EF; color: #165740; box-shadow: 0 20px 80px #0004; }
 .activity-lightbox::backdrop { background: #111c19bd; }

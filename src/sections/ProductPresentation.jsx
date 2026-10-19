@@ -14,7 +14,6 @@ function ProductArtwork({ src }) {
         width="1122" height="1402" fetchPriority="high" decoding="async"
         onError={() => setUnavailable(true)}/>
     </a>
-    <figcaption>Toque ou clique na imagem para ver os detalhes em uma nova aba.</figcaption>
   </figure>;
 }
 

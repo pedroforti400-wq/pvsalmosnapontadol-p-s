@@ -102,7 +102,7 @@ describe('Carrossel das atividades', () => {
   });
 
   it('direciona o CTA ao destino provisório com rolagem suave e foco acessível', () => {
-    render(<><MaterialCarousel/><div id="checkout-final" tabIndex={-1}>Área de oferta em preparação.</div></>);
+    render(<><MaterialCarousel/><div id="checkout-final" className="checkout-anchor" tabIndex={-1}/></>);
     const target = document.getElementById('checkout-final'); target.scrollIntoView = vi.fn();
     fireEvent.click(screen.getByRole('link', { name: 'Quero garantir agora' }));
     expect(target.scrollIntoView).toHaveBeenCalledWith({ behavior: 'smooth', block: 'center' });

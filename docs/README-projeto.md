@@ -6,7 +6,7 @@ React + Vite + CSS no repositório existente. Nenhuma publicação realizada.
 
 A aplicação renderiza **o cabeçalho com a logo oficial, a primeira seção aprovada e a segunda seção com o carrossel das atividades**. A headline e a subheadline são as fornecidas pelo produtor. O fundo contínuo é #FAF7EF; azul, verde, amarelo e laranja aparecem nos destaques. O laranja do texto recebe um tom mais escuro para preservar contraste e legibilidade.
 
-Os componentes das seções anteriores, suas artes, configurações e `src/styles.css` permanecem no repositório e no histórico, mas não são renderizados nem têm seus estilos importados nesta etapa. Não há oferta comercial, compra ou rodapé nesta etapa. O destino discreto `#checkout-final` informa apenas que a área de oferta está em preparação, sem preço ou checkout falso.
+Os componentes das seções anteriores, suas artes, configurações e `src/styles.css` permanecem no repositório e no histórico, mas não são renderizados nem têm seus estilos importados nesta etapa. Não há oferta comercial, compra ou rodapé nesta etapa. O identificador `#checkout-final` permanece em uma âncora invisível de altura zero, sem mensagens provisórias, caixa visível, preço ou checkout falso. O CTA continua rolando e transferindo o foco para esse destino.
 
 ## Imagem principal oficial
 
@@ -20,7 +20,7 @@ public/images/imagem-principal-salmos-com-bonus.png
 
 Esse endereço já está configurado em `product.images.productWithBonuses` no arquivo `src/config.js`. Se o original tiver outra extensão, preserve seu formato e atualize esse campo para corresponder ao arquivo. Não basta renomear uma extensão diferente para PNG.
 
-A imagem é exibida inteira, com largura responsiva e altura automática, sem sobreposição. Clicar ou tocar abre o próprio original em uma nova aba para ampliar. A mensagem provisória e sua caixa pontilhada foram removidas. Se o arquivo não carregar, a página não exibe imagem genérica, ícone quebrado ou espaço reservado.
+A imagem é exibida inteira, com largura responsiva e altura automática, sem sobreposição. Clicar ou tocar abre o próprio original em uma nova aba para ampliar. A legenda de orientação abaixo da imagem foi removida, assim como seu espaço; a imagem e o link de ampliação foram preservados. A mensagem provisória e sua caixa pontilhada foram removidas. Se o arquivo não carregar, a página não exibe imagem genérica, ícone quebrado ou espaço reservado.
 
 A logo oficial `public/images/logo-oficial-salmos.png` foi mantida intacta.
 

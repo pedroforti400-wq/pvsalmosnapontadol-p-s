@@ -12,10 +12,7 @@ export default function App() {
     <main id="conteudo" tabIndex={-1}>
       <ProductPresentation/>
       <MaterialCarousel/>
-      <div id="checkout-final" className="checkout-preparation" role="region"
-        aria-label="Área de oferta em preparação" tabIndex={-1}>
-        <p>Área de oferta em preparação.</p>
-      </div>
+      <div id="checkout-final" className="checkout-anchor" tabIndex={-1}/>
     </main>
   </>;
 }
