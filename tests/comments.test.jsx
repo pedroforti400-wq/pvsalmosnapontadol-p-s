@@ -32,11 +32,18 @@ beforeEach(() => {
 afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); });
 
 describe('Quarta seção: comentários ilustrativos', () => {
-  it('apresenta a copy solicitada e os quatro recortes originais, sem recriar comentários', () => {
+  it('apresenta a copy, os quatro PNGs individuais e a identificação de conteúdo ilustrativo criado com IA', () => {
     render(<IllustrativeComments/>);
     expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Quem vê, se encanta. Quem usa, recomenda.');
     expect(screen.getByText('Conheça o estilo dos comentários e experiências que inspiraram nossa apresentação do Salmos na Ponta do Lápis.')).toBeInTheDocument();
     expect(screen.queryByText('COMENTÁRIOS ILUSTRATIVOS')).not.toBeInTheDocument();
+    expect(screen.getByRole('region', { name: 'Quatro comentários ilustrativos' })).toHaveAccessibleDescription('Comentários e perfis criados com IA para fins ilustrativos. Não são avaliações autênticas verificadas.');
+    expect(comments.map(comment => comment.src)).toEqual([
+      '/images/depoimento-joely-cardoso.png',
+      '/images/depoimento-juliana-ferreira.png',
+      '/images/depoimento-juliana-martins.png',
+      '/images/depoimento-mariana-costa.png',
+    ]);
     expect(screen.getAllByRole('img')).toHaveLength(4);
     comments.forEach(comment => {
       const trigger = screen.getByRole('button', { name: `Ampliar comentário ilustrativo de ${comment.name}` });
@@ -44,6 +51,7 @@ describe('Quarta seção: comentários ilustrativos', () => {
       expect(within(trigger).getByRole('img')).toHaveAccessibleName(new RegExp(comment.name));
     });
     expect(document.querySelector('img[src="/images/referencia-depoimentos.png"]')).toBeNull();
+    expect(document.querySelector('img[src*="/images/comentarios/comentario-"]')).toBeNull();
     expect(document.querySelectorAll('.comment-slide')).toHaveLength(8);
     expect(document.querySelectorAll('.comment-slide[aria-hidden="true"]')).toHaveLength(4);
   });

@@ -52,7 +52,7 @@ export default function IllustrativeComments() {
     </div>
 
     <div ref={container} className="comments-carousel" role="region" aria-roledescription="carrossel"
-      aria-label="Quatro comentários ilustrativos" tabIndex={0} {...interactionProps}>
+      aria-label="Quatro comentários ilustrativos" aria-describedby="comments-notice" tabIndex={0} {...interactionProps}>
       <div ref={viewport} className="comments-viewport">
         <div className="comments-track">
           {slides.map((comment, index) => {
@@ -61,7 +61,6 @@ export default function IllustrativeComments() {
               alt={duplicate ? '' : `Comentário ilustrativo de ${comment.name}, ${comment.network}: ${comment.quote}`}
               decoding="async" loading="eager" draggable="false"/>;
             return <div key={`${comment.name}-${index}`} className="comment-slide"
-              style={{ '--comment-card-width': `${comment.width}px` }}
               role={duplicate ? undefined : 'group'} aria-roledescription={duplicate ? undefined : 'slide'}
               aria-label={duplicate ? undefined : `${index + 1} de ${comments.length}`} aria-hidden={duplicate ? 'true' : undefined}>
               {duplicate
@@ -73,6 +72,8 @@ export default function IllustrativeComments() {
         </div>
       </div>
     </div>
+
+    <p id="comments-notice" className="comments-notice">Comentários e perfis criados com IA para fins ilustrativos. Não são avaliações autênticas verificadas.</p>
 
     <svg className="comments-meadow" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 35C230-35 280 80 530 47s280-49 470-4 250-34 440-8v35H0Z" fill="#e7ebd6"/></svg>
     <Heart className="comments-bottom-heart" size={18} aria-hidden="true"/>

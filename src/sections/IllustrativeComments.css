@@ -18,10 +18,11 @@
 .comments-carousel { position: relative; z-index: 1; width: min(100% - 48px, 1600px); margin: 26px auto 0; border-radius: 20px; }
 .comments-viewport { overflow: hidden; }
 .comments-track { display: flex; align-items: flex-start; margin-left: -16px; padding: 12px 0 26px; touch-action: pan-y pinch-zoom; }
-.comment-slide { flex: 0 0 auto; width: calc(var(--comment-card-width) + 16px); max-width: 100%; min-width: 0; padding-left: 16px; }
+.comment-slide { flex: 0 0 auto; width: 436px; max-width: 100%; min-width: 0; padding-left: 16px; }
 .comment-card { display: block; width: 100%; margin: 0; padding: 0; border: 0; border-radius: 21px; background: #fff; box-shadow: 0 7px 20px #65502b12; cursor: zoom-in; -webkit-tap-highlight-color: transparent; }
 .comment-card:focus-visible { outline-offset: -5px; }
-.comment-card-image { display: block; width: 100%; height: auto; border-radius: 21px; user-select: none; }
+.comment-card-image { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 21px; user-select: none; }
+.comments-notice { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 0 16px; color: #686452; font-size: 12px; line-height: 1.6; text-align: center; }
 .comments-meadow { position: absolute; bottom: 0; left: 0; width: 100%; height: 58px; pointer-events: none; }
 .comments-bottom-heart { position: absolute; bottom: 18px; left: 6%; fill: #f6c769; color: #f6c769; transform: rotate(-15deg); pointer-events: none; }
 
@@ -32,7 +33,7 @@
 .comment-dialog-header h3 { margin: 0; font-size: 16px; line-height: 1.4; }
 .comment-dialog-header button { display: grid; place-items: center; flex: 0 0 42px; height: 42px; padding: 0; border: 0; border-radius: 50%; color: inherit; background: #ece7da; cursor: pointer; }
 .comment-enlargement { min-height: 120px; max-height: 70dvh; overflow: auto; overscroll-behavior: contain; }
-.comment-enlargement img { display: block; max-width: none; height: auto; margin: 0 auto; }
+.comment-enlargement img { display: block; max-width: none; height: auto; object-fit: contain; margin: 0 auto; }
 .comment-original { display: inline-flex; justify-content: center; align-items: center; gap: 6px; align-self: center; flex-shrink: 0; font-size: 13px; font-weight: 800; }
 
 @media (max-width: 1199px) {

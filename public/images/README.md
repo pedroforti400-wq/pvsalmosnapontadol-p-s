@@ -16,6 +16,10 @@ A aplicação não recria essa arte nem usa uma imagem genérica em seu lugar. A
 
 # Comentários da quarta seção
 
+Os cartões atuais usam diretamente `depoimento-juliana-ferreira.png`, `depoimento-mariana-costa.png`, `depoimento-juliana-martins.png` e `depoimento-joely-cardoso.png`, enviados no commit `974449e`. Todos os PNGs originais têm 1122 × 1402 px e são exibidos integralmente, sem alterações ou conversão. Comentários e perfis foram criados com IA e são exemplos ilustrativos, não avaliações autênticas verificadas.
+
+Os recortes abaixo foram substituídos pelos PNGs individuais e permanecem apenas para histórico:
+
 `referencia-depoimentos.png` foi fornecida no commit `a3f2df2`. Não havia cartões originais separados. Os recortes em `comentarios/comentario-01.webp` a `comentario-04.webp` são WebP sem perda, na resolução da referência, preservando todos os pixels dos cartões. Não foram recriados nomes, fotos, textos, imagens do material ou identificações das redes sociais.
 
 Coordenadas no PNG original, em pixels (esquerda, topo, direita exclusiva, base exclusiva):
