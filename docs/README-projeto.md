@@ -10,9 +10,9 @@ Os componentes das seções anteriores, suas artes, configurações e `src/style
 
 ## Imagem principal oficial
 
-O caminho solicitado para a arte oficial é `/images/imagem-principal-salmos-com-bonus.png`. Na última atualização e consulta ao GitHub, o arquivo ainda não apareceu na branch `codex/salmos-sales-page` nem na `main` do repositório conectado. Nenhuma arte substituta foi criada.
+A arte oficial foi localizada na branch `codex/salmos-sales-page`, no commit de upload `ab5b19a`, e está integrada pelo caminho `/images/imagem-principal-salmos-com-bonus.png`. O PNG original tem 1122 × 1402 pixels e foi preservado sem alterações.
 
-Envie o arquivo original, sem cortes nem alterações, para:
+Arquivo original utilizado:
 
 ```
 public/images/imagem-principal-salmos-com-bonus.png
@@ -20,7 +20,7 @@ public/images/imagem-principal-salmos-com-bonus.png
 
 Esse endereço já está configurado em `product.images.productWithBonuses` no arquivo `src/config.js`. Se o original tiver outra extensão, preserve seu formato e atualize esse campo para corresponder ao arquivo. Não basta renomear uma extensão diferente para PNG.
 
-Depois de adicionar o arquivo, atualize o navegador. A imagem será exibida inteira, com largura responsiva e altura automática, sem sobreposição. Clicar ou tocar abre o próprio original em uma nova aba para ampliar. A mensagem provisória e sua caixa pontilhada foram removidas. Se o arquivo não carregar, a página não exibe imagem genérica, ícone quebrado ou espaço reservado.
+A imagem é exibida inteira, com largura responsiva e altura automática, sem sobreposição. Clicar ou tocar abre o próprio original em uma nova aba para ampliar. A mensagem provisória e sua caixa pontilhada foram removidas. Se o arquivo não carregar, a página não exibe imagem genérica, ícone quebrado ou espaço reservado.
 
 A logo oficial `public/images/logo-oficial-salmos.png` foi mantida intacta.
 
@@ -53,7 +53,7 @@ npm run build
 
 Validação desta etapa: 6 testes aprovados e build Vite concluído. Chromium conferido em 320, 375, 390, 768 e 1440 px, com a logo centralizada, sem rolagem horizontal e sem erros de JavaScript. O link de pular para o conteúdo também foi conferido por teclado.
 
-Os testes cobrem a copy exata, a presença de apenas uma seção, o cabeçalho contendo somente a logo, o link de ampliação e a ausência de mensagem provisória quando o arquivo não carrega. A revisão visual desta alteração foi feita sem a arte, pois o arquivo ainda não está acessível. A logo, a copy, a tipografia, as cores e a organização da primeira seção foram preservadas. A aparência da arte original só poderá ser validada após seu envio.
+Os testes cobrem a copy exata, a presença de apenas uma seção, o cabeçalho contendo somente a logo, o link de ampliação e a ausência de mensagem provisória quando o arquivo não carrega. A imagem real foi conferida nas cinco larguras, mantendo a proporção original e os quatro bônus inferiores visíveis, sem cortes. A ampliação foi testada no tamanho de celular e abriu o arquivo original em nova aba. A logo, a copy, a tipografia, as cores e a organização da primeira seção foram preservadas. Nenhum arquivo ausente ou erro de JavaScript foi detectado.
 
 ## Arquivos desta etapa
 

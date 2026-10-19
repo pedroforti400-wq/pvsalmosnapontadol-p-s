@@ -1,6 +1,6 @@
 # Arte da apresentação atual
 
-Adicione a imagem ORIGINAL do produto principal com os quatro bônus em `imagem-principal-salmos-com-bonus.png`. O arquivo ainda não foi localizado na última atualização da branch pelo ambiente; o caminho solicitado já está configurado. Se o formato original for outro, preserve a extensão e ajuste `product.images.productWithBonuses` em `src/config.js`.
+`imagem-principal-salmos-com-bonus.png` é a imagem oficial do produto principal com os quatro bônus, enviada pelo produtor no commit `ab5b19a`. O PNG original (1122 × 1402 pixels) é usado diretamente, sem alterações, cortes ou conversão. O caminho está configurado em `product.images.productWithBonuses` em `src/config.js`.
 
 A aplicação não recria essa arte nem usa uma imagem genérica em seu lugar. A logo oficial `logo-oficial-salmos.png` é usada integralmente e sem alterações.
 
