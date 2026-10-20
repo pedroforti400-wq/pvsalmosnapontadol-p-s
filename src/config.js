@@ -6,7 +6,7 @@ export const product = {
   referencePrice: 99.90,
   referencePriceConfirmed: true, // Referência comercial confirmada pelo produtor nesta oferta.
   currency: 'BRL',
-  checkoutUrl: '', // URL HTTPS real do checkout. Vazio ou inválido mantém o botão de compra desabilitado.
+  checkoutUrl: 'https://pay.wiapy.com/6ad7db0723173d72243f531c', // URL HTTPS real do checkout. Vazio ou inválido mantém o botão de compra desabilitado.
   contactEmail: '',
   offerLabel: 'Oferta especial de lançamento',
   isDemo: true, // Desative depois de validar preço, conteúdo e condições comerciais.
