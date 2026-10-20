@@ -1,0 +1,584 @@
+{
+  "/images/logo-oficial-salmos.png": {
+    "width": 1774,
+    "height": 887,
+    "variants": [
+      {
+        "src": "/images/optimized/logo-oficial-salmos-208.webp",
+        "width": 208
+      },
+      {
+        "src": "/images/optimized/logo-oficial-salmos-416.webp",
+        "width": 416
+      },
+      {
+        "src": "/images/optimized/logo-oficial-salmos-624.webp",
+        "width": 624
+      }
+    ]
+  },
+  "/images/imagem-principal-salmos-com-bonus.png": {
+    "width": 1199,
+    "height": 1244,
+    "variants": [
+      {
+        "src": "/images/optimized/imagem-principal-salmos-com-bonus-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/images/optimized/imagem-principal-salmos-com-bonus-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/optimized/imagem-principal-salmos-com-bonus-1120.webp",
+        "width": 1120
+      },
+      {
+        "src": "/images/optimized/imagem-principal-salmos-com-bonus-1199.webp",
+        "width": 1199
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/images/optimized/imagem-principal-salmos-com-bonus-400.avif",
+        "width": 400
+      },
+      {
+        "src": "/images/optimized/imagem-principal-salmos-com-bonus-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/optimized/imagem-principal-salmos-com-bonus-1120.avif",
+        "width": 1120
+      },
+      {
+        "src": "/images/optimized/imagem-principal-salmos-com-bonus-1199.avif",
+        "width": 1199
+      }
+    ]
+  },
+  "/images/atividade-01.webp": {
+    "width": 1055,
+    "height": 1491,
+    "variants": [
+      {
+        "src": "/images/optimized/atividade-01-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/images/atividade-01.webp",
+        "width": 1055
+      }
+    ]
+  },
+  "/images/atividade-02.webp": {
+    "width": 1055,
+    "height": 1491,
+    "variants": [
+      {
+        "src": "/images/optimized/atividade-02-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/images/atividade-02.webp",
+        "width": 1055
+      }
+    ]
+  },
+  "/images/atividade-03.webp": {
+    "width": 1055,
+    "height": 1491,
+    "variants": [
+      {
+        "src": "/images/optimized/atividade-03-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/images/atividade-03.webp",
+        "width": 1055
+      }
+    ]
+  },
+  "/images/atividade-04.webp": {
+    "width": 1055,
+    "height": 1491,
+    "variants": [
+      {
+        "src": "/images/optimized/atividade-04-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/images/atividade-04.webp",
+        "width": 1055
+      }
+    ]
+  },
+  "/images/atividade-05.webp": {
+    "width": 1055,
+    "height": 1491,
+    "variants": [
+      {
+        "src": "/images/optimized/atividade-05-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/images/atividade-05.webp",
+        "width": 1055
+      }
+    ]
+  },
+  "/images/atividade-06.webp": {
+    "width": 1055,
+    "height": 1491,
+    "variants": [
+      {
+        "src": "/images/optimized/atividade-06-720.webp",
+        "width": 720
+      },
+      {
+        "src": "/images/atividade-06.webp",
+        "width": 1055
+      }
+    ]
+  },
+  "/images/terceira-secao-salmos-antes-depois.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "src": "/images/optimized/terceira-secao-salmos-antes-depois-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/optimized/terceira-secao-salmos-antes-depois-1024.webp",
+        "width": 1024
+      },
+      {
+        "src": "/images/optimized/terceira-secao-salmos-antes-depois-1672.webp",
+        "width": 1672
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/images/optimized/terceira-secao-salmos-antes-depois-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/optimized/terceira-secao-salmos-antes-depois-1024.avif",
+        "width": 1024
+      },
+      {
+        "src": "/images/optimized/terceira-secao-salmos-antes-depois-1672.avif",
+        "width": 1672
+      }
+    ]
+  },
+  "/images/depoimento-joely-cardoso.png": {
+    "width": 1122,
+    "height": 1402,
+    "variants": [
+      {
+        "src": "/images/optimized/depoimento-joely-cardoso-420.webp",
+        "width": 420
+      },
+      {
+        "src": "/images/optimized/depoimento-joely-cardoso-840.webp",
+        "width": 840
+      },
+      {
+        "src": "/images/optimized/depoimento-joely-cardoso-1122.webp",
+        "width": 1122
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/images/optimized/depoimento-joely-cardoso-420.avif",
+        "width": 420
+      },
+      {
+        "src": "/images/optimized/depoimento-joely-cardoso-840.avif",
+        "width": 840
+      },
+      {
+        "src": "/images/optimized/depoimento-joely-cardoso-1122.avif",
+        "width": 1122
+      }
+    ]
+  },
+  "/images/depoimento-juliana-ferreira.png": {
+    "width": 1122,
+    "height": 1402,
+    "variants": [
+      {
+        "src": "/images/optimized/depoimento-juliana-ferreira-420.webp",
+        "width": 420
+      },
+      {
+        "src": "/images/optimized/depoimento-juliana-ferreira-840.webp",
+        "width": 840
+      },
+      {
+        "src": "/images/optimized/depoimento-juliana-ferreira-1122.webp",
+        "width": 1122
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/images/optimized/depoimento-juliana-ferreira-420.avif",
+        "width": 420
+      },
+      {
+        "src": "/images/optimized/depoimento-juliana-ferreira-840.avif",
+        "width": 840
+      },
+      {
+        "src": "/images/optimized/depoimento-juliana-ferreira-1122.avif",
+        "width": 1122
+      }
+    ]
+  },
+  "/images/depoimento-juliana-martins.png": {
+    "width": 1122,
+    "height": 1402,
+    "variants": [
+      {
+        "src": "/images/optimized/depoimento-juliana-martins-420.webp",
+        "width": 420
+      },
+      {
+        "src": "/images/optimized/depoimento-juliana-martins-840.webp",
+        "width": 840
+      },
+      {
+        "src": "/images/optimized/depoimento-juliana-martins-1122.webp",
+        "width": 1122
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/images/optimized/depoimento-juliana-martins-420.avif",
+        "width": 420
+      },
+      {
+        "src": "/images/optimized/depoimento-juliana-martins-840.avif",
+        "width": 840
+      },
+      {
+        "src": "/images/optimized/depoimento-juliana-martins-1122.avif",
+        "width": 1122
+      }
+    ]
+  },
+  "/images/depoimento-mariana-costa.png": {
+    "width": 1122,
+    "height": 1402,
+    "variants": [
+      {
+        "src": "/images/optimized/depoimento-mariana-costa-420.webp",
+        "width": 420
+      },
+      {
+        "src": "/images/optimized/depoimento-mariana-costa-840.webp",
+        "width": 840
+      },
+      {
+        "src": "/images/optimized/depoimento-mariana-costa-1122.webp",
+        "width": 1122
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/images/optimized/depoimento-mariana-costa-420.avif",
+        "width": 420
+      },
+      {
+        "src": "/images/optimized/depoimento-mariana-costa-840.avif",
+        "width": 840
+      },
+      {
+        "src": "/images/optimized/depoimento-mariana-costa-1122.avif",
+        "width": 1122
+      }
+    ]
+  },
+  "/images/para-quem-familias.png": {
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/images/optimized/para-quem-familias-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/optimized/para-quem-familias-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/optimized/para-quem-familias-1120.webp",
+        "width": 1120
+      },
+      {
+        "src": "/images/optimized/para-quem-familias-1536.webp",
+        "width": 1536
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/images/optimized/para-quem-familias-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/images/optimized/para-quem-familias-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/optimized/para-quem-familias-1120.avif",
+        "width": 1120
+      },
+      {
+        "src": "/images/optimized/para-quem-familias-1536.avif",
+        "width": 1536
+      }
+    ]
+  },
+  "/images/para-quem-educadores.png": {
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/images/optimized/para-quem-educadores-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/optimized/para-quem-educadores-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/optimized/para-quem-educadores-1120.webp",
+        "width": 1120
+      },
+      {
+        "src": "/images/optimized/para-quem-educadores-1536.webp",
+        "width": 1536
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/images/optimized/para-quem-educadores-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/images/optimized/para-quem-educadores-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/optimized/para-quem-educadores-1120.avif",
+        "width": 1120
+      },
+      {
+        "src": "/images/optimized/para-quem-educadores-1536.avif",
+        "width": 1536
+      }
+    ]
+  },
+  "/images/para-quem-ministerios.png": {
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/images/optimized/para-quem-ministerios-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/optimized/para-quem-ministerios-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/optimized/para-quem-ministerios-1120.webp",
+        "width": 1120
+      },
+      {
+        "src": "/images/optimized/para-quem-ministerios-1536.webp",
+        "width": 1536
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/images/optimized/para-quem-ministerios-480.avif",
+        "width": 480
+      },
+      {
+        "src": "/images/optimized/para-quem-ministerios-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/optimized/para-quem-ministerios-1120.avif",
+        "width": 1120
+      },
+      {
+        "src": "/images/optimized/para-quem-ministerios-1536.avif",
+        "width": 1536
+      }
+    ]
+  },
+  "/images/bonus-bible-goods.png": {
+    "width": 1024,
+    "height": 1536,
+    "variants": [
+      {
+        "src": "/images/optimized/bonus-bible-goods-220.webp",
+        "width": 220
+      },
+      {
+        "src": "/images/optimized/bonus-bible-goods-440.webp",
+        "width": 440
+      },
+      {
+        "src": "/images/optimized/bonus-bible-goods-660.webp",
+        "width": 660
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/images/optimized/bonus-bible-goods-220.avif",
+        "width": 220
+      },
+      {
+        "src": "/images/optimized/bonus-bible-goods-440.avif",
+        "width": 440
+      },
+      {
+        "src": "/images/optimized/bonus-bible-goods-660.avif",
+        "width": 660
+      }
+    ]
+  },
+  "/images/bonus-proverbios-na-ponta-do-lapis.png": {
+    "width": 1024,
+    "height": 1536,
+    "variants": [
+      {
+        "src": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-220.webp",
+        "width": 220
+      },
+      {
+        "src": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.webp",
+        "width": 440
+      },
+      {
+        "src": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-660.webp",
+        "width": 660
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-220.avif",
+        "width": 220
+      },
+      {
+        "src": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+        "width": 440
+      },
+      {
+        "src": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-660.avif",
+        "width": 660
+      }
+    ]
+  },
+  "/images/bonus-tabuada-com-noe.png": {
+    "width": 1024,
+    "height": 1536,
+    "variants": [
+      {
+        "src": "/images/optimized/bonus-tabuada-com-noe-220.webp",
+        "width": 220
+      },
+      {
+        "src": "/images/optimized/bonus-tabuada-com-noe-440.webp",
+        "width": 440
+      },
+      {
+        "src": "/images/optimized/bonus-tabuada-com-noe-660.webp",
+        "width": 660
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/images/optimized/bonus-tabuada-com-noe-220.avif",
+        "width": 220
+      },
+      {
+        "src": "/images/optimized/bonus-tabuada-com-noe-440.avif",
+        "width": 440
+      },
+      {
+        "src": "/images/optimized/bonus-tabuada-com-noe-660.avif",
+        "width": 660
+      }
+    ]
+  },
+  "/images/bonus-emociobook.png": {
+    "width": 1024,
+    "height": 1536,
+    "variants": [
+      {
+        "src": "/images/optimized/bonus-emociobook-220.webp",
+        "width": 220
+      },
+      {
+        "src": "/images/optimized/bonus-emociobook-440.webp",
+        "width": 440
+      },
+      {
+        "src": "/images/optimized/bonus-emociobook-660.webp",
+        "width": 660
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/images/optimized/bonus-emociobook-220.avif",
+        "width": 220
+      },
+      {
+        "src": "/images/optimized/bonus-emociobook-440.avif",
+        "width": 440
+      },
+      {
+        "src": "/images/optimized/bonus-emociobook-660.avif",
+        "width": 660
+      }
+    ]
+  },
+  "/images/garantia-jesus-criancas.png": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "/images/optimized/garantia-jesus-criancas-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/images/optimized/garantia-jesus-criancas-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/optimized/garantia-jesus-criancas-1254.webp",
+        "width": 1254
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/images/optimized/garantia-jesus-criancas-400.avif",
+        "width": 400
+      },
+      {
+        "src": "/images/optimized/garantia-jesus-criancas-800.avif",
+        "width": 800
+      },
+      {
+        "src": "/images/optimized/garantia-jesus-criancas-1254.avif",
+        "width": 1254
+      }
+    ]
+  }
+}

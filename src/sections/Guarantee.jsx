@@ -1,6 +1,7 @@
 import { CalendarDays, Heart, ShieldCheck, Sparkles, Star } from 'lucide-react';
 import { product } from '../config';
 import './Guarantee.css';
+import ResponsiveImage, { imageSizes } from '../components/ResponsiveImage';
 
 const assurances = [
   { Icon: ShieldCheck, title: 'Compra sem risco', text: 'Você pode conhecer o material com tranquilidade e segurança.' },
@@ -14,7 +15,7 @@ export default function Guarantee() {
       <div className="satisfaction-visual">
         <div className="satisfaction-art" aria-hidden="true">
           <Star className="satisfaction-star" size={25}/>
-          <img src="/images/garantia-jesus-criancas.png" alt="" width="1254" height="1254" loading="lazy" decoding="async"/>
+          <ResponsiveImage sizes={imageSizes.guarantee} src="/images/garantia-jesus-criancas.png" alt="" width="1254" height="1254" loading="lazy" decoding="async"/>
           <Heart className="satisfaction-heart" size={20}/>
         </div>
         <div className="satisfaction-seal">

@@ -1,6 +1,6 @@
 # Salmos na Ponta do Lápis — reconstrução por etapas
 
-React + Vite + CSS no repositório existente. Nenhuma publicação realizada.
+React + Vite + CSS no repositório existente. A produção é hospedada pelo produtor na Netlify; as otimizações de performance estão em uma branch separada para revisão, sem publicação por esta etapa.
 
 ## Etapa atual
 
@@ -193,3 +193,9 @@ Os testes de comentários cobrem os quatro PNGs individuais, as duas passagens d
 - `src/components/Header.css`: cabeçalho compacto e logo centralizada.
 - `src/config.js`: imagens, preço atual, preço de referência confirmado e URL real de checkout.
 - `tests/app.test.jsx`, `tests/carousel.test.jsx` e `tests/before-after.test.jsx` e `tests/comments.test.jsx`: preservação das seções aprovadas, carrosséis e ampliações.
+
+## Otimização de performance em revisão
+
+A branch `codex/salmos-performance`, baseada em `62625c0`, contém somente otimizações e mantém as dez seções aprovadas. A branch de produção `codex/salmos-sales-page` não deve receber push ou merge antes da aprovação do produtor.
+
+O [relatório de performance](performance/README.md) apresenta as medições locais antes/depois, o elemento LCP, os tamanhos das cópias responsivas, as verificações visuais e os comandos para reproduzir a comparação. Os arquivos originais foram preservados.

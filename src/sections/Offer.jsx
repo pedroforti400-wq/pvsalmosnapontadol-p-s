@@ -2,6 +2,7 @@ import { Heart, ShoppingCart, Sparkles, Star } from 'lucide-react';
 import { bonuses } from '../bonuses';
 import { product, formatPrice, getCheckoutUrl } from '../config';
 import './Offer.css';
+import ResponsiveImage, { imageSizes } from '../components/ResponsiveImage';
 
 export default function Offer() {
   const checkout = getCheckoutUrl(product.checkoutUrl);
@@ -25,13 +26,13 @@ export default function Offer() {
       <div className="final-offer-kit" role="group" aria-label="Kit completo: material principal e quatro bônus digitais">
         {product.images.productWithBonuses && <figure className="final-kit-main">
           <a className="final-kit-main-cover" href={product.images.productWithBonuses} target="_blank" rel="noopener noreferrer" aria-label="Ampliar apresentação do material principal em uma nova aba">
-            <img src={product.images.productWithBonuses} alt="Salmos na Ponta do Lápis: apresentação original do material principal, tablet e páginas de atividades" width="1199" height="1244" loading="lazy" decoding="async"/>
+            <ResponsiveImage sizes={imageSizes.offerMain} src={product.images.productWithBonuses} alt="Salmos na Ponta do Lápis: apresentação original do material principal, tablet e páginas de atividades" width="1199" height="1244" loading="lazy" decoding="async"/>
           </a>
           <figcaption>MATERIAL PRINCIPAL</figcaption>
         </figure>}
         {bonuses.map((bonus, index) => <figure key={bonus.id} className={`final-kit-bonus final-kit-bonus--${index + 1}`}>
           <a className="final-kit-cover" href={bonus.image} target="_blank" rel="noopener noreferrer" aria-label={`Ampliar capa de ${bonus.title} na oferta em uma nova aba`}>
-            <img src={bonus.image} alt={bonus.alt} width="1024" height="1536" loading="lazy" decoding="async"/>
+            <ResponsiveImage sizes={imageSizes.offerBonus} src={bonus.image} alt={bonus.alt} width="1024" height="1536" loading="lazy" decoding="async"/>
           </a>
           <figcaption><span>BÔNUS {index + 1}</span><strong>{bonus.title}</strong></figcaption>
         </figure>)}

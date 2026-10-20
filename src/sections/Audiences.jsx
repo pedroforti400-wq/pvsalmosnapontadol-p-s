@@ -1,5 +1,6 @@
 import { BookOpen, Heart, Sprout } from 'lucide-react';
 import { audiences } from '../audiences';
+import ResponsiveImage, { imageSizes } from '../components/ResponsiveImage';
 import './Audiences.css';
 
 const decorations = { families: Heart, educators: Sprout, ministries: BookOpen };
@@ -21,7 +22,7 @@ export default function Audiences() {
           const Decoration = decorations[audience.id];
           return <article key={audience.id} className={`audiences-card audiences-card--${audience.id}`} aria-labelledby={`audience-${audience.id}`}>
             <div className="audiences-image">
-              <img src={audience.image} width="1536" height="1024" alt={audience.alt} loading="lazy" decoding="async"/>
+              <ResponsiveImage sizes={imageSizes.audience} src={audience.image} width="1536" height="1024" alt={audience.alt} loading="lazy" decoding="async"/>
               <span className="audiences-emblem" aria-hidden="true"><Decoration size={24} strokeWidth={1.7}/></span>
             </div>
             <div className="audiences-copy">

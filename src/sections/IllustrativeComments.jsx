@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Heart, X } from 'lucide-react';
 import { comments } from '../comments';
+import ResponsiveImage, { imageSizes } from '../components/ResponsiveImage';
 import useContinuousComments from '../hooks/useContinuousComments';
 import './IllustrativeComments.css';
 
@@ -55,9 +56,9 @@ export default function IllustrativeComments() {
         <div className="comments-track">
           {slides.map((comment, index) => {
             const duplicate = index >= comments.length;
-            const image = <img className="comment-card-image" src={comment.src} width={comment.width} height={comment.height}
+            const image = <ResponsiveImage sizes={imageSizes.comment} className="comment-card-image" src={comment.src} width={comment.width} height={comment.height}
               alt={duplicate ? '' : `Comentário ilustrativo de ${comment.name}, ${comment.network}: ${comment.quote}`}
-              decoding="async" loading="eager" draggable="false"/>;
+              decoding="async" loading="lazy" fetchPriority="low" draggable="false"/>;
             return <div key={`${comment.name}-${index}`} className="comment-slide"
               role={duplicate ? undefined : 'group'} aria-roledescription={duplicate ? undefined : 'slide'}
               aria-label={duplicate ? undefined : `${index + 1} de ${comments.length}`} aria-hidden={duplicate ? 'true' : undefined}>

@@ -1,9 +1,10 @@
 import { ArrowRight, Sparkles } from 'lucide-react';
 import Art from '../Art';
+import ResponsiveImage, { imageSizes } from './ResponsiveImage';
 import { product } from '../config';
 
 export function Logo({ className = '', eager = false }) {
-  return <img className={`logo-image ${className}`} src={product.logo.src}
+  return <ResponsiveImage sizes={imageSizes.logo} className={`logo-image ${className}`} src={product.logo.src}
     alt={product.name} width={product.logo.width} height={product.logo.height}
     loading={eager ? 'eager' : 'lazy'} decoding="async"/>;
 }

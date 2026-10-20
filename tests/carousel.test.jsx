@@ -43,7 +43,7 @@ describe('Carrossel das atividades', () => {
   it('usa as seis imagens individuais e navega pelas setas, indicadores e loop', () => {
     render(<MaterialCarousel/>);
     expect(screen.getAllByRole('img')).toHaveLength(6);
-    screen.getAllByRole('img').forEach((img, index) => expect(img).toHaveAttribute('src', `/images/atividade-0${index + 1}.webp`));
+    screen.getAllByRole('img').forEach((img, index) => expect(img).toHaveAttribute('data-original-src', `/images/atividade-0${index + 1}.webp`));
     current(1);
     fireEvent.click(screen.getByRole('button', { name: 'Próxima atividade' })); current(2);
     fireEvent.click(screen.getByRole('button', { name: 'Atividade anterior' })); current(1);

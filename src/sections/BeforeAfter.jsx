@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, X } from 'lucide-react';
 import './BeforeAfter.css';
+import ResponsiveImage, { imageSizes } from '../components/ResponsiveImage';
 
 const image = {
   src: '/images/terceira-secao-salmos-antes-depois.png',
@@ -50,7 +51,7 @@ export default function BeforeAfter() {
     <figure className="before-after-figure">
       <button type="button" className="before-after-trigger" aria-label="Ampliar comparação ilustrativa de escrita"
         aria-haspopup="dialog" onClick={() => setEnlarged(true)}>
-        <img className="before-after-image" src={image.src} alt={image.alt} width={image.width} height={image.height}
+        <ResponsiveImage sizes={imageSizes.comparison} className="before-after-image" src={image.src} alt={image.alt} width={image.width} height={image.height}
           loading="lazy" decoding="async"/>
       </button>
     </figure>

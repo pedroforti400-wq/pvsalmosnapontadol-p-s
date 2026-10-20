@@ -48,7 +48,7 @@ describe('Quarta seção: comentários ilustrativos', () => {
     expect(screen.getAllByRole('img')).toHaveLength(4);
     comments.forEach(comment => {
       const trigger = screen.getByRole('button', { name: `Ampliar comentário ilustrativo de ${comment.name}` });
-      expect(within(trigger).getByRole('img')).toHaveAttribute('src', comment.src);
+      expect(within(trigger).getByRole('img')).toHaveAttribute('data-original-src', comment.src);
       expect(within(trigger).getByRole('img')).toHaveAccessibleName(new RegExp(comment.name));
     });
     expect(document.querySelector('img[src="/images/referencia-depoimentos.png"]')).toBeNull();
