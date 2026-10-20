@@ -12,7 +12,7 @@ describe('Terceira seção: imagem original e ampliação', () => {
   it('mantém a arte original sem legenda visível e permite ampliar e fechar pelo botão', () => {
     render(<BeforeAfter/>);
     const section = screen.getByRole('region', { name: 'Caligrafia e aprendizado com propósito' });
-    expect(within(section).getByRole('img')).toHaveAttribute('src', '/images/terceira-secao-salmos-antes-depois.png');
+    expect(within(section).getByRole('img')).toHaveAttribute('data-original-src', '/images/terceira-secao-salmos-antes-depois.png');
     expect(within(section).getByRole('img')).toHaveAccessibleName(/Simulação de escrita criada com IA/);
     expect(section.querySelector('figcaption')).toBeNull();
     expect(screen.queryByText('Simulação de escrita criada com IA. Não representa resultados reais nem garante evolução.')).not.toBeInTheDocument();

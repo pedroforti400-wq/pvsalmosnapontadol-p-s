@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ResponsiveImage, { imageSizes } from '../components/ResponsiveImage';
 import { product } from '../config';
 
 function ProductArtwork({ src }) {
@@ -9,9 +10,9 @@ function ProductArtwork({ src }) {
   return <figure className="product-artwork">
     <a className="product-artwork-link" href={src} target="_blank" rel="noopener noreferrer"
       aria-label="Ampliar a imagem do produto e dos quatro bônus em uma nova aba">
-      <img src={src}
+      <ResponsiveImage src={src} sizes={imageSizes.hero} loading="eager"
         alt="Salmos na Ponta do Lápis: produto principal, tablet, páginas de atividades e os quatro bônus especiais"
-        width="1122" height="1402" fetchPriority="high" decoding="async"
+        width="1199" height="1244" fetchPriority="high" decoding="async"
         onError={() => setUnavailable(true)}/>
     </a>
   </figure>;

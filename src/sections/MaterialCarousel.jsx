@@ -3,13 +3,15 @@ import useEmblaCarousel from 'embla-carousel-react';
 import AutoScroll from 'embla-carousel-auto-scroll';
 import { ArrowRight, ChevronLeft, ChevronRight, Crown, Heart, X } from 'lucide-react';
 import { activities } from '../activities';
+import ResponsiveImage, { imageSizes } from '../components/ResponsiveImage';
+import useCarouselImages from '../hooks/useCarouselImages';
 import './MaterialCarousel.css';
 
 export const CONTINUOUS_SPEED = 0.45;
 export const RESUME_DELAY = 800;
 
 function useReducedMotion() {
-  const [reduced, setReduced] = useState(() => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false);
+  const [reduced, setReduced] = useState(() => typeof window !== 'undefined' && (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false));
   useEffect(() => {
     const media = window.matchMedia?.('(prefers-reduced-motion: reduce)');
     if (!media) return;
@@ -65,13 +67,14 @@ export default function MaterialCarousel() {
   }));
   const [viewport, api] = useEmblaCarousel({ loop: true, dragFree: true, align: 'start', duration: 35 }, [autoScroll]);
   const section = useRef(null);
+  const imagesReady = useCarouselImages(section);
   const pointerFocus = useRef(false);
   const [selected, setSelected] = useState(0);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [visible, setVisible] = useState(false);
-  const [hidden, setHidden] = useState(document.hidden);
+  const [hidden, setHidden] = useState(() => typeof document !== 'undefined' ? document.hidden : false);
   const [enlarged, setEnlarged] = useState(null);
   const [interaction, setInteraction] = useState(0);
 
@@ -99,7 +102,7 @@ export default function MaterialCarousel() {
     return () => document.removeEventListener('visibilitychange', update);
   }, []);
 
-  const moving = !reduced && !hovered && !focused && !dragging && !hidden && visible && enlarged === null;
+  const moving = imagesReady && !reduced && !hovered && !focused && !dragging && !hidden && visible && enlarged === null;
   useEffect(() => {
     const motion = api?.plugins().autoScroll;
     if (!motion) return;
@@ -158,7 +161,7 @@ export default function MaterialCarousel() {
               role="group" aria-roledescription="slide" aria-label={`${index + 1} de ${activities.length}`}>
               <button type="button" className="activity-card" onClick={() => setEnlarged(index)}
                 aria-label={`Ampliar atividade ${index + 1}: ${activity.title}`}>
-                <img src={activity.src} alt={activity.alt} width="1055" height="1491" loading="eager" decoding="async" draggable="false"/>
+                <ResponsiveImage src={activity.src} sizes={imageSizes.activity} alt={activity.alt} width="1055" height="1491" fetchPriority="low" loading="lazy" decoding="async" draggable="false"/>
               </button>
             </div>)}
           </div>

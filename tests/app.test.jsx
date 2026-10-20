@@ -62,7 +62,7 @@ describe('Primeira etapa da nova apresentação', () => {
     expect(bonusSection.getByRole('link', { name: 'QUERO MEU KIT COMPLETO + 4 BÔNUS!' })).toHaveAttribute('href', '#checkout-final');
     expect([...document.querySelectorAll('#bonus del')].map(price => price.textContent.replace(/\s/g, ' '))).toEqual(['R$ 12,99', 'R$ 17,99', 'R$ 25,49', 'R$ 15,99']);
     expect(document.querySelector('.bonuses-summary')).toHaveTextContent('Você recebe R$ 72,46 em bônus inclusos sem custo adicional.');
-    expect(bonusSection.getAllByRole('img').map(image => image.getAttribute('src'))).toEqual([
+    expect(bonusSection.getAllByRole('img').map(image => image.getAttribute('data-original-src'))).toEqual([
       '/images/bonus-bible-goods.png', '/images/bonus-proverbios-na-ponta-do-lapis.png', '/images/bonus-tabuada-com-noe.png', '/images/bonus-emociobook.png',
     ]);
     expect(document.querySelector('img[src="/images/referencia-quatro-bonus-salmos.png"]')).toBeNull();
@@ -70,10 +70,10 @@ describe('Primeira etapa da nova apresentação', () => {
     expect(audiences.getByText('FEITO COM AMOR E PROPÓSITO')).toBeInTheDocument();
     expect(audiences.getByText('Um material especial para quem acredita que aprender a escrever também pode ser uma oportunidade de crescer na fé.')).toBeInTheDocument();
     expect(audiences.getAllByRole('article')).toHaveLength(3);
-    expect(audiences.getAllByRole('img').map(image => image.getAttribute('src'))).toEqual([
+    expect(audiences.getAllByRole('img').map(image => image.getAttribute('data-original-src'))).toEqual([
       '/images/para-quem-familias.png', '/images/para-quem-educadores.png', '/images/para-quem-ministerios.png',
     ]);
-    expect(within(document.getElementById('escrita-com-proposito')).getByRole('img')).toHaveAttribute('src', '/images/terceira-secao-salmos-antes-depois.png');
+    expect(within(document.getElementById('escrita-com-proposito')).getByRole('img')).toHaveAttribute('data-original-src', '/images/terceira-secao-salmos-antes-depois.png');
     expect(document.getElementById('checkout-final')).toHaveAttribute('aria-labelledby', 'final-offer-title');
     expect(document.getElementById('checkout-final')).toHaveAttribute('tabindex', '-1');
     expect(screen.queryByText('Área de oferta em preparação.')).not.toBeInTheDocument();
@@ -89,7 +89,7 @@ describe('Primeira etapa da nova apresentação', () => {
     render(<App/>);
     const header = screen.getByRole('banner');
     expect(within(header).getByRole('img', { name: product.name })).toHaveAttribute(
-      'src', '/images/logo-oficial-salmos.png'
+      'data-original-src', '/images/logo-oficial-salmos.png'
     );
     expect(header.textContent).toBe('');
     expect(within(header).queryByRole('navigation')).not.toBeInTheDocument();
@@ -104,7 +104,7 @@ describe('Primeira etapa da nova apresentação', () => {
     expect(link).toHaveAttribute('href', '/images/imagem-principal-salmos-com-bonus.png');
     expect(link).toHaveAttribute('target', '_blank');
     expect(link).toHaveAttribute('rel', 'noopener noreferrer');
-    expect(within(link).getByRole('img')).toHaveAttribute('src', originalArtwork);
+    expect(within(link).getByRole('img')).toHaveAttribute('data-original-src', originalArtwork);
     expect(within(link).queryByRole('button')).not.toBeInTheDocument();
     expect(screen.queryByRole('status')).not.toBeInTheDocument();
     expect(document.querySelector('.product-artwork-pending')).toBeNull();
@@ -112,6 +112,9 @@ describe('Primeira etapa da nova apresentação', () => {
 
   it('não mostra mensagem provisória, caixa vazia ou imagem genérica se o arquivo falhar', () => {
     render(<App/>);
+    Object.defineProperty(screen.getByRole('img', { name: /produto principal, tablet/ }), 'complete', { configurable: true, value: true });
+    fireEvent.error(screen.getByRole('img', { name: /produto principal, tablet/ }));
+    fireEvent.error(screen.getByRole('img', { name: /produto principal, tablet/ }));
     fireEvent.error(screen.getByRole('img', { name: /produto principal, tablet/ }));
     expect(screen.queryByRole('status')).not.toBeInTheDocument();
     expect(document.querySelector('.product-artwork-pending')).toBeNull();

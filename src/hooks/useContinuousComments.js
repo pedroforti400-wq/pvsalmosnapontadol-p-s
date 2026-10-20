@@ -1,23 +1,25 @@
 import { useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import AutoScroll from 'embla-carousel-auto-scroll';
+import useCarouselImages from './useCarouselImages';
 import { CONTINUOUS_SPEED, RESUME_DELAY } from '../sections/MaterialCarousel';
 
 // Mesma política de movimento das atividades, sem alterar o componente aprovado.
 export default function useContinuousComments(paused) {
-  const [reduced, setReduced] = useState(() => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false);
+  const [reduced, setReduced] = useState(() => typeof window !== 'undefined' && (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false));
   const [motion] = useState(() => AutoScroll({
     speed: CONTINUOUS_SPEED, startDelay: 0, playOnInit: false,
     stopOnInteraction: true, stopOnFocusIn: false,
   }));
   const [viewport, api] = useEmblaCarousel({ loop: true, dragFree: true, align: 'start', duration: 35 }, [motion]);
   const container = useRef(null);
+  const imagesReady = useCarouselImages(container);
   const pointerFocus = useRef(false);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [visible, setVisible] = useState(false);
-  const [hidden, setHidden] = useState(document.hidden);
+  const [hidden, setHidden] = useState(() => typeof document !== 'undefined' ? document.hidden : false);
   const [interaction, setInteraction] = useState(0);
 
   useEffect(() => {
@@ -50,7 +52,7 @@ export default function useContinuousComments(paused) {
     return () => document.removeEventListener('visibilitychange', update);
   }, []);
 
-  const moving = !reduced && !paused && !hovered && !focused && !dragging && visible && !hidden;
+  const moving = imagesReady && !reduced && !paused && !hovered && !focused && !dragging && visible && !hidden;
   useEffect(() => {
     const scroll = api?.plugins().autoScroll;
     if (!scroll) return;

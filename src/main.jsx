@@ -1,5 +1,5 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import { Header } from './components/Layout';
 import ProductPresentation from './sections/ProductPresentation';
 import MaterialCarousel from './sections/MaterialCarousel';
@@ -31,4 +31,8 @@ export default function App() {
     </main>
   </>;
 }
-if(document.getElementById('root')) createRoot(document.getElementById('root')).render(<App/>);
+if (typeof document !== 'undefined') {
+  const root = document.getElementById('root');
+  if (root?.hasAttribute('data-prerendered')) hydrateRoot(root, <App/>);
+  else if (root) createRoot(root).render(<App/>);
+}

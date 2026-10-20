@@ -1,6 +1,7 @@
 import { ArrowRight, ArrowUpRight, Check, Gift } from 'lucide-react';
 import { bonuses, bonusTotalCents, formatBonusPrice } from '../bonuses';
 import './Bonuses.css';
+import ResponsiveImage, { imageSizes } from '../components/ResponsiveImage';
 
 export default function Bonuses() {
   function scrollToOffer(event) {
@@ -27,7 +28,7 @@ export default function Bonuses() {
           <div className="bonuses-cover-stage">
             <span className="bonuses-number">BÔNUS {String(index + 1).padStart(2, '0')}</span>
             <a className="bonuses-cover-link" href={bonus.image} target="_blank" rel="noopener noreferrer" aria-label={`Ampliar capa de ${bonus.title} em uma nova aba`}>
-              <img src={bonus.image} alt={bonus.alt} width="1024" height="1536" loading="lazy" decoding="async"/>
+              <ResponsiveImage sizes={imageSizes.bonus} src={bonus.image} alt={bonus.alt} width="1024" height="1536" loading="lazy" decoding="async"/>
               <ArrowUpRight className="bonuses-expand" size={16} aria-hidden="true"/>
             </a>
           </div>
