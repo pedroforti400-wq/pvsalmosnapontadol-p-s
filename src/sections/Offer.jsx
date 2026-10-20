@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Heart, ShoppingCart, Sparkles, Star } from 'lucide-react';
 import { bonuses } from '../bonuses';
 import { product, formatPrice, getCheckoutUrl } from '../config';
@@ -5,7 +6,9 @@ import './Offer.css';
 import ResponsiveImage, { imageSizes } from '../components/ResponsiveImage';
 
 export default function Offer() {
-  const checkout = getCheckoutUrl(product.checkoutUrl);
+  const [search, setSearch] = useState('');
+  useEffect(() => { setSearch(window.location.search); }, []);
+  const checkout = getCheckoutUrl(product.checkoutUrl, search);
   const price = formatPrice(product.price);
   const showReference = product.referencePriceConfirmed && Number.isFinite(product.referencePrice) && product.referencePrice > product.price;
   const buttonContent = <><ShoppingCart size={25} aria-hidden="true"/><span>QUERO GARANTIR MEU KIT POR {price}!</span></>;

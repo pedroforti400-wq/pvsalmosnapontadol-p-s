@@ -26,6 +26,15 @@ export const product = {
   guaranteeDays: 7, // Garantia de satisfação de 7 dias confirmada pelo produtor.
 };
 export const formatPrice = value => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: product.currency }).format(value);
-export function getCheckoutUrl(value) {
-  try { const url = new URL(value); return url.protocol === 'https:' ? url.href : null; } catch { return null; }
+export function getCheckoutUrl(value, search = '') {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== 'https:') return null;
+    const params = new URLSearchParams(search);
+    for (const key of ['utm_source', 'utm_campaign', 'utm_medium', 'utm_content', 'utm_term']) {
+      const parameter = params.get(key);
+      if (parameter) url.searchParams.set(key, parameter);
+    }
+    return url.href;
+  } catch { return null; }
 }
