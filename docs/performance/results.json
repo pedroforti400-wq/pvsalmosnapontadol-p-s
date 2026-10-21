@@ -1,0 +1,3871 @@
+{
+  "measurement": "Local built production preview, Lighthouse 13.5.0, mobile, simulated slow 4G and CPU 4x. These are not new PageSpeed measurements of the public domain.",
+  "productionBase": "62625c0fc8c0067e917d8495b8d23c3be972c6b9",
+  "branch": "codex/salmos-performance",
+  "results": {
+    "before": {
+      "runs": [
+        {
+          "run": 1,
+          "performance": 68.0,
+          "first-contentful-paint": 1928.6111,
+          "largest-contentful-paint": 56931.91665000001,
+          "total-blocking-time": 274,
+          "cumulative-layout-shift": 0.002114736144057684,
+          "speed-index": 1928.6111,
+          "total-byte-weight": 23994029
+        },
+        {
+          "run": 2,
+          "performance": 68.0,
+          "first-contentful-paint": 1855.8875000000003,
+          "largest-contentful-paint": 56836.83125,
+          "total-blocking-time": 267,
+          "cumulative-layout-shift": 0.002114736144057684,
+          "speed-index": 1855.8875000000003,
+          "total-byte-weight": 23994029
+        },
+        {
+          "run": 3,
+          "performance": 70.0,
+          "first-contentful-paint": 1856.3969000000002,
+          "largest-contentful-paint": 52636.09535,
+          "total-blocking-time": 229,
+          "cumulative-layout-shift": 0.002114736144057684,
+          "speed-index": 1856.3969000000002,
+          "total-byte-weight": 23994029
+        }
+      ],
+      "median": {
+        "performance": 68.0,
+        "first-contentful-paint": 1856.3969000000002,
+        "largest-contentful-paint": 56836.83125,
+        "total-blocking-time": 267,
+        "cumulative-layout-shift": 0.002114736144057684,
+        "speed-index": 1856.3969000000002,
+        "total-byte-weight": 23994029
+      },
+      "config": {
+        "output": [
+          "json",
+          "html"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.56,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "node",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "lcpObservedBreakdown": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "label",
+                "valueType": "text",
+                "label": "Subpart"
+              },
+              {
+                "key": "duration",
+                "valueType": "ms",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "subpart": "timeToFirstByte",
+                "label": "Time to first byte",
+                "duration": 2.89
+              },
+              {
+                "subpart": "resourceLoadDelay",
+                "label": "Resource load delay",
+                "duration": 209.022
+              },
+              {
+                "subpart": "resourceLoadDuration",
+                "label": "Resource load duration",
+                "duration": 59.85
+              },
+              {
+                "subpart": "elementRenderDelay",
+                "label": "Element render delay",
+                "duration": 179.418
+              }
+            ]
+          },
+          {
+            "type": "node",
+            "lhId": "page-4-IMG",
+            "path": "1,HTML,1,BODY,0,DIV,2,MAIN,0,SECTION,1,FIGURE,0,A,0,IMG",
+            "selector": "section#inicio > figure.product-artwork > a.product-artwork-link > img",
+            "boundingRect": {
+              "top": 443,
+              "bottom": 829,
+              "left": 20,
+              "right": 392,
+              "width": 372,
+              "height": 386
+            },
+            "snippet": "<img alt=\"Salmos na Ponta do Lápis: produto principal, tablet, páginas de atividades…\" width=\"1122\" height=\"1402\" fetchpriority=\"high\" decoding=\"async\" src=\"/images/imagem-principal-salmos-com-bonus.png\">",
+            "nodeLabel": "Salmos na Ponta do Lápis: produto principal, tablet, páginas de atividades e os…"
+          }
+        ]
+      },
+      "lcpDiscovery": {
+        "type": "list",
+        "items": [
+          {
+            "type": "checklist",
+            "items": {
+              "priorityHinted": {
+                "label": "fetchpriority=high applied",
+                "value": true
+              },
+              "requestDiscoverable": {
+                "label": "Request is discoverable in initial document",
+                "value": false
+              },
+              "eagerlyLoaded": {
+                "label": "LCP resources should not use loading=lazy",
+                "value": true
+              }
+            }
+          },
+          {
+            "type": "node",
+            "lhId": "page-4-IMG",
+            "path": "1,HTML,1,BODY,0,DIV,2,MAIN,0,SECTION,1,FIGURE,0,A,0,IMG",
+            "selector": "section#inicio > figure.product-artwork > a.product-artwork-link > img",
+            "boundingRect": {
+              "top": 443,
+              "bottom": 829,
+              "left": 20,
+              "right": 392,
+              "width": 372,
+              "height": 386
+            },
+            "snippet": "<img alt=\"Salmos na Ponta do Lápis: produto principal, tablet, páginas de atividades…\" width=\"1122\" height=\"1402\" fetchpriority=\"high\" decoding=\"async\" src=\"/images/imagem-principal-salmos-com-bonus.png\">",
+            "nodeLabel": "Salmos na Ponta do Lápis: produto principal, tablet, páginas de atividades e os…"
+          }
+        ]
+      },
+      "categories": {
+        "performance": 68.0,
+        "accessibility": 96.0,
+        "best-practices": 100,
+        "seo": 100
+      }
+    },
+    "after": {
+      "runs": [
+        {
+          "run": 1,
+          "performance": 91.0,
+          "first-contentful-paint": 1714.9405,
+          "largest-contentful-paint": 3303.9404999999997,
+          "total-blocking-time": 12,
+          "cumulative-layout-shift": 0,
+          "speed-index": 1714.9405,
+          "total-byte-weight": 1429264
+        },
+        {
+          "run": 2,
+          "performance": 91.0,
+          "first-contentful-paint": 1717.0498,
+          "largest-contentful-paint": 3301.0498,
+          "total-blocking-time": 36,
+          "cumulative-layout-shift": 0,
+          "speed-index": 1717.0498,
+          "total-byte-weight": 1429264
+        },
+        {
+          "run": 3,
+          "performance": 91.0,
+          "first-contentful-paint": 1802.276,
+          "largest-contentful-paint": 3302.276,
+          "total-blocking-time": 16,
+          "cumulative-layout-shift": 0,
+          "speed-index": 1802.276,
+          "total-byte-weight": 1429264
+        }
+      ],
+      "median": {
+        "performance": 91.0,
+        "first-contentful-paint": 1717.0498,
+        "largest-contentful-paint": 3302.276,
+        "total-blocking-time": 16,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1717.0498,
+        "total-byte-weight": 1429264
+      },
+      "config": {
+        "output": [
+          "json",
+          "html"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.56,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "node",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "lcpObservedBreakdown": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "label",
+                "valueType": "text",
+                "label": "Subpart"
+              },
+              {
+                "key": "duration",
+                "valueType": "ms",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "subpart": "timeToFirstByte",
+                "label": "Time to first byte",
+                "duration": 4.438
+              },
+              {
+                "subpart": "resourceLoadDelay",
+                "label": "Resource load delay",
+                "duration": 11.796
+              },
+              {
+                "subpart": "resourceLoadDuration",
+                "label": "Resource load duration",
+                "duration": 22.254
+              },
+              {
+                "subpart": "elementRenderDelay",
+                "label": "Element render delay",
+                "duration": 78.892
+              }
+            ]
+          },
+          {
+            "type": "node",
+            "lhId": "page-0-IMG",
+            "path": "1,HTML,1,BODY,0,DIV,2,MAIN,0,SECTION,1,FIGURE,0,A,0,IMG",
+            "selector": "section#inicio > figure.product-artwork > a.product-artwork-link > img",
+            "boundingRect": {
+              "top": 443,
+              "bottom": 829,
+              "left": 20,
+              "right": 392,
+              "width": 372,
+              "height": 386
+            },
+            "snippet": "<img src=\"http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-7…\" data-original-src=\"/images/imagem-principal-salmos-com-bonus.png\" decoding=\"async\" loading=\"eager\" alt=\"Salmos na Ponta do Lápis: produto principal, tablet, páginas de atividades…\" width=\"1199\" height=\"1244\" fetchpriority=\"high\" style=\"aspect-ratio:1199 / 1244\" srcset=\"/images/optimized/imagem-principal-salmos-com-bonus-400.avif 400w, /images…\" sizes=\"(max-width: 359px) calc(100vw - 32px), (max-width: 767px) calc(100vw - 40p…\">",
+            "nodeLabel": "Salmos na Ponta do Lápis: produto principal, tablet, páginas de atividades e os…"
+          }
+        ]
+      },
+      "lcpDiscovery": {
+        "type": "list",
+        "items": [
+          {
+            "type": "checklist",
+            "items": {
+              "priorityHinted": {
+                "label": "fetchpriority=high applied",
+                "value": true
+              },
+              "requestDiscoverable": {
+                "label": "Request is discoverable in initial document",
+                "value": true
+              },
+              "eagerlyLoaded": {
+                "label": "LCP resources should not use loading=lazy",
+                "value": true
+              }
+            }
+          },
+          {
+            "type": "node",
+            "lhId": "page-0-IMG",
+            "path": "1,HTML,1,BODY,0,DIV,2,MAIN,0,SECTION,1,FIGURE,0,A,0,IMG",
+            "selector": "section#inicio > figure.product-artwork > a.product-artwork-link > img",
+            "boundingRect": {
+              "top": 443,
+              "bottom": 829,
+              "left": 20,
+              "right": 392,
+              "width": 372,
+              "height": 386
+            },
+            "snippet": "<img src=\"http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-7…\" data-original-src=\"/images/imagem-principal-salmos-com-bonus.png\" decoding=\"async\" loading=\"eager\" alt=\"Salmos na Ponta do Lápis: produto principal, tablet, páginas de atividades…\" width=\"1199\" height=\"1244\" fetchpriority=\"high\" style=\"aspect-ratio:1199 / 1244\" srcset=\"/images/optimized/imagem-principal-salmos-com-bonus-400.avif 400w, /images…\" sizes=\"(max-width: 359px) calc(100vw - 32px), (max-width: 767px) calc(100vw - 40p…\">",
+            "nodeLabel": "Salmos na Ponta do Lápis: produto principal, tablet, páginas de atividades e os…"
+          }
+        ]
+      },
+      "categories": {
+        "performance": 91.0,
+        "accessibility": 96.0,
+        "best-practices": 100,
+        "seo": 100
+      }
+    }
+  },
+  "images": {
+    "encoder": {
+      "aom": "3.15.1",
+      "archive": "3.8.9",
+      "cairo": "1.18.6",
+      "cgif": "0.5.4",
+      "exif": "0.6.26",
+      "expat": "2.8.5",
+      "ffi": "3.8.0",
+      "fontconfig": "2.18.3",
+      "freetype": "2.14.3",
+      "fribidi": "1.0.17",
+      "glib": "2.90.0",
+      "harfbuzz": "14.5.0",
+      "heif": "1.23.5",
+      "highway": "1.4.0",
+      "imagequant": "2.4.1",
+      "lcms": "2.19.1",
+      "mozjpeg": "0826579",
+      "pango": "1.58.2",
+      "pixman": "0.46.4",
+      "png": "1.6.58",
+      "proxy-libintl": "0.5",
+      "rsvg": "2.63.2",
+      "tiff": "4.7.2",
+      "uhdr": "2.0.2",
+      "vips": "8.18.7",
+      "webp": "1.6.0",
+      "xml2": "2.15.4",
+      "zlib-ng": "2.3.3",
+      "sharp": "0.35.5"
+    },
+    "images": [
+      {
+        "source": "/images/logo-oficial-salmos.png",
+        "originalBytes": 1512802,
+        "sha256": "b8ae23f7b2fc5cd2dedb6ee42b666cf3b22357240936b1b3615efd8a756ef1f7",
+        "width": 1774,
+        "height": 887,
+        "quality": "lossless",
+        "variants": [
+          {
+            "src": "/images/optimized/logo-oficial-salmos-208.webp",
+            "width": 208,
+            "bytes": 34608
+          },
+          {
+            "src": "/images/optimized/logo-oficial-salmos-416.webp",
+            "width": 416,
+            "bytes": 98704
+          },
+          {
+            "src": "/images/optimized/logo-oficial-salmos-624.webp",
+            "width": 624,
+            "bytes": 187166
+          }
+        ],
+        "avifQuality": 70,
+        "avifEffort": 4,
+        "avifVariants": [],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/logo-oficial-salmos-416.webp",
+            "width": 416,
+            "bytes": 98704
+          }
+        ]
+      },
+      {
+        "source": "/images/imagem-principal-salmos-com-bonus.png",
+        "originalBytes": 2627399,
+        "sha256": "d28f2e7ef3f19c6601c3df7ecf740ba55079484cf2eb9798ec7dce9d3958da58",
+        "width": 1199,
+        "height": 1244,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/imagem-principal-salmos-com-bonus-400.webp",
+            "width": 400,
+            "bytes": 99702
+          },
+          {
+            "src": "/images/optimized/imagem-principal-salmos-com-bonus-768.webp",
+            "width": 768,
+            "bytes": 283986
+          },
+          {
+            "src": "/images/optimized/imagem-principal-salmos-com-bonus-1120.webp",
+            "width": 1120,
+            "bytes": 461064
+          },
+          {
+            "src": "/images/optimized/imagem-principal-salmos-com-bonus-1199.webp",
+            "width": 1199,
+            "bytes": 502840
+          }
+        ],
+        "avifQuality": 70,
+        "avifEffort": 4,
+        "avifVariants": [
+          {
+            "src": "/images/optimized/imagem-principal-salmos-com-bonus-400.avif",
+            "width": 400,
+            "bytes": 53071
+          },
+          {
+            "src": "/images/optimized/imagem-principal-salmos-com-bonus-768.avif",
+            "width": 768,
+            "bytes": 134262
+          },
+          {
+            "src": "/images/optimized/imagem-principal-salmos-com-bonus-1120.avif",
+            "width": 1120,
+            "bytes": 212079
+          },
+          {
+            "src": "/images/optimized/imagem-principal-salmos-com-bonus-1199.avif",
+            "width": 1199,
+            "bytes": 230656
+          }
+        ],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/imagem-principal-salmos-com-bonus-768.avif",
+            "width": 768,
+            "bytes": 134262
+          }
+        ]
+      },
+      {
+        "source": "/images/atividade-01.webp",
+        "originalBytes": 205902,
+        "sha256": "806e91a2349f8ca88bf66ff0fdacb9f7dd6da4f01f6ed97f8aaeae676fac39b4",
+        "width": 1055,
+        "height": 1491,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/atividade-01-720.webp",
+            "width": 720,
+            "bytes": 164782
+          },
+          {
+            "src": "/images/atividade-01.webp",
+            "width": 1055,
+            "bytes": 205902
+          }
+        ],
+        "avifQuality": 70,
+        "avifEffort": 4,
+        "avifVariants": [],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/atividade-01-720.webp",
+            "width": 720,
+            "bytes": 164782
+          }
+        ]
+      },
+      {
+        "source": "/images/atividade-02.webp",
+        "originalBytes": 206676,
+        "sha256": "72331e1b7e4190365251eef3981090768ef86f24660981ff975f675ec08f7af5",
+        "width": 1055,
+        "height": 1491,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/atividade-02-720.webp",
+            "width": 720,
+            "bytes": 167324
+          },
+          {
+            "src": "/images/atividade-02.webp",
+            "width": 1055,
+            "bytes": 206676
+          }
+        ],
+        "avifQuality": 70,
+        "avifEffort": 4,
+        "avifVariants": [],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/atividade-02-720.webp",
+            "width": 720,
+            "bytes": 167324
+          }
+        ]
+      },
+      {
+        "source": "/images/atividade-03.webp",
+        "originalBytes": 219794,
+        "sha256": "6cca185e4c9293ae3d3ed54790fa9b1ebd24dc0ec8ccb06968f7738a0d0abc46",
+        "width": 1055,
+        "height": 1491,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/atividade-03-720.webp",
+            "width": 720,
+            "bytes": 178588
+          },
+          {
+            "src": "/images/atividade-03.webp",
+            "width": 1055,
+            "bytes": 219794
+          }
+        ],
+        "avifQuality": 70,
+        "avifEffort": 4,
+        "avifVariants": [],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/atividade-03-720.webp",
+            "width": 720,
+            "bytes": 178588
+          }
+        ]
+      },
+      {
+        "source": "/images/atividade-04.webp",
+        "originalBytes": 193870,
+        "sha256": "6e5231e1ad696aa5805498d2ffb91b6831b2a7cf0b3bc03d4df1cd9630edf1e4",
+        "width": 1055,
+        "height": 1491,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/atividade-04-720.webp",
+            "width": 720,
+            "bytes": 150942
+          },
+          {
+            "src": "/images/atividade-04.webp",
+            "width": 1055,
+            "bytes": 193870
+          }
+        ],
+        "avifQuality": 70,
+        "avifEffort": 4,
+        "avifVariants": [],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/atividade-04-720.webp",
+            "width": 720,
+            "bytes": 150942
+          }
+        ]
+      },
+      {
+        "source": "/images/atividade-05.webp",
+        "originalBytes": 212048,
+        "sha256": "7a6f63b3e6a254bbe488941799c75b64567573cc4f0e29ba11869bb8f9ce0ccf",
+        "width": 1055,
+        "height": 1491,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/atividade-05-720.webp",
+            "width": 720,
+            "bytes": 166416
+          },
+          {
+            "src": "/images/atividade-05.webp",
+            "width": 1055,
+            "bytes": 212048
+          }
+        ],
+        "avifQuality": 70,
+        "avifEffort": 4,
+        "avifVariants": [],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/atividade-05-720.webp",
+            "width": 720,
+            "bytes": 166416
+          }
+        ]
+      },
+      {
+        "source": "/images/atividade-06.webp",
+        "originalBytes": 219692,
+        "sha256": "1d4a01fb20c6330352833fa839516ae7c1e063cc5f30b69570a99c98479522b5",
+        "width": 1055,
+        "height": 1491,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/atividade-06-720.webp",
+            "width": 720,
+            "bytes": 175574
+          },
+          {
+            "src": "/images/atividade-06.webp",
+            "width": 1055,
+            "bytes": 219692
+          }
+        ],
+        "avifQuality": 70,
+        "avifEffort": 4,
+        "avifVariants": [],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/atividade-06-720.webp",
+            "width": 720,
+            "bytes": 175574
+          }
+        ]
+      },
+      {
+        "source": "/images/terceira-secao-salmos-antes-depois.png",
+        "originalBytes": 1699559,
+        "sha256": "3625214b7c591667e5930ba17df1e6e1aeead3c13811ae21084b64ee21c34a87",
+        "width": 1672,
+        "height": 941,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/terceira-secao-salmos-antes-depois-640.webp",
+            "width": 640,
+            "bytes": 55982
+          },
+          {
+            "src": "/images/optimized/terceira-secao-salmos-antes-depois-1024.webp",
+            "width": 1024,
+            "bytes": 119532
+          },
+          {
+            "src": "/images/optimized/terceira-secao-salmos-antes-depois-1672.webp",
+            "width": 1672,
+            "bytes": 247558
+          }
+        ],
+        "avifQuality": 85,
+        "avifEffort": 4,
+        "avifVariants": [
+          {
+            "src": "/images/optimized/terceira-secao-salmos-antes-depois-640.avif",
+            "width": 640,
+            "bytes": 33659
+          },
+          {
+            "src": "/images/optimized/terceira-secao-salmos-antes-depois-1024.avif",
+            "width": 1024,
+            "bytes": 70826
+          },
+          {
+            "src": "/images/optimized/terceira-secao-salmos-antes-depois-1672.avif",
+            "width": 1672,
+            "bytes": 144235
+          }
+        ],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/terceira-secao-salmos-antes-depois-1024.avif",
+            "width": 1024,
+            "bytes": 70826
+          }
+        ]
+      },
+      {
+        "source": "/images/depoimento-joely-cardoso.png",
+        "originalBytes": 2959688,
+        "sha256": "e91d42994859a09e732376e6cd0d387f7e978823f8b09603d17e30fafd5aa8ea",
+        "width": 1122,
+        "height": 1402,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/depoimento-joely-cardoso-420.webp",
+            "width": 420,
+            "bytes": 87248
+          },
+          {
+            "src": "/images/optimized/depoimento-joely-cardoso-840.webp",
+            "width": 840,
+            "bytes": 259260
+          },
+          {
+            "src": "/images/optimized/depoimento-joely-cardoso-1122.webp",
+            "width": 1122,
+            "bytes": 390146
+          }
+        ],
+        "avifQuality": 70,
+        "avifEffort": 4,
+        "avifVariants": [
+          {
+            "src": "/images/optimized/depoimento-joely-cardoso-420.avif",
+            "width": 420,
+            "bytes": 44181
+          },
+          {
+            "src": "/images/optimized/depoimento-joely-cardoso-840.avif",
+            "width": 840,
+            "bytes": 114812
+          },
+          {
+            "src": "/images/optimized/depoimento-joely-cardoso-1122.avif",
+            "width": 1122,
+            "bytes": 158216
+          }
+        ],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/depoimento-joely-cardoso-840.avif",
+            "width": 840,
+            "bytes": 114812
+          }
+        ]
+      },
+      {
+        "source": "/images/depoimento-juliana-ferreira.png",
+        "originalBytes": 3168562,
+        "sha256": "65c87dabca332bf4eb05817cceeb33d735a0f706a760b112de791a09046ac9f7",
+        "width": 1122,
+        "height": 1402,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/depoimento-juliana-ferreira-420.webp",
+            "width": 420,
+            "bytes": 96102
+          },
+          {
+            "src": "/images/optimized/depoimento-juliana-ferreira-840.webp",
+            "width": 840,
+            "bytes": 296656
+          },
+          {
+            "src": "/images/optimized/depoimento-juliana-ferreira-1122.webp",
+            "width": 1122,
+            "bytes": 465186
+          }
+        ],
+        "avifQuality": 70,
+        "avifEffort": 4,
+        "avifVariants": [
+          {
+            "src": "/images/optimized/depoimento-juliana-ferreira-420.avif",
+            "width": 420,
+            "bytes": 50689
+          },
+          {
+            "src": "/images/optimized/depoimento-juliana-ferreira-840.avif",
+            "width": 840,
+            "bytes": 141784
+          },
+          {
+            "src": "/images/optimized/depoimento-juliana-ferreira-1122.avif",
+            "width": 1122,
+            "bytes": 204380
+          }
+        ],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/depoimento-juliana-ferreira-840.avif",
+            "width": 840,
+            "bytes": 141784
+          }
+        ]
+      },
+      {
+        "source": "/images/depoimento-juliana-martins.png",
+        "originalBytes": 2986241,
+        "sha256": "3c3bf7eb69c148828d33dc4a1c6398129cd98672de181c832b7efc4a677e0358",
+        "width": 1122,
+        "height": 1402,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/depoimento-juliana-martins-420.webp",
+            "width": 420,
+            "bytes": 81566
+          },
+          {
+            "src": "/images/optimized/depoimento-juliana-martins-840.webp",
+            "width": 840,
+            "bytes": 260068
+          },
+          {
+            "src": "/images/optimized/depoimento-juliana-martins-1122.webp",
+            "width": 1122,
+            "bytes": 406888
+          }
+        ],
+        "avifQuality": 70,
+        "avifEffort": 4,
+        "avifVariants": [
+          {
+            "src": "/images/optimized/depoimento-juliana-martins-420.avif",
+            "width": 420,
+            "bytes": 42402
+          },
+          {
+            "src": "/images/optimized/depoimento-juliana-martins-840.avif",
+            "width": 840,
+            "bytes": 121313
+          },
+          {
+            "src": "/images/optimized/depoimento-juliana-martins-1122.avif",
+            "width": 1122,
+            "bytes": 181630
+          }
+        ],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/depoimento-juliana-martins-840.avif",
+            "width": 840,
+            "bytes": 121313
+          }
+        ]
+      },
+      {
+        "source": "/images/depoimento-mariana-costa.png",
+        "originalBytes": 2959083,
+        "sha256": "07d668e312fe0461cff6f1714932daeae534cd37af228e2031aed89d5053117c",
+        "width": 1122,
+        "height": 1402,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/depoimento-mariana-costa-420.webp",
+            "width": 420,
+            "bytes": 88882
+          },
+          {
+            "src": "/images/optimized/depoimento-mariana-costa-840.webp",
+            "width": 840,
+            "bytes": 269966
+          },
+          {
+            "src": "/images/optimized/depoimento-mariana-costa-1122.webp",
+            "width": 1122,
+            "bytes": 410808
+          }
+        ],
+        "avifQuality": 70,
+        "avifEffort": 4,
+        "avifVariants": [
+          {
+            "src": "/images/optimized/depoimento-mariana-costa-420.avif",
+            "width": 420,
+            "bytes": 43489
+          },
+          {
+            "src": "/images/optimized/depoimento-mariana-costa-840.avif",
+            "width": 840,
+            "bytes": 121161
+          },
+          {
+            "src": "/images/optimized/depoimento-mariana-costa-1122.avif",
+            "width": 1122,
+            "bytes": 175808
+          }
+        ],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/depoimento-mariana-costa-840.avif",
+            "width": 840,
+            "bytes": 121161
+          }
+        ]
+      },
+      {
+        "source": "/images/para-quem-familias.png",
+        "originalBytes": 2261874,
+        "sha256": "a080de8ca1a8dc224d8897156c515be58d05e5cebbd4c30627ee3e3f2bddc7f6",
+        "width": 1536,
+        "height": 1024,
+        "quality": 94,
+        "variants": [
+          {
+            "src": "/images/optimized/para-quem-familias-480.webp",
+            "width": 480,
+            "bytes": 62558
+          },
+          {
+            "src": "/images/optimized/para-quem-familias-768.webp",
+            "width": 768,
+            "bytes": 126336
+          },
+          {
+            "src": "/images/optimized/para-quem-familias-1120.webp",
+            "width": 1120,
+            "bytes": 223774
+          },
+          {
+            "src": "/images/optimized/para-quem-familias-1536.webp",
+            "width": 1536,
+            "bytes": 363024
+          }
+        ],
+        "avifQuality": 85,
+        "avifEffort": 4,
+        "avifVariants": [
+          {
+            "src": "/images/optimized/para-quem-familias-480.avif",
+            "width": 480,
+            "bytes": 47238
+          },
+          {
+            "src": "/images/optimized/para-quem-familias-768.avif",
+            "width": 768,
+            "bytes": 93845
+          },
+          {
+            "src": "/images/optimized/para-quem-familias-1120.avif",
+            "width": 1120,
+            "bytes": 160037
+          },
+          {
+            "src": "/images/optimized/para-quem-familias-1536.avif",
+            "width": 1536,
+            "bytes": 245632
+          }
+        ],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/para-quem-familias-768.avif",
+            "width": 768,
+            "bytes": 93845
+          }
+        ]
+      },
+      {
+        "source": "/images/para-quem-educadores.png",
+        "originalBytes": 2378861,
+        "sha256": "16264a627441c402a76dad2217152ef9a06c80a5263b60e53bd761a4679c16cd",
+        "width": 1536,
+        "height": 1024,
+        "quality": 94,
+        "variants": [
+          {
+            "src": "/images/optimized/para-quem-educadores-480.webp",
+            "width": 480,
+            "bytes": 75672
+          },
+          {
+            "src": "/images/optimized/para-quem-educadores-768.webp",
+            "width": 768,
+            "bytes": 150960
+          },
+          {
+            "src": "/images/optimized/para-quem-educadores-1120.webp",
+            "width": 1120,
+            "bytes": 263378
+          },
+          {
+            "src": "/images/optimized/para-quem-educadores-1536.webp",
+            "width": 1536,
+            "bytes": 415836
+          }
+        ],
+        "avifQuality": 85,
+        "avifEffort": 4,
+        "avifVariants": [
+          {
+            "src": "/images/optimized/para-quem-educadores-480.avif",
+            "width": 480,
+            "bytes": 59732
+          },
+          {
+            "src": "/images/optimized/para-quem-educadores-768.avif",
+            "width": 768,
+            "bytes": 116704
+          },
+          {
+            "src": "/images/optimized/para-quem-educadores-1120.avif",
+            "width": 1120,
+            "bytes": 193533
+          },
+          {
+            "src": "/images/optimized/para-quem-educadores-1536.avif",
+            "width": 1536,
+            "bytes": 288190
+          }
+        ],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/para-quem-educadores-768.avif",
+            "width": 768,
+            "bytes": 116704
+          }
+        ]
+      },
+      {
+        "source": "/images/para-quem-ministerios.png",
+        "originalBytes": 2334681,
+        "sha256": "83ed6979fb6aac8cb7647f6050d5fd5b5627aa27284323c5bc45c29ec51b9b9f",
+        "width": 1536,
+        "height": 1024,
+        "quality": 94,
+        "variants": [
+          {
+            "src": "/images/optimized/para-quem-ministerios-480.webp",
+            "width": 480,
+            "bytes": 70036
+          },
+          {
+            "src": "/images/optimized/para-quem-ministerios-768.webp",
+            "width": 768,
+            "bytes": 143880
+          },
+          {
+            "src": "/images/optimized/para-quem-ministerios-1120.webp",
+            "width": 1120,
+            "bytes": 254850
+          },
+          {
+            "src": "/images/optimized/para-quem-ministerios-1536.webp",
+            "width": 1536,
+            "bytes": 401826
+          }
+        ],
+        "avifQuality": 85,
+        "avifEffort": 4,
+        "avifVariants": [
+          {
+            "src": "/images/optimized/para-quem-ministerios-480.avif",
+            "width": 480,
+            "bytes": 54059
+          },
+          {
+            "src": "/images/optimized/para-quem-ministerios-768.avif",
+            "width": 768,
+            "bytes": 107550
+          },
+          {
+            "src": "/images/optimized/para-quem-ministerios-1120.avif",
+            "width": 1120,
+            "bytes": 179491
+          },
+          {
+            "src": "/images/optimized/para-quem-ministerios-1536.avif",
+            "width": 1536,
+            "bytes": 272395
+          }
+        ],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/para-quem-ministerios-768.avif",
+            "width": 768,
+            "bytes": 107550
+          }
+        ]
+      },
+      {
+        "source": "/images/bonus-bible-goods.png",
+        "originalBytes": 2889000,
+        "sha256": "c9531d73b84c1e08e9e960548e63d37651988fb0d5a1dc64b00a1c888f9cd9c8",
+        "width": 1024,
+        "height": 1536,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/bonus-bible-goods-220.webp",
+            "width": 220,
+            "bytes": 53214
+          },
+          {
+            "src": "/images/optimized/bonus-bible-goods-440.webp",
+            "width": 440,
+            "bytes": 170598
+          },
+          {
+            "src": "/images/optimized/bonus-bible-goods-660.webp",
+            "width": 660,
+            "bytes": 331416
+          }
+        ],
+        "avifQuality": 85,
+        "avifEffort": 4,
+        "avifVariants": [
+          {
+            "src": "/images/optimized/bonus-bible-goods-220.avif",
+            "width": 220,
+            "bytes": 42907
+          },
+          {
+            "src": "/images/optimized/bonus-bible-goods-440.avif",
+            "width": 440,
+            "bytes": 127402
+          },
+          {
+            "src": "/images/optimized/bonus-bible-goods-660.avif",
+            "width": 660,
+            "bytes": 233820
+          }
+        ],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/bonus-bible-goods-440.avif",
+            "width": 440,
+            "bytes": 127402
+          }
+        ]
+      },
+      {
+        "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+        "originalBytes": 2815836,
+        "sha256": "aa0bb7cf53f9ce458a044e2ff6cc608a3b0fc1cc0cef480b630dc77bd08f5282",
+        "width": 1024,
+        "height": 1536,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-220.webp",
+            "width": 220,
+            "bytes": 51206
+          },
+          {
+            "src": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.webp",
+            "width": 440,
+            "bytes": 166218
+          },
+          {
+            "src": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-660.webp",
+            "width": 660,
+            "bytes": 316306
+          }
+        ],
+        "avifQuality": 85,
+        "avifEffort": 4,
+        "avifVariants": [
+          {
+            "src": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-220.avif",
+            "width": 220,
+            "bytes": 39859
+          },
+          {
+            "src": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+            "width": 440,
+            "bytes": 115866
+          },
+          {
+            "src": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-660.avif",
+            "width": 660,
+            "bytes": 213116
+          }
+        ],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+            "width": 440,
+            "bytes": 115866
+          }
+        ]
+      },
+      {
+        "source": "/images/bonus-tabuada-com-noe.png",
+        "originalBytes": 2909858,
+        "sha256": "5ebc8d732aef23d9d8b8baf6f2fc48b7552722b77a9e8e83304abe115a55d760",
+        "width": 1024,
+        "height": 1536,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/bonus-tabuada-com-noe-220.webp",
+            "width": 220,
+            "bytes": 49864
+          },
+          {
+            "src": "/images/optimized/bonus-tabuada-com-noe-440.webp",
+            "width": 440,
+            "bytes": 164686
+          },
+          {
+            "src": "/images/optimized/bonus-tabuada-com-noe-660.webp",
+            "width": 660,
+            "bytes": 327784
+          }
+        ],
+        "avifQuality": 85,
+        "avifEffort": 4,
+        "avifVariants": [
+          {
+            "src": "/images/optimized/bonus-tabuada-com-noe-220.avif",
+            "width": 220,
+            "bytes": 40071
+          },
+          {
+            "src": "/images/optimized/bonus-tabuada-com-noe-440.avif",
+            "width": 440,
+            "bytes": 120455
+          },
+          {
+            "src": "/images/optimized/bonus-tabuada-com-noe-660.avif",
+            "width": 660,
+            "bytes": 223567
+          }
+        ],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/bonus-tabuada-com-noe-440.avif",
+            "width": 440,
+            "bytes": 120455
+          }
+        ]
+      },
+      {
+        "source": "/images/bonus-emociobook.png",
+        "originalBytes": 2821345,
+        "sha256": "98e3a91a42f9aa4bd265696de9a759d2cbeeda5985aedaf42ddf6ada6610f6b5",
+        "width": 1024,
+        "height": 1536,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/bonus-emociobook-220.webp",
+            "width": 220,
+            "bytes": 54190
+          },
+          {
+            "src": "/images/optimized/bonus-emociobook-440.webp",
+            "width": 440,
+            "bytes": 173172
+          },
+          {
+            "src": "/images/optimized/bonus-emociobook-660.webp",
+            "width": 660,
+            "bytes": 328770
+          }
+        ],
+        "avifQuality": 85,
+        "avifEffort": 4,
+        "avifVariants": [
+          {
+            "src": "/images/optimized/bonus-emociobook-220.avif",
+            "width": 220,
+            "bytes": 44690
+          },
+          {
+            "src": "/images/optimized/bonus-emociobook-440.avif",
+            "width": 440,
+            "bytes": 128312
+          },
+          {
+            "src": "/images/optimized/bonus-emociobook-660.avif",
+            "width": 660,
+            "bytes": 231492
+          }
+        ],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/bonus-emociobook-440.avif",
+            "width": 440,
+            "bytes": 128312
+          }
+        ]
+      },
+      {
+        "source": "/images/garantia-jesus-criancas.png",
+        "originalBytes": 1774319,
+        "sha256": "7c96e57c079220300319dc316d71bb92da4f36371685f846d9cc3c99be5e2d8a",
+        "width": 1254,
+        "height": 1254,
+        "quality": 96,
+        "variants": [
+          {
+            "src": "/images/optimized/garantia-jesus-criancas-400.webp",
+            "width": 400,
+            "bytes": 77792
+          },
+          {
+            "src": "/images/optimized/garantia-jesus-criancas-800.webp",
+            "width": 800,
+            "bytes": 217600
+          },
+          {
+            "src": "/images/optimized/garantia-jesus-criancas-1254.webp",
+            "width": 1254,
+            "bytes": 423676
+          }
+        ],
+        "avifQuality": 70,
+        "avifEffort": 4,
+        "avifVariants": [
+          {
+            "src": "/images/optimized/garantia-jesus-criancas-400.avif",
+            "width": 400,
+            "bytes": 37757
+          },
+          {
+            "src": "/images/optimized/garantia-jesus-criancas-800.avif",
+            "width": 800,
+            "bytes": 90312
+          },
+          {
+            "src": "/images/optimized/garantia-jesus-criancas-1254.avif",
+            "width": 1254,
+            "bytes": 158495
+          }
+        ],
+        "mobile390pxDpr2": [
+          {
+            "src": "/images/optimized/garantia-jesus-criancas-800.avif",
+            "width": 800,
+            "bytes": 90312
+          }
+        ]
+      }
+    ]
+  },
+  "visual": {
+    "report": [
+      {
+        "width": 320,
+        "maxLayoutDelta": 0,
+        "images": [
+          {
+            "source": "/images/logo-oficial-salmos.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/logo-oficial-salmos-416.webp",
+            "width": 184,
+            "height": 92,
+            "naturalWidth": 184
+          },
+          {
+            "source": "/images/imagem-principal-salmos-com-bonus.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-768.avif",
+            "width": 288,
+            "height": 299,
+            "naturalWidth": 288
+          },
+          {
+            "source": "/images/atividade-01.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-01-720.webp",
+            "width": 248,
+            "height": 350,
+            "naturalWidth": 231
+          },
+          {
+            "source": "/images/atividade-02.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-02-720.webp",
+            "width": 248,
+            "height": 350,
+            "naturalWidth": 231
+          },
+          {
+            "source": "/images/atividade-03.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-03-720.webp",
+            "width": 248,
+            "height": 350,
+            "naturalWidth": 231
+          },
+          {
+            "source": "/images/atividade-04.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-04-720.webp",
+            "width": 248,
+            "height": 350,
+            "naturalWidth": 231
+          },
+          {
+            "source": "/images/atividade-05.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-05-720.webp",
+            "width": 248,
+            "height": 350,
+            "naturalWidth": 231
+          },
+          {
+            "source": "/images/atividade-06.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-06-720.webp",
+            "width": 248,
+            "height": 350,
+            "naturalWidth": 231
+          },
+          {
+            "source": "/images/terceira-secao-salmos-antes-depois.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/terceira-secao-salmos-antes-depois-640.avif",
+            "width": 320,
+            "height": 180,
+            "naturalWidth": 320
+          },
+          {
+            "source": "/images/depoimento-joely-cardoso.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-840.avif",
+            "width": 296,
+            "height": 370,
+            "naturalWidth": 295
+          },
+          {
+            "source": "/images/depoimento-juliana-ferreira.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-840.avif",
+            "width": 296,
+            "height": 370,
+            "naturalWidth": 295
+          },
+          {
+            "source": "/images/depoimento-juliana-martins.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-840.avif",
+            "width": 296,
+            "height": 370,
+            "naturalWidth": 295
+          },
+          {
+            "source": "/images/depoimento-mariana-costa.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-840.avif",
+            "width": 296,
+            "height": 370,
+            "naturalWidth": 295
+          },
+          {
+            "source": "/images/depoimento-joely-cardoso.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-840.avif",
+            "width": 296,
+            "height": 370,
+            "naturalWidth": 295
+          },
+          {
+            "source": "/images/depoimento-juliana-ferreira.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-840.avif",
+            "width": 296,
+            "height": 370,
+            "naturalWidth": 295
+          },
+          {
+            "source": "/images/depoimento-juliana-martins.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-840.avif",
+            "width": 296,
+            "height": 370,
+            "naturalWidth": 295
+          },
+          {
+            "source": "/images/depoimento-mariana-costa.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-840.avif",
+            "width": 296,
+            "height": 370,
+            "naturalWidth": 295
+          },
+          {
+            "source": "/images/para-quem-familias.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-familias-768.avif",
+            "width": 286,
+            "height": 191,
+            "naturalWidth": 286
+          },
+          {
+            "source": "/images/para-quem-educadores.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-educadores-768.avif",
+            "width": 286,
+            "height": 191,
+            "naturalWidth": 286
+          },
+          {
+            "source": "/images/para-quem-ministerios.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-ministerios-768.avif",
+            "width": 286,
+            "height": 191,
+            "naturalWidth": 286
+          },
+          {
+            "source": "/images/bonus-bible-goods.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-bible-goods-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-tabuada-com-noe.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-tabuada-com-noe-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-emociobook.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-emociobook-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/imagem-principal-salmos-com-bonus.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-768.avif",
+            "width": 233,
+            "height": 242,
+            "naturalWidth": 243
+          },
+          {
+            "source": "/images/bonus-bible-goods.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-bible-goods-440.avif",
+            "width": 115,
+            "height": 172,
+            "naturalWidth": 112
+          },
+          {
+            "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+            "width": 115,
+            "height": 172,
+            "naturalWidth": 112
+          },
+          {
+            "source": "/images/bonus-tabuada-com-noe.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-tabuada-com-noe-440.avif",
+            "width": 115,
+            "height": 172,
+            "naturalWidth": 112
+          },
+          {
+            "source": "/images/bonus-emociobook.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-emociobook-440.avif",
+            "width": 115,
+            "height": 172,
+            "naturalWidth": 112
+          },
+          {
+            "source": "/images/garantia-jesus-criancas.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/garantia-jesus-criancas-800.avif",
+            "width": 230,
+            "height": 230,
+            "naturalWidth": 230
+          }
+        ],
+        "screenshotErrors": [],
+        "faq": true,
+        "lightboxes": true,
+        "cta": true
+      },
+      {
+        "width": 375,
+        "maxLayoutDelta": 0,
+        "images": [
+          {
+            "source": "/images/logo-oficial-salmos.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/logo-oficial-salmos-416.webp",
+            "width": 184,
+            "height": 92,
+            "naturalWidth": 184
+          },
+          {
+            "source": "/images/imagem-principal-salmos-com-bonus.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-768.avif",
+            "width": 335,
+            "height": 348,
+            "naturalWidth": 335
+          },
+          {
+            "source": "/images/atividade-01.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-01-720.webp",
+            "width": 303,
+            "height": 428,
+            "naturalWidth": 287
+          },
+          {
+            "source": "/images/atividade-02.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-02-720.webp",
+            "width": 303,
+            "height": 428,
+            "naturalWidth": 287
+          },
+          {
+            "source": "/images/atividade-03.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-03-720.webp",
+            "width": 303,
+            "height": 428,
+            "naturalWidth": 287
+          },
+          {
+            "source": "/images/atividade-04.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-04-720.webp",
+            "width": 303,
+            "height": 428,
+            "naturalWidth": 287
+          },
+          {
+            "source": "/images/atividade-05.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-05-720.webp",
+            "width": 303,
+            "height": 428,
+            "naturalWidth": 287
+          },
+          {
+            "source": "/images/atividade-06.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-06-720.webp",
+            "width": 303,
+            "height": 428,
+            "naturalWidth": 287
+          },
+          {
+            "source": "/images/terceira-secao-salmos-antes-depois.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/terceira-secao-salmos-antes-depois-1024.avif",
+            "width": 375,
+            "height": 211,
+            "naturalWidth": 375
+          },
+          {
+            "source": "/images/depoimento-joely-cardoso.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-840.avif",
+            "width": 351,
+            "height": 439,
+            "naturalWidth": 351
+          },
+          {
+            "source": "/images/depoimento-juliana-ferreira.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-840.avif",
+            "width": 351,
+            "height": 439,
+            "naturalWidth": 351
+          },
+          {
+            "source": "/images/depoimento-juliana-martins.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-840.avif",
+            "width": 351,
+            "height": 439,
+            "naturalWidth": 351
+          },
+          {
+            "source": "/images/depoimento-mariana-costa.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-840.avif",
+            "width": 351,
+            "height": 439,
+            "naturalWidth": 351
+          },
+          {
+            "source": "/images/depoimento-joely-cardoso.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-840.avif",
+            "width": 351,
+            "height": 439,
+            "naturalWidth": 351
+          },
+          {
+            "source": "/images/depoimento-juliana-ferreira.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-840.avif",
+            "width": 351,
+            "height": 439,
+            "naturalWidth": 351
+          },
+          {
+            "source": "/images/depoimento-juliana-martins.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-840.avif",
+            "width": 351,
+            "height": 439,
+            "naturalWidth": 351
+          },
+          {
+            "source": "/images/depoimento-mariana-costa.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-840.avif",
+            "width": 351,
+            "height": 439,
+            "naturalWidth": 351
+          },
+          {
+            "source": "/images/para-quem-familias.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-familias-768.avif",
+            "width": 341,
+            "height": 227,
+            "naturalWidth": 341
+          },
+          {
+            "source": "/images/para-quem-educadores.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-educadores-768.avif",
+            "width": 341,
+            "height": 227,
+            "naturalWidth": 341
+          },
+          {
+            "source": "/images/para-quem-ministerios.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-ministerios-768.avif",
+            "width": 341,
+            "height": 227,
+            "naturalWidth": 341
+          },
+          {
+            "source": "/images/bonus-bible-goods.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-bible-goods-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-tabuada-com-noe.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-tabuada-com-noe-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-emociobook.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-emociobook-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/imagem-principal-salmos-com-bonus.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-768.avif",
+            "width": 285,
+            "height": 296,
+            "naturalWidth": 295
+          },
+          {
+            "source": "/images/bonus-bible-goods.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-bible-goods-440.avif",
+            "width": 142,
+            "height": 213,
+            "naturalWidth": 139
+          },
+          {
+            "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+            "width": 142,
+            "height": 213,
+            "naturalWidth": 139
+          },
+          {
+            "source": "/images/bonus-tabuada-com-noe.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-tabuada-com-noe-440.avif",
+            "width": 142,
+            "height": 213,
+            "naturalWidth": 139
+          },
+          {
+            "source": "/images/bonus-emociobook.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-emociobook-440.avif",
+            "width": 142,
+            "height": 213,
+            "naturalWidth": 139
+          },
+          {
+            "source": "/images/garantia-jesus-criancas.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/garantia-jesus-criancas-800.avif",
+            "width": 285,
+            "height": 285,
+            "naturalWidth": 285
+          }
+        ],
+        "screenshotErrors": [
+          {
+            "selector": "#inicio",
+            "meanAbsoluteError": 1.8635029309546631
+          },
+          {
+            "selector": "#atividades",
+            "meanAbsoluteError": 1.0780699815837937
+          },
+          {
+            "selector": "#escrita-com-proposito",
+            "meanAbsoluteError": 1.723677966101695
+          },
+          {
+            "selector": "#comentarios-ilustrativos",
+            "meanAbsoluteError": 1.2172607944732297
+          },
+          {
+            "selector": "#para-quem",
+            "meanAbsoluteError": 0.534781724674082
+          },
+          {
+            "selector": "#bonus",
+            "meanAbsoluteError": 0.8706025778437354
+          },
+          {
+            "selector": "#checkout-final",
+            "meanAbsoluteError": 0.8173865463589566
+          },
+          {
+            "selector": "#garantia",
+            "meanAbsoluteError": 0.34248115477145147
+          }
+        ],
+        "faq": true,
+        "lightboxes": true,
+        "cta": true
+      },
+      {
+        "width": 390,
+        "maxLayoutDelta": 0,
+        "images": [
+          {
+            "source": "/images/logo-oficial-salmos.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/logo-oficial-salmos-416.webp",
+            "width": 184,
+            "height": 92,
+            "naturalWidth": 184
+          },
+          {
+            "source": "/images/imagem-principal-salmos-com-bonus.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-768.avif",
+            "width": 350,
+            "height": 363,
+            "naturalWidth": 350
+          },
+          {
+            "source": "/images/atividade-01.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-01-720.webp",
+            "width": 318,
+            "height": 449,
+            "naturalWidth": 302
+          },
+          {
+            "source": "/images/atividade-02.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-02-720.webp",
+            "width": 318,
+            "height": 449,
+            "naturalWidth": 302
+          },
+          {
+            "source": "/images/atividade-03.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-03-720.webp",
+            "width": 318,
+            "height": 449,
+            "naturalWidth": 302
+          },
+          {
+            "source": "/images/atividade-04.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-04-720.webp",
+            "width": 318,
+            "height": 449,
+            "naturalWidth": 302
+          },
+          {
+            "source": "/images/atividade-05.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-05-720.webp",
+            "width": 318,
+            "height": 449,
+            "naturalWidth": 302
+          },
+          {
+            "source": "/images/atividade-06.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-06-720.webp",
+            "width": 318,
+            "height": 449,
+            "naturalWidth": 302
+          },
+          {
+            "source": "/images/terceira-secao-salmos-antes-depois.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/terceira-secao-salmos-antes-depois-1024.avif",
+            "width": 390,
+            "height": 219,
+            "naturalWidth": 390
+          },
+          {
+            "source": "/images/depoimento-joely-cardoso.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-840.avif",
+            "width": 366,
+            "height": 457,
+            "naturalWidth": 366
+          },
+          {
+            "source": "/images/depoimento-juliana-ferreira.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-840.avif",
+            "width": 366,
+            "height": 457,
+            "naturalWidth": 366
+          },
+          {
+            "source": "/images/depoimento-juliana-martins.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-840.avif",
+            "width": 366,
+            "height": 457,
+            "naturalWidth": 366
+          },
+          {
+            "source": "/images/depoimento-mariana-costa.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-840.avif",
+            "width": 366,
+            "height": 457,
+            "naturalWidth": 366
+          },
+          {
+            "source": "/images/depoimento-joely-cardoso.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-840.avif",
+            "width": 366,
+            "height": 457,
+            "naturalWidth": 366
+          },
+          {
+            "source": "/images/depoimento-juliana-ferreira.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-840.avif",
+            "width": 366,
+            "height": 457,
+            "naturalWidth": 366
+          },
+          {
+            "source": "/images/depoimento-juliana-martins.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-840.avif",
+            "width": 366,
+            "height": 457,
+            "naturalWidth": 366
+          },
+          {
+            "source": "/images/depoimento-mariana-costa.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-840.avif",
+            "width": 366,
+            "height": 457,
+            "naturalWidth": 366
+          },
+          {
+            "source": "/images/para-quem-familias.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-familias-768.avif",
+            "width": 356,
+            "height": 237,
+            "naturalWidth": 356
+          },
+          {
+            "source": "/images/para-quem-educadores.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-educadores-768.avif",
+            "width": 356,
+            "height": 237,
+            "naturalWidth": 356
+          },
+          {
+            "source": "/images/para-quem-ministerios.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-ministerios-768.avif",
+            "width": 356,
+            "height": 237,
+            "naturalWidth": 356
+          },
+          {
+            "source": "/images/bonus-bible-goods.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-bible-goods-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-tabuada-com-noe.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-tabuada-com-noe-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-emociobook.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-emociobook-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/imagem-principal-salmos-com-bonus.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-768.avif",
+            "width": 300,
+            "height": 311,
+            "naturalWidth": 309
+          },
+          {
+            "source": "/images/bonus-bible-goods.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-bible-goods-440.avif",
+            "width": 150,
+            "height": 224,
+            "naturalWidth": 147
+          },
+          {
+            "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+            "width": 150,
+            "height": 224,
+            "naturalWidth": 147
+          },
+          {
+            "source": "/images/bonus-tabuada-com-noe.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-tabuada-com-noe-440.avif",
+            "width": 150,
+            "height": 224,
+            "naturalWidth": 147
+          },
+          {
+            "source": "/images/bonus-emociobook.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-emociobook-440.avif",
+            "width": 150,
+            "height": 224,
+            "naturalWidth": 147
+          },
+          {
+            "source": "/images/garantia-jesus-criancas.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/garantia-jesus-criancas-800.avif",
+            "width": 300,
+            "height": 300,
+            "naturalWidth": 300
+          }
+        ],
+        "screenshotErrors": [],
+        "faq": true,
+        "lightboxes": true,
+        "cta": true
+      },
+      {
+        "width": 640,
+        "maxLayoutDelta": 0,
+        "images": [
+          {
+            "source": "/images/logo-oficial-salmos.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/logo-oficial-salmos-416.webp",
+            "width": 208,
+            "height": 104,
+            "naturalWidth": 208
+          },
+          {
+            "source": "/images/imagem-principal-salmos-com-bonus.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-1199.avif",
+            "width": 600,
+            "height": 623,
+            "naturalWidth": 600
+          },
+          {
+            "source": "/images/atividade-01.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-01-720.webp",
+            "width": 173,
+            "height": 245,
+            "naturalWidth": 173
+          },
+          {
+            "source": "/images/atividade-02.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-02-720.webp",
+            "width": 173,
+            "height": 245,
+            "naturalWidth": 173
+          },
+          {
+            "source": "/images/atividade-03.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-03-720.webp",
+            "width": 173,
+            "height": 245,
+            "naturalWidth": 173
+          },
+          {
+            "source": "/images/atividade-04.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-04-720.webp",
+            "width": 173,
+            "height": 245,
+            "naturalWidth": 173
+          },
+          {
+            "source": "/images/atividade-05.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-05-720.webp",
+            "width": 173,
+            "height": 245,
+            "naturalWidth": 173
+          },
+          {
+            "source": "/images/atividade-06.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-06-720.webp",
+            "width": 173,
+            "height": 245,
+            "naturalWidth": 173
+          },
+          {
+            "source": "/images/terceira-secao-salmos-antes-depois.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/terceira-secao-salmos-antes-depois-1672.avif",
+            "width": 640,
+            "height": 360,
+            "naturalWidth": 640
+          },
+          {
+            "source": "/images/depoimento-joely-cardoso.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-ferreira.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-martins.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-mariana-costa.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-joely-cardoso.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-ferreira.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-martins.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-mariana-costa.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/para-quem-familias.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-familias-1120.avif",
+            "width": 558,
+            "height": 372,
+            "naturalWidth": 558
+          },
+          {
+            "source": "/images/para-quem-educadores.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-educadores-1120.avif",
+            "width": 558,
+            "height": 372,
+            "naturalWidth": 558
+          },
+          {
+            "source": "/images/para-quem-ministerios.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-ministerios-1120.avif",
+            "width": 558,
+            "height": 372,
+            "naturalWidth": 558
+          },
+          {
+            "source": "/images/bonus-bible-goods.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-bible-goods-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-tabuada-com-noe.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-tabuada-com-noe-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-emociobook.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-emociobook-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/imagem-principal-salmos-com-bonus.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-1120.avif",
+            "width": 265,
+            "height": 275,
+            "naturalWidth": 500
+          },
+          {
+            "source": "/images/bonus-bible-goods.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-bible-goods-440.avif",
+            "width": 107,
+            "height": 161,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+            "width": 107,
+            "height": 161,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/bonus-tabuada-com-noe.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-tabuada-com-noe-440.avif",
+            "width": 107,
+            "height": 161,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/bonus-emociobook.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-emociobook-440.avif",
+            "width": 107,
+            "height": 161,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/garantia-jesus-criancas.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/garantia-jesus-criancas-800.avif",
+            "width": 320,
+            "height": 320,
+            "naturalWidth": 320
+          }
+        ],
+        "screenshotErrors": [],
+        "faq": true,
+        "lightboxes": true,
+        "cta": true
+      },
+      {
+        "width": 768,
+        "maxLayoutDelta": 0,
+        "images": [
+          {
+            "source": "/images/logo-oficial-salmos.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/logo-oficial-salmos-416.webp",
+            "width": 208,
+            "height": 104,
+            "naturalWidth": 208
+          },
+          {
+            "source": "/images/imagem-principal-salmos-com-bonus.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-1199.avif",
+            "width": 704,
+            "height": 730,
+            "naturalWidth": 704
+          },
+          {
+            "source": "/images/atividade-01.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-01-720.webp",
+            "width": 216,
+            "height": 305,
+            "naturalWidth": 215
+          },
+          {
+            "source": "/images/atividade-02.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-02-720.webp",
+            "width": 216,
+            "height": 305,
+            "naturalWidth": 215
+          },
+          {
+            "source": "/images/atividade-03.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-03-720.webp",
+            "width": 216,
+            "height": 305,
+            "naturalWidth": 215
+          },
+          {
+            "source": "/images/atividade-04.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-04-720.webp",
+            "width": 216,
+            "height": 305,
+            "naturalWidth": 215
+          },
+          {
+            "source": "/images/atividade-05.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-05-720.webp",
+            "width": 216,
+            "height": 305,
+            "naturalWidth": 215
+          },
+          {
+            "source": "/images/atividade-06.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-06-720.webp",
+            "width": 216,
+            "height": 305,
+            "naturalWidth": 215
+          },
+          {
+            "source": "/images/terceira-secao-salmos-antes-depois.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/terceira-secao-salmos-antes-depois-1672.avif",
+            "width": 768,
+            "height": 432,
+            "naturalWidth": 768
+          },
+          {
+            "source": "/images/depoimento-joely-cardoso.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-ferreira.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-martins.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-mariana-costa.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-joely-cardoso.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-ferreira.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-martins.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-mariana-costa.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/para-quem-familias.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-familias-1120.avif",
+            "width": 558,
+            "height": 372,
+            "naturalWidth": 558
+          },
+          {
+            "source": "/images/para-quem-educadores.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-educadores-1120.avif",
+            "width": 558,
+            "height": 372,
+            "naturalWidth": 558
+          },
+          {
+            "source": "/images/para-quem-ministerios.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-ministerios-1120.avif",
+            "width": 558,
+            "height": 372,
+            "naturalWidth": 558
+          },
+          {
+            "source": "/images/bonus-bible-goods.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-bible-goods-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-tabuada-com-noe.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-tabuada-com-noe-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-emociobook.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-emociobook-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/imagem-principal-salmos-com-bonus.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-1120.avif",
+            "width": 338,
+            "height": 350,
+            "naturalWidth": 500
+          },
+          {
+            "source": "/images/bonus-bible-goods.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-bible-goods-440.avif",
+            "width": 135,
+            "height": 203,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+            "width": 135,
+            "height": 203,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/bonus-tabuada-com-noe.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-tabuada-com-noe-440.avif",
+            "width": 135,
+            "height": 203,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/bonus-emociobook.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-emociobook-440.avif",
+            "width": 135,
+            "height": 203,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/garantia-jesus-criancas.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/garantia-jesus-criancas-800.avif",
+            "width": 320,
+            "height": 320,
+            "naturalWidth": 320
+          }
+        ],
+        "screenshotErrors": [],
+        "faq": true,
+        "lightboxes": true,
+        "cta": true
+      },
+      {
+        "width": 1024,
+        "maxLayoutDelta": 0,
+        "images": [
+          {
+            "source": "/images/logo-oficial-salmos.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/logo-oficial-salmos-416.webp",
+            "width": 208,
+            "height": 104,
+            "naturalWidth": 208
+          },
+          {
+            "source": "/images/imagem-principal-salmos-com-bonus.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-1199.avif",
+            "width": 960,
+            "height": 996,
+            "naturalWidth": 960
+          },
+          {
+            "source": "/images/atividade-01.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-01-720.webp",
+            "width": 220,
+            "height": 311,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/atividade-02.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-02-720.webp",
+            "width": 220,
+            "height": 311,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/atividade-03.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-03-720.webp",
+            "width": 220,
+            "height": 311,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/atividade-04.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-04-720.webp",
+            "width": 220,
+            "height": 311,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/atividade-05.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-05-720.webp",
+            "width": 220,
+            "height": 311,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/atividade-06.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-06-720.webp",
+            "width": 220,
+            "height": 311,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/terceira-secao-salmos-antes-depois.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/terceira-secao-salmos-antes-depois-1672.avif",
+            "width": 1024,
+            "height": 576,
+            "naturalWidth": 1023
+          },
+          {
+            "source": "/images/depoimento-joely-cardoso.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-ferreira.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-martins.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-mariana-costa.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-joely-cardoso.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-ferreira.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-martins.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-mariana-costa.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-840.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/para-quem-familias.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-familias-768.avif",
+            "width": 302,
+            "height": 201,
+            "naturalWidth": 301
+          },
+          {
+            "source": "/images/para-quem-educadores.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-educadores-768.avif",
+            "width": 302,
+            "height": 201,
+            "naturalWidth": 301
+          },
+          {
+            "source": "/images/para-quem-ministerios.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-ministerios-768.avif",
+            "width": 302,
+            "height": 201,
+            "naturalWidth": 301
+          },
+          {
+            "source": "/images/bonus-bible-goods.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-bible-goods-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-tabuada-com-noe.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-tabuada-com-noe-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-emociobook.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-emociobook-440.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/imagem-principal-salmos-com-bonus.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-1199.avif",
+            "width": 461,
+            "height": 478,
+            "naturalWidth": 500
+          },
+          {
+            "source": "/images/bonus-bible-goods.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-bible-goods-440.avif",
+            "width": 183,
+            "height": 274,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-proverbios-na-ponta-do-lapis-440.avif",
+            "width": 183,
+            "height": 274,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/bonus-tabuada-com-noe.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-tabuada-com-noe-440.avif",
+            "width": 183,
+            "height": 274,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/bonus-emociobook.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-emociobook-440.avif",
+            "width": 183,
+            "height": 274,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/garantia-jesus-criancas.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/garantia-jesus-criancas-800.avif",
+            "width": 334,
+            "height": 334,
+            "naturalWidth": 334
+          }
+        ],
+        "screenshotErrors": [],
+        "faq": true,
+        "lightboxes": true,
+        "cta": true
+      },
+      {
+        "width": 1440,
+        "maxLayoutDelta": 0,
+        "images": [
+          {
+            "source": "/images/logo-oficial-salmos.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/logo-oficial-salmos-208.webp",
+            "width": 208,
+            "height": 104,
+            "naturalWidth": 208
+          },
+          {
+            "source": "/images/imagem-principal-salmos-com-bonus.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-1199.avif",
+            "width": 1122,
+            "height": 1164,
+            "naturalWidth": 1122
+          },
+          {
+            "source": "/images/atividade-01.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-01-720.webp",
+            "width": 324,
+            "height": 458,
+            "naturalWidth": 324
+          },
+          {
+            "source": "/images/atividade-02.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-02-720.webp",
+            "width": 324,
+            "height": 458,
+            "naturalWidth": 324
+          },
+          {
+            "source": "/images/atividade-03.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-03-720.webp",
+            "width": 324,
+            "height": 458,
+            "naturalWidth": 324
+          },
+          {
+            "source": "/images/atividade-04.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-04-720.webp",
+            "width": 324,
+            "height": 458,
+            "naturalWidth": 324
+          },
+          {
+            "source": "/images/atividade-05.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-05-720.webp",
+            "width": 324,
+            "height": 458,
+            "naturalWidth": 324
+          },
+          {
+            "source": "/images/atividade-06.webp",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/atividade-06-720.webp",
+            "width": 324,
+            "height": 458,
+            "naturalWidth": 324
+          },
+          {
+            "source": "/images/terceira-secao-salmos-antes-depois.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/terceira-secao-salmos-antes-depois-1672.avif",
+            "width": 1440,
+            "height": 810,
+            "naturalWidth": 1440
+          },
+          {
+            "source": "/images/depoimento-joely-cardoso.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-420.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-ferreira.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-420.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-martins.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-420.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-mariana-costa.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-420.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-joely-cardoso.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-420.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-ferreira.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-420.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-juliana-martins.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-420.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/depoimento-mariana-costa.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-420.avif",
+            "width": 420,
+            "height": 525,
+            "naturalWidth": 420
+          },
+          {
+            "source": "/images/para-quem-familias.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-familias-480.avif",
+            "width": 395,
+            "height": 264,
+            "naturalWidth": 400
+          },
+          {
+            "source": "/images/para-quem-educadores.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-educadores-480.avif",
+            "width": 395,
+            "height": 264,
+            "naturalWidth": 400
+          },
+          {
+            "source": "/images/para-quem-ministerios.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/para-quem-ministerios-480.avif",
+            "width": 395,
+            "height": 264,
+            "naturalWidth": 400
+          },
+          {
+            "source": "/images/bonus-bible-goods.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-bible-goods-220.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-proverbios-na-ponta-do-lapis-220.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-tabuada-com-noe.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-tabuada-com-noe-220.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/bonus-emociobook.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-emociobook-220.avif",
+            "width": 220,
+            "height": 330,
+            "naturalWidth": 220
+          },
+          {
+            "source": "/images/imagem-principal-salmos-com-bonus.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-1199.avif",
+            "width": 483,
+            "height": 502,
+            "naturalWidth": 500
+          },
+          {
+            "source": "/images/bonus-bible-goods.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-bible-goods-220.avif",
+            "width": 191,
+            "height": 287,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-proverbios-na-ponta-do-lapis-220.avif",
+            "width": 191,
+            "height": 287,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/bonus-tabuada-com-noe.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-tabuada-com-noe-220.avif",
+            "width": 191,
+            "height": 287,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/bonus-emociobook.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/bonus-emociobook-220.avif",
+            "width": 191,
+            "height": 287,
+            "naturalWidth": 200
+          },
+          {
+            "source": "/images/garantia-jesus-criancas.png",
+            "currentSrc": "http://127.0.0.1:4173/images/optimized/garantia-jesus-criancas-800.avif",
+            "width": 440,
+            "height": 440,
+            "naturalWidth": 440
+          }
+        ],
+        "screenshotErrors": [
+          {
+            "selector": "#inicio",
+            "meanAbsoluteError": 1.2245978469230825
+          },
+          {
+            "selector": "#atividades",
+            "meanAbsoluteError": 1.6769834307992202
+          },
+          {
+            "selector": "#escrita-com-proposito",
+            "meanAbsoluteError": 0.7051106301106301
+          },
+          {
+            "selector": "#comentarios-ilustrativos",
+            "meanAbsoluteError": 1.9354393413865965
+          },
+          {
+            "selector": "#para-quem",
+            "meanAbsoluteError": 0.6731238437724166
+          },
+          {
+            "selector": "#bonus",
+            "meanAbsoluteError": 0.8511221987497838
+          },
+          {
+            "selector": "#checkout-final",
+            "meanAbsoluteError": 0.42054822884811416
+          },
+          {
+            "selector": "#garantia",
+            "meanAbsoluteError": 0.2878200263104635
+          }
+        ],
+        "faq": true,
+        "lightboxes": true,
+        "cta": true
+      }
+    ],
+    "errors": []
+  },
+  "quality": [
+    {
+      "source": "/images/logo-oficial-salmos.png",
+      "variant": "/images/optimized/logo-oficial-salmos-208.webp",
+      "width": 208,
+      "ssim": 0.9985169306380948,
+      "meanAbsoluteError": 0.6774454511834319
+    },
+    {
+      "source": "/images/logo-oficial-salmos.png",
+      "variant": "/images/optimized/logo-oficial-salmos-416.webp",
+      "width": 416,
+      "ssim": 0.998753307141233,
+      "meanAbsoluteError": 0.5722714034763313
+    },
+    {
+      "source": "/images/logo-oficial-salmos.png",
+      "variant": "/images/optimized/logo-oficial-salmos-624.webp",
+      "width": 624,
+      "ssim": 0.9988697169605519,
+      "meanAbsoluteError": 0.4913066033859303
+    },
+    {
+      "source": "/images/imagem-principal-salmos-com-bonus.png",
+      "variant": "/images/optimized/imagem-principal-salmos-com-bonus-400.avif",
+      "width": 400,
+      "ssim": 0.9988972803953099,
+      "meanAbsoluteError": 2.730472891566265
+    },
+    {
+      "source": "/images/imagem-principal-salmos-com-bonus.png",
+      "variant": "/images/optimized/imagem-principal-salmos-com-bonus-400.webp",
+      "width": 400,
+      "ssim": 0.9993831681666481,
+      "meanAbsoluteError": 3.246081325301205
+    },
+    {
+      "source": "/images/imagem-principal-salmos-com-bonus.png",
+      "variant": "/images/optimized/imagem-principal-salmos-com-bonus-1199.avif",
+      "width": 1199,
+      "ssim": 0.9997382181589515,
+      "meanAbsoluteError": 1.5940735714917844
+    },
+    {
+      "source": "/images/imagem-principal-salmos-com-bonus.png",
+      "variant": "/images/optimized/imagem-principal-salmos-com-bonus-1199.webp",
+      "width": 1199,
+      "ssim": 0.9997437057415569,
+      "meanAbsoluteError": 1.7810720817723236
+    },
+    {
+      "source": "/images/atividade-01.webp",
+      "variant": "/images/optimized/atividade-01-720.webp",
+      "width": 720,
+      "ssim": 0.9995206762545472,
+      "meanAbsoluteError": 1.0404094357127265
+    },
+    {
+      "source": "/images/atividade-01.webp",
+      "variant": "/images/atividade-01.webp",
+      "width": 1055,
+      "ssim": 1,
+      "meanAbsoluteError": 0
+    },
+    {
+      "source": "/images/atividade-02.webp",
+      "variant": "/images/optimized/atividade-02-720.webp",
+      "width": 720,
+      "ssim": 0.9994853889703718,
+      "meanAbsoluteError": 1.1551377292075966
+    },
+    {
+      "source": "/images/atividade-02.webp",
+      "variant": "/images/atividade-02.webp",
+      "width": 1055,
+      "ssim": 1,
+      "meanAbsoluteError": 0
+    },
+    {
+      "source": "/images/atividade-03.webp",
+      "variant": "/images/optimized/atividade-03-720.webp",
+      "width": 720,
+      "ssim": 0.9994044134419477,
+      "meanAbsoluteError": 1.2948254338572365
+    },
+    {
+      "source": "/images/atividade-03.webp",
+      "variant": "/images/atividade-03.webp",
+      "width": 1055,
+      "ssim": 1,
+      "meanAbsoluteError": 0
+    },
+    {
+      "source": "/images/atividade-04.webp",
+      "variant": "/images/optimized/atividade-04-720.webp",
+      "width": 720,
+      "ssim": 0.9992840334462642,
+      "meanAbsoluteError": 1.0786454922506004
+    },
+    {
+      "source": "/images/atividade-04.webp",
+      "variant": "/images/atividade-04.webp",
+      "width": 1055,
+      "ssim": 1,
+      "meanAbsoluteError": 0
+    },
+    {
+      "source": "/images/atividade-05.webp",
+      "variant": "/images/optimized/atividade-05-720.webp",
+      "width": 720,
+      "ssim": 0.999503226040944,
+      "meanAbsoluteError": 1.1397739985810957
+    },
+    {
+      "source": "/images/atividade-05.webp",
+      "variant": "/images/atividade-05.webp",
+      "width": 1055,
+      "ssim": 1,
+      "meanAbsoluteError": 0
+    },
+    {
+      "source": "/images/atividade-06.webp",
+      "variant": "/images/optimized/atividade-06-720.webp",
+      "width": 720,
+      "ssim": 0.999502838861209,
+      "meanAbsoluteError": 1.1110793904169396
+    },
+    {
+      "source": "/images/atividade-06.webp",
+      "variant": "/images/atividade-06.webp",
+      "width": 1055,
+      "ssim": 1,
+      "meanAbsoluteError": 0
+    },
+    {
+      "source": "/images/terceira-secao-salmos-antes-depois.png",
+      "variant": "/images/optimized/terceira-secao-salmos-antes-depois-640.avif",
+      "width": 640,
+      "ssim": 0.9956238492725886,
+      "meanAbsoluteError": 0.7588639322916667
+    },
+    {
+      "source": "/images/terceira-secao-salmos-antes-depois.png",
+      "variant": "/images/optimized/terceira-secao-salmos-antes-depois-640.webp",
+      "width": 640,
+      "ssim": 0.9948883831997053,
+      "meanAbsoluteError": 1.15482421875
+    },
+    {
+      "source": "/images/terceira-secao-salmos-antes-depois.png",
+      "variant": "/images/optimized/terceira-secao-salmos-antes-depois-1672.avif",
+      "width": 1672,
+      "ssim": 0.9988683693378932,
+      "meanAbsoluteError": 0.6642107106356365
+    },
+    {
+      "source": "/images/terceira-secao-salmos-antes-depois.png",
+      "variant": "/images/optimized/terceira-secao-salmos-antes-depois-1672.webp",
+      "width": 1672,
+      "ssim": 0.9975802551877618,
+      "meanAbsoluteError": 0.8743405798575271
+    },
+    {
+      "source": "/images/depoimento-joely-cardoso.png",
+      "variant": "/images/optimized/depoimento-joely-cardoso-420.avif",
+      "width": 420,
+      "ssim": 0.9983410369055595,
+      "meanAbsoluteError": 1.8912539682539682
+    },
+    {
+      "source": "/images/depoimento-joely-cardoso.png",
+      "variant": "/images/optimized/depoimento-joely-cardoso-420.webp",
+      "width": 420,
+      "ssim": 0.9987358036450833,
+      "meanAbsoluteError": 2.004436507936508
+    },
+    {
+      "source": "/images/depoimento-joely-cardoso.png",
+      "variant": "/images/optimized/depoimento-joely-cardoso-1122.avif",
+      "width": 1122,
+      "ssim": 0.9988188718834801,
+      "meanAbsoluteError": 1.1750818794642743
+    },
+    {
+      "source": "/images/depoimento-joely-cardoso.png",
+      "variant": "/images/optimized/depoimento-joely-cardoso-1122.webp",
+      "width": 1122,
+      "ssim": 0.9990876094992596,
+      "meanAbsoluteError": 1.04730096551654
+    },
+    {
+      "source": "/images/depoimento-juliana-ferreira.png",
+      "variant": "/images/optimized/depoimento-juliana-ferreira-420.avif",
+      "width": 420,
+      "ssim": 0.9982112512365656,
+      "meanAbsoluteError": 2.0700453514739228
+    },
+    {
+      "source": "/images/depoimento-juliana-ferreira.png",
+      "variant": "/images/optimized/depoimento-juliana-ferreira-420.webp",
+      "width": 420,
+      "ssim": 0.9988335284992284,
+      "meanAbsoluteError": 2.3329024943310657
+    },
+    {
+      "source": "/images/depoimento-juliana-ferreira.png",
+      "variant": "/images/optimized/depoimento-juliana-ferreira-1122.avif",
+      "width": 1122,
+      "ssim": 0.9990960272644207,
+      "meanAbsoluteError": 1.4006354876278095
+    },
+    {
+      "source": "/images/depoimento-juliana-ferreira.png",
+      "variant": "/images/optimized/depoimento-juliana-ferreira-1122.webp",
+      "width": 1122,
+      "ssim": 0.9991920794845629,
+      "meanAbsoluteError": 1.2500246337673961
+    },
+    {
+      "source": "/images/depoimento-juliana-martins.png",
+      "variant": "/images/optimized/depoimento-juliana-martins-420.avif",
+      "width": 420,
+      "ssim": 0.9981602116897415,
+      "meanAbsoluteError": 1.7101836734693878
+    },
+    {
+      "source": "/images/depoimento-juliana-martins.png",
+      "variant": "/images/optimized/depoimento-juliana-martins-420.webp",
+      "width": 420,
+      "ssim": 0.9983867815903155,
+      "meanAbsoluteError": 1.681343537414966
+    },
+    {
+      "source": "/images/depoimento-juliana-martins.png",
+      "variant": "/images/optimized/depoimento-juliana-martins-1122.avif",
+      "width": 1122,
+      "ssim": 0.9988249169890047,
+      "meanAbsoluteError": 1.2958156288063143
+    },
+    {
+      "source": "/images/depoimento-juliana-martins.png",
+      "variant": "/images/optimized/depoimento-juliana-martins-1122.webp",
+      "width": 1122,
+      "ssim": 0.9987009528246936,
+      "meanAbsoluteError": 1.1016796097248391
+    },
+    {
+      "source": "/images/depoimento-mariana-costa.png",
+      "variant": "/images/optimized/depoimento-mariana-costa-420.avif",
+      "width": 420,
+      "ssim": 0.9986355960878451,
+      "meanAbsoluteError": 1.7883174603174603
+    },
+    {
+      "source": "/images/depoimento-mariana-costa.png",
+      "variant": "/images/optimized/depoimento-mariana-costa-420.webp",
+      "width": 420,
+      "ssim": 0.9989318756183786,
+      "meanAbsoluteError": 1.8792403628117913
+    },
+    {
+      "source": "/images/depoimento-mariana-costa.png",
+      "variant": "/images/optimized/depoimento-mariana-costa-1122.avif",
+      "width": 1122,
+      "ssim": 0.9992669881804565,
+      "meanAbsoluteError": 1.232315974632623
+    },
+    {
+      "source": "/images/depoimento-mariana-costa.png",
+      "variant": "/images/optimized/depoimento-mariana-costa-1122.webp",
+      "width": 1122,
+      "ssim": 0.999183661758882,
+      "meanAbsoluteError": 1.3248969831740243
+    },
+    {
+      "source": "/images/para-quem-familias.png",
+      "variant": "/images/optimized/para-quem-familias-480.avif",
+      "width": 480,
+      "ssim": 0.9952494197689211,
+      "meanAbsoluteError": 1.5757649739583333
+    },
+    {
+      "source": "/images/para-quem-familias.png",
+      "variant": "/images/optimized/para-quem-familias-480.webp",
+      "width": 480,
+      "ssim": 0.9960905635927543,
+      "meanAbsoluteError": 1.9910367838541667
+    },
+    {
+      "source": "/images/para-quem-familias.png",
+      "variant": "/images/optimized/para-quem-familias-1536.avif",
+      "width": 1536,
+      "ssim": 0.9994880352230789,
+      "meanAbsoluteError": 0.9751656850179037
+    },
+    {
+      "source": "/images/para-quem-familias.png",
+      "variant": "/images/optimized/para-quem-familias-1536.webp",
+      "width": 1536,
+      "ssim": 0.9994385379917552,
+      "meanAbsoluteError": 1.0511647860209148
+    },
+    {
+      "source": "/images/para-quem-educadores.png",
+      "variant": "/images/optimized/para-quem-educadores-480.avif",
+      "width": 480,
+      "ssim": 0.9960737427424986,
+      "meanAbsoluteError": 1.9415169270833332
+    },
+    {
+      "source": "/images/para-quem-educadores.png",
+      "variant": "/images/optimized/para-quem-educadores-480.webp",
+      "width": 480,
+      "ssim": 0.9969097589914685,
+      "meanAbsoluteError": 2.5196647135416668
+    },
+    {
+      "source": "/images/para-quem-educadores.png",
+      "variant": "/images/optimized/para-quem-educadores-1536.avif",
+      "width": 1536,
+      "ssim": 0.9996331709862984,
+      "meanAbsoluteError": 1.0897647539774578
+    },
+    {
+      "source": "/images/para-quem-educadores.png",
+      "variant": "/images/optimized/para-quem-educadores-1536.webp",
+      "width": 1536,
+      "ssim": 0.9995964009955448,
+      "meanAbsoluteError": 1.1725047429402669
+    },
+    {
+      "source": "/images/para-quem-ministerios.png",
+      "variant": "/images/optimized/para-quem-ministerios-480.avif",
+      "width": 480,
+      "ssim": 0.99542111206844,
+      "meanAbsoluteError": 1.766484375
+    },
+    {
+      "source": "/images/para-quem-ministerios.png",
+      "variant": "/images/optimized/para-quem-ministerios-480.webp",
+      "width": 480,
+      "ssim": 0.996359386201233,
+      "meanAbsoluteError": 2.237962239583333
+    },
+    {
+      "source": "/images/para-quem-ministerios.png",
+      "variant": "/images/optimized/para-quem-ministerios-1536.avif",
+      "width": 1536,
+      "ssim": 0.9995377506025221,
+      "meanAbsoluteError": 1.0391154289245605
+    },
+    {
+      "source": "/images/para-quem-ministerios.png",
+      "variant": "/images/optimized/para-quem-ministerios-1536.webp",
+      "width": 1536,
+      "ssim": 0.999463052834465,
+      "meanAbsoluteError": 1.1110868453979492
+    },
+    {
+      "source": "/images/bonus-bible-goods.png",
+      "variant": "/images/optimized/bonus-bible-goods-220.avif",
+      "width": 220,
+      "ssim": 0.9979454838620008,
+      "meanAbsoluteError": 2.736518595041322
+    },
+    {
+      "source": "/images/bonus-bible-goods.png",
+      "variant": "/images/optimized/bonus-bible-goods-220.webp",
+      "width": 220,
+      "ssim": 0.9981711112688638,
+      "meanAbsoluteError": 4.08073347107438
+    },
+    {
+      "source": "/images/bonus-bible-goods.png",
+      "variant": "/images/optimized/bonus-bible-goods-660.avif",
+      "width": 660,
+      "ssim": 0.9997617391143594,
+      "meanAbsoluteError": 1.7577253596571778
+    },
+    {
+      "source": "/images/bonus-bible-goods.png",
+      "variant": "/images/optimized/bonus-bible-goods-660.webp",
+      "width": 660,
+      "ssim": 0.9997508015934963,
+      "meanAbsoluteError": 2.2078198653198653
+    },
+    {
+      "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+      "variant": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-220.avif",
+      "width": 220,
+      "ssim": 0.9981095828566934,
+      "meanAbsoluteError": 2.580141184573003
+    },
+    {
+      "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+      "variant": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-220.webp",
+      "width": 220,
+      "ssim": 0.9989279460670768,
+      "meanAbsoluteError": 3.3633023415977963
+    },
+    {
+      "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+      "variant": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-660.avif",
+      "width": 660,
+      "ssim": 0.9997660487985991,
+      "meanAbsoluteError": 1.6856799051117233
+    },
+    {
+      "source": "/images/bonus-proverbios-na-ponta-do-lapis.png",
+      "variant": "/images/optimized/bonus-proverbios-na-ponta-do-lapis-660.webp",
+      "width": 660,
+      "ssim": 0.9998001375850148,
+      "meanAbsoluteError": 1.9473243801652893
+    },
+    {
+      "source": "/images/bonus-tabuada-com-noe.png",
+      "variant": "/images/optimized/bonus-tabuada-com-noe-220.avif",
+      "width": 220,
+      "ssim": 0.9976235397165778,
+      "meanAbsoluteError": 2.558694903581267
+    },
+    {
+      "source": "/images/bonus-tabuada-com-noe.png",
+      "variant": "/images/optimized/bonus-tabuada-com-noe-220.webp",
+      "width": 220,
+      "ssim": 0.9978102163415781,
+      "meanAbsoluteError": 3.8608092286501376
+    },
+    {
+      "source": "/images/bonus-tabuada-com-noe.png",
+      "variant": "/images/optimized/bonus-tabuada-com-noe-660.avif",
+      "width": 660,
+      "ssim": 0.9997071666390762,
+      "meanAbsoluteError": 1.7345883073155801
+    },
+    {
+      "source": "/images/bonus-tabuada-com-noe.png",
+      "variant": "/images/optimized/bonus-tabuada-com-noe-660.webp",
+      "width": 660,
+      "ssim": 0.9996917428841628,
+      "meanAbsoluteError": 2.242685950413223
+    },
+    {
+      "source": "/images/bonus-emociobook.png",
+      "variant": "/images/optimized/bonus-emociobook-220.avif",
+      "width": 220,
+      "ssim": 0.9980133639408445,
+      "meanAbsoluteError": 2.8774035812672176
+    },
+    {
+      "source": "/images/bonus-emociobook.png",
+      "variant": "/images/optimized/bonus-emociobook-220.webp",
+      "width": 220,
+      "ssim": 0.9983267158681339,
+      "meanAbsoluteError": 3.99448347107438
+    },
+    {
+      "source": "/images/bonus-emociobook.png",
+      "variant": "/images/optimized/bonus-emociobook-660.avif",
+      "width": 660,
+      "ssim": 0.999786597827475,
+      "meanAbsoluteError": 1.7597222222222222
+    },
+    {
+      "source": "/images/bonus-emociobook.png",
+      "variant": "/images/optimized/bonus-emociobook-660.webp",
+      "width": 660,
+      "ssim": 0.9997912289387917,
+      "meanAbsoluteError": 2.1938257575757576
+    },
+    {
+      "source": "/images/garantia-jesus-criancas.png",
+      "variant": "/images/optimized/garantia-jesus-criancas-400.avif",
+      "width": 400,
+      "ssim": 0.9992960466241164,
+      "meanAbsoluteError": 1.696815625
+    },
+    {
+      "source": "/images/garantia-jesus-criancas.png",
+      "variant": "/images/optimized/garantia-jesus-criancas-400.webp",
+      "width": 400,
+      "ssim": 0.9996959698105484,
+      "meanAbsoluteError": 1.517484375
+    },
+    {
+      "source": "/images/garantia-jesus-criancas.png",
+      "variant": "/images/optimized/garantia-jesus-criancas-1254.avif",
+      "width": 1254,
+      "ssim": 0.9998590752570691,
+      "meanAbsoluteError": 0.8880310279831811
+    },
+    {
+      "source": "/images/garantia-jesus-criancas.png",
+      "variant": "/images/optimized/garantia-jesus-criancas-1254.webp",
+      "width": 1254,
+      "ssim": 0.9999175520545253,
+      "meanAbsoluteError": 0.671366777826108
+    }
+  ],
+  "originalImageHashes": [
+    {
+      "path": "public/images/atividade-01.webp",
+      "bytes": 205902,
+      "width": 1055,
+      "height": 1491,
+      "sha256": "806e91a2349f8ca88bf66ff0fdacb9f7dd6da4f01f6ed97f8aaeae676fac39b4"
+    },
+    {
+      "path": "public/images/atividade-02.webp",
+      "bytes": 206676,
+      "width": 1055,
+      "height": 1491,
+      "sha256": "72331e1b7e4190365251eef3981090768ef86f24660981ff975f675ec08f7af5"
+    },
+    {
+      "path": "public/images/atividade-03.webp",
+      "bytes": 219794,
+      "width": 1055,
+      "height": 1491,
+      "sha256": "6cca185e4c9293ae3d3ed54790fa9b1ebd24dc0ec8ccb06968f7738a0d0abc46"
+    },
+    {
+      "path": "public/images/atividade-04.webp",
+      "bytes": 193870,
+      "width": 1055,
+      "height": 1491,
+      "sha256": "6e5231e1ad696aa5805498d2ffb91b6831b2a7cf0b3bc03d4df1cd9630edf1e4"
+    },
+    {
+      "path": "public/images/atividade-05.webp",
+      "bytes": 212048,
+      "width": 1055,
+      "height": 1491,
+      "sha256": "7a6f63b3e6a254bbe488941799c75b64567573cc4f0e29ba11869bb8f9ce0ccf"
+    },
+    {
+      "path": "public/images/atividade-06.webp",
+      "bytes": 219692,
+      "width": 1055,
+      "height": 1491,
+      "sha256": "1d4a01fb20c6330352833fa839516ae7c1e063cc5f30b69570a99c98479522b5"
+    },
+    {
+      "path": "public/images/biblical-friends.webp",
+      "bytes": 349570,
+      "width": 1312,
+      "height": 1199,
+      "sha256": "7668ca9ba93edb67b345f9e897374fd4d2006784529f6481937705695828106d"
+    },
+    {
+      "path": "public/images/biblical-garden.webp",
+      "bytes": 308756,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "4f12de06d31aabe64e1d746189b1dd8b10740e9693eddb03ab60479a5f98f3b1"
+    },
+    {
+      "path": "public/images/bonus-bible-goods.png",
+      "bytes": 2889000,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "c9531d73b84c1e08e9e960548e63d37651988fb0d5a1dc64b00a1c888f9cd9c8"
+    },
+    {
+      "path": "public/images/bonus-emociobook.png",
+      "bytes": 2821345,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "98e3a91a42f9aa4bd265696de9a759d2cbeeda5985aedaf42ddf6ada6610f6b5"
+    },
+    {
+      "path": "public/images/bonus-proverbios-na-ponta-do-lapis.png",
+      "bytes": 2815836,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "aa0bb7cf53f9ce458a044e2ff6cc608a3b0fc1cc0cef480b630dc77bd08f5282"
+    },
+    {
+      "path": "public/images/bonus-tabuada-com-noe.png",
+      "bytes": 2909858,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "5ebc8d732aef23d9d8b8baf6f2fc48b7552722b77a9e8e83304abe115a55d760"
+    },
+    {
+      "path": "public/images/caligrafia-antes-depois.webp",
+      "bytes": 163528,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "3c9fbe7a1fbe2e796e25270e338a0f17596a1ab3356e66404e83b9b2d4a5f8de"
+    },
+    {
+      "path": "public/images/child-writing.webp",
+      "bytes": 214674,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "9189945e5ec40fb051ed2a0c0827b18332aefea31d6d38d6f9df8d2ab4d01099"
+    },
+    {
+      "path": "public/images/comentarios/biblia-coracao.png",
+      "bytes": 10883,
+      "width": 198,
+      "height": 74,
+      "sha256": "7cdef506bef07ee27e3304d0f25e78c55b66a5c194a440a83d0f319d28aba13d"
+    },
+    {
+      "path": "public/images/comentarios/comentario-01.webp",
+      "bytes": 286510,
+      "width": 420,
+      "height": 553,
+      "sha256": "f7c1aa0ff118c5fa9b59612a02c9438230cfc6d8143bff418f9553bb4a0134c6"
+    },
+    {
+      "path": "public/images/comentarios/comentario-02.webp",
+      "bytes": 265074,
+      "width": 388,
+      "height": 553,
+      "sha256": "6542769d747634ea3d831ab0d720b7e974bbe19abf6342d9355632c77f64f2a1"
+    },
+    {
+      "path": "public/images/comentarios/comentario-03.webp",
+      "bytes": 269032,
+      "width": 389,
+      "height": 553,
+      "sha256": "9d8717a389c9c651568ce23173c51318a4dac10a5e5f5786001ae86a2d84ec0e"
+    },
+    {
+      "path": "public/images/comentarios/comentario-04.webp",
+      "bytes": 243936,
+      "width": 399,
+      "height": 553,
+      "sha256": "dc4bf327113085c7d017a642d5e6243939f781f3ea457612c7c2d3916e6b1ded"
+    },
+    {
+      "path": "public/images/comentarios/folhagem.png",
+      "bytes": 28394,
+      "width": 168,
+      "height": 274,
+      "sha256": "32236919b06f9f4b6180e35e16ec851623f475a0426b3e392d5bd97f508af459"
+    },
+    {
+      "path": "public/images/comentarios/menina-flores.png",
+      "bytes": 157293,
+      "width": 430,
+      "height": 275,
+      "sha256": "b4cb5f636d4d1179e2608034b0ad8f75f25c25fb1b4762292e0e00af10ac316f"
+    },
+    {
+      "path": "public/images/depoimento-joely-cardoso.png",
+      "bytes": 2959688,
+      "width": 1122,
+      "height": 1402,
+      "sha256": "e91d42994859a09e732376e6cd0d387f7e978823f8b09603d17e30fafd5aa8ea"
+    },
+    {
+      "path": "public/images/depoimento-juliana-ferreira.png",
+      "bytes": 3168562,
+      "width": 1122,
+      "height": 1402,
+      "sha256": "65c87dabca332bf4eb05817cceeb33d735a0f706a760b112de791a09046ac9f7"
+    },
+    {
+      "path": "public/images/depoimento-juliana-martins.png",
+      "bytes": 2986241,
+      "width": 1122,
+      "height": 1402,
+      "sha256": "3c3bf7eb69c148828d33dc4a1c6398129cd98672de181c832b7efc4a677e0358"
+    },
+    {
+      "path": "public/images/depoimento-mariana-costa.png",
+      "bytes": 2959083,
+      "width": 1122,
+      "height": 1402,
+      "sha256": "07d668e312fe0461cff6f1714932daeae534cd37af228e2031aed89d5053117c"
+    },
+    {
+      "path": "public/images/garantia-jesus-criancas.png",
+      "bytes": 1774319,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "7c96e57c079220300319dc316d71bb92da4f36371685f846d9cc3c99be5e2d8a"
+    },
+    {
+      "path": "public/images/imagem-principal-salmos-com-bonus.png",
+      "bytes": 2627399,
+      "width": 1199,
+      "height": 1244,
+      "sha256": "d28f2e7ef3f19c6601c3df7ecf740ba55079484cf2eb9798ec7dce9d3958da58"
+    },
+    {
+      "path": "public/images/logo-oficial-salmos.png",
+      "bytes": 1512802,
+      "width": 1774,
+      "height": 887,
+      "sha256": "b8ae23f7b2fc5cd2dedb6ee42b666cf3b22357240936b1b3615efd8a756ef1f7"
+    },
+    {
+      "path": "public/images/para-quem-educadores.png",
+      "bytes": 2378861,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "16264a627441c402a76dad2217152ef9a06c80a5263b60e53bd761a4679c16cd"
+    },
+    {
+      "path": "public/images/para-quem-familias.png",
+      "bytes": 2261874,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "a080de8ca1a8dc224d8897156c515be58d05e5cebbd4c30627ee3e3f2bddc7f6"
+    },
+    {
+      "path": "public/images/para-quem-ministerios.png",
+      "bytes": 2334681,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "83ed6979fb6aac8cb7647f6050d5fd5b5627aa27284323c5bc45c29ec51b9b9f"
+    },
+    {
+      "path": "public/images/referencia-carrossel.png",
+      "bytes": 2514405,
+      "width": 1672,
+      "height": 941,
+      "sha256": "094bee3360f4dba9f85127ce6e1a469a911738248ef709fbb8f12fdc119be201"
+    },
+    {
+      "path": "public/images/referencia-depoimentos.png",
+      "bytes": 2207617,
+      "width": 1672,
+      "height": 941,
+      "sha256": "be6a62fdfded8885eb86991812a503fb31fa30e1af878bb112e42ab075d80979"
+    },
+    {
+      "path": "public/images/referencia-quatro-bonus-salmos.png",
+      "bytes": 264589,
+      "width": 736,
+      "height": 163,
+      "sha256": "e210dd6be483a319e6591b817b0e789208ebe6f1b5f87a11c27935e95f05bab6"
+    },
+    {
+      "path": "public/images/terceira-secao-salmos-antes-depois.png",
+      "bytes": 1699559,
+      "width": 1672,
+      "height": 941,
+      "sha256": "3625214b7c591667e5930ba17df1e6e1aeead3c13811ae21084b64ee21c34a87"
+    }
+  ],
+  "motion": {
+    "delayedLoading": true,
+    "motion": true,
+    "hover": true,
+    "resume": true,
+    "navigation": true,
+    "noOriginalPNGs": true,
+    "singleLcpDownload": true,
+    "resource": [
+      {
+        "url": "http://127.0.0.1:4173/images/optimized/imagem-principal-salmos-com-bonus-768.avif",
+        "start": 38.600000001490116,
+        "end": 402.1000000014901,
+        "bytes": 134562
+      },
+      {
+        "url": "http://127.0.0.1:4173/images/optimized/logo-oficial-salmos-416.webp",
+        "start": 41.19999999552965,
+        "end": 406.79999999701977,
+        "bytes": 99004
+      },
+      {
+        "url": "http://127.0.0.1:4173/images/optimized/atividade-01-720.webp",
+        "start": 421,
+        "end": 730.8999999985099,
+        "bytes": 165082
+      },
+      {
+        "url": "http://127.0.0.1:4173/images/optimized/atividade-02-720.webp",
+        "start": 421,
+        "end": 740.2999999970198,
+        "bytes": 167624
+      },
+      {
+        "url": "http://127.0.0.1:4173/images/optimized/atividade-03-720.webp",
+        "start": 421.29999999701977,
+        "end": 740.3999999985099,
+        "bytes": 178888
+      },
+      {
+        "url": "http://127.0.0.1:4173/images/optimized/atividade-04-720.webp",
+        "start": 421.69999999552965,
+        "end": 743.8999999985099,
+        "bytes": 151242
+      },
+      {
+        "url": "http://127.0.0.1:4173/images/optimized/atividade-05-720.webp",
+        "start": 422,
+        "end": 744.3999999985099,
+        "bytes": 166716
+      },
+      {
+        "url": "http://127.0.0.1:4173/images/optimized/atividade-06-720.webp",
+        "start": 422.1000000014901,
+        "end": 755.1000000014901,
+        "bytes": 175874
+      },
+      {
+        "url": "http://127.0.0.1:4173/images/optimized/terceira-secao-salmos-antes-depois-1024.avif",
+        "start": 503.6000000014901,
+        "end": 815.1999999955297,
+        "bytes": 71126
+      },
+      {
+        "url": "http://127.0.0.1:4173/images/optimized/depoimento-joely-cardoso-840.avif",
+        "start": 503.79999999701977,
+        "end": 815.2999999970198,
+        "bytes": 115112
+      },
+      {
+        "url": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-ferreira-840.avif",
+        "start": 504.1000000014901,
+        "end": 817.1000000014901,
+        "bytes": 142084
+      },
+      {
+        "url": "http://127.0.0.1:4173/images/optimized/depoimento-juliana-martins-840.avif",
+        "start": 504.19999999552965,
+        "end": 818.2999999970198,
+        "bytes": 121613
+      },
+      {
+        "url": "http://127.0.0.1:4173/images/optimized/depoimento-mariana-costa-840.avif",
+        "start": 504.5,
+        "end": 818.3999999985099,
+        "bytes": 121461
+      },
+      {
+        "url": "http://127.0.0.1:4173/images/optimized/para-quem-familias-768.avif",
+        "start": 3572.10000000149,
+        "end": 3876.2999999970198,
+        "bytes": 94145
+      }
+    ]
+  }
+}

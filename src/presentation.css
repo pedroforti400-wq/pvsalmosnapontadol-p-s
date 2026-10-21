@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url('@fontsource-variable/nunito-sans/files/nunito-sans-latin-wght-normal.woff2') format('woff2');
+}
+
+:root {
+  font-family: 'Nunito', system-ui, sans-serif;
+  color: #165740;
+  background: #FAF7EF;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --cream: #FAF7EF;
+  --yellow: #FFDA00;
+  --blue: #067CB6;
+  --green: #165740;
+  --orange: #F58B36;
+  /* Tom de apoio para a leitura do destaque laranja sobre o fundo claro. */
+  --orange-ink: #AD530E;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 0; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 6px; }
+.brand { display: block; border-radius: 8px; }
+.skip { position: absolute; top: 10px; left: 10px; transform: translateY(-200%); }
+.skip:focus { transform: none; z-index: 2; background: white; padding: 12px 16px; border-radius: 8px; }
+
+.product-presentation {
+  width: min(100% - 64px, 1160px);
+  margin: 0 auto;
+  padding: 30px 0 64px;
+  text-align: center;
+}
+.presentation-copy { max-width: 1060px; margin: 0 auto; }
+.presentation-copy h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3.65vw, 3.25rem);
+  font-weight: 900;
+  line-height: 1.17;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.headline-blue { color: var(--blue); }
+.headline-orange {
+  color: var(--orange-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--orange);
+  text-decoration-thickness: 0.055em;
+  text-underline-offset: 0.12em;
+}
+.presentation-subheadline {
+  max-width: 870px;
+  margin: 26px auto 0;
+  color: #536359;
+  font-size: 19px;
+  font-weight: 450;
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+.presentation-subheadline strong { color: var(--green); font-weight: 850; }
+.bonus-highlight {
+  background: linear-gradient(transparent 59%, #FFDA004D 59%, #FFDA004D 94%, transparent 94%);
+}
+.product-artwork { margin: 42px auto 0; max-width: 1122px; }
+.product-artwork-link { display: block; border-radius: 20px; cursor: zoom-in; }
+.product-artwork img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 12px 42px #16574012;
+}
+
+@media (max-width: 767px) {
+  .product-presentation { width: calc(100% - 40px); padding: 24px 0 40px; }
+  .presentation-copy h1 { font-size: clamp(1.875rem, 5.8vw, 2.5rem); line-height: 1.2; letter-spacing: -0.025em; }
+  .presentation-subheadline { margin-top: 22px; font-size: 17px; line-height: 1.75; }
+  .product-artwork { margin-top: 30px; }
+  .product-artwork-link, .product-artwork img { border-radius: 12px; }
+}
+
+@media (max-width: 359px) {
+  .product-presentation { width: calc(100% - 32px); padding-top: 20px; }
+  .presentation-copy h1 { font-size: 28px; }
+  .presentation-subheadline { font-size: 16px; }
+}

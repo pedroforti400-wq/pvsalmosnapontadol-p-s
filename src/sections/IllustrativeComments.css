@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'Comments Display'; font-style: italic; font-weight: 700; font-display: swap;
+  src: url('@fontsource/lobster-two/files/lobster-two-latin-700-italic.woff2') format('woff2');
+}
+.comments-section { position: relative; overflow: hidden; padding: 30px 0 66px; background: #FAF7EF; color: #073767; }
+.comments-heading { position: relative; max-width: 1100px; padding: 0 24px; margin: 0 auto; text-align: center; }
+.comments-heading-copy { position: relative; z-index: 1; }
+.comments-heading h2 { margin: 0; font-family: 'Comments Display', 'Nunito', sans-serif; font-size: clamp(40px, 4.5vw, 72px); font-weight: 700; font-style: italic; line-height: 1.07; letter-spacing: -.015em; }
+.comments-heading h2 > span { display: block; text-wrap: balance; }
+.comments-heading h2 > span:last-child { color: #bf861c; }
+.comments-heart-divider { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 13px; color: #d59a2b; }
+.comments-heart-divider > span { width: 80px; height: 1px; background: #dfb45b; }
+.comments-heart-divider > svg { fill: currentColor; stroke-width: 1; }
+.comments-subheadline { max-width: 900px; margin: 14px auto 0; font-size: 18px; font-weight: 550; line-height: 1.65; text-wrap: pretty; }
+.comments-carousel { position: relative; z-index: 1; width: min(100% - 48px, 1600px); margin: 26px auto 0; border-radius: 20px; }
+.comments-viewport { overflow: hidden; }
+.comments-track { display: flex; align-items: flex-start; margin-left: -16px; padding: 12px 0 26px; touch-action: pan-y pinch-zoom; }
+.comment-slide { flex: 0 0 auto; width: 436px; max-width: 100%; min-width: 0; padding-left: 16px; }
+.comment-card { display: block; width: 100%; margin: 0; padding: 0; border: 0; border-radius: 21px; background: #fff; box-shadow: 0 7px 20px #65502b12; cursor: zoom-in; -webkit-tap-highlight-color: transparent; }
+.comment-card:focus-visible { outline-offset: -5px; }
+.comment-card-image { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 21px; user-select: none; }
+.comments-meadow { position: absolute; bottom: 0; left: 0; width: 100%; height: 58px; pointer-events: none; }
+.comments-bottom-heart { position: absolute; bottom: 18px; left: 6%; fill: #f6c769; color: #f6c769; transform: rotate(-15deg); pointer-events: none; }
+
+.comment-dialog { width: min(96vw, 640px); max-width: 96vw; max-height: 94dvh; padding: 0; border: 0; border-radius: 18px; background: #FAF7EF; color: #165740; overflow: hidden; box-shadow: 0 20px 80px #0004; }
+.comment-dialog::backdrop { background: #111c19bd; }
+.comment-dialog-content { display: flex; flex-direction: column; gap: 12px; max-height: 94dvh; padding: 16px; }
+.comment-dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-shrink: 0; }
+.comment-dialog-header h3 { margin: 0; font-size: 16px; line-height: 1.4; }
+.comment-dialog-header button { display: grid; place-items: center; flex: 0 0 42px; height: 42px; padding: 0; border: 0; border-radius: 50%; color: inherit; background: #ece7da; cursor: pointer; }
+.comment-enlargement { min-height: 120px; max-height: 70dvh; overflow: auto; overscroll-behavior: contain; }
+.comment-enlargement img { display: block; max-width: none; height: auto; object-fit: contain; margin: 0 auto; }
+.comment-original { display: inline-flex; justify-content: center; align-items: center; gap: 6px; align-self: center; flex-shrink: 0; font-size: 13px; font-weight: 800; }
+
+@media (max-width: 1199px) {
+  .comments-subheadline { font-size: 17px; }
+}
+@media (max-width: 900px) {
+  .comments-heading { padding: 0 30px; }
+  .comments-heading h2 { font-size: clamp(40px, 6.5vw, 58px); }
+}
+@media (max-width: 639px) {
+  .comments-section { padding: 20px 0 56px; }
+  .comments-heading { padding: 0 16px; }
+  .comments-heading h2 { font-size: clamp(30px, 9vw, 43px); line-height: 1.12; }
+  .comments-subheadline { margin-top: 12px; font-size: 16px; line-height: 1.65; }
+  .comments-carousel { width: calc(100% - 24px); margin-top: 20px; }
+  .comment-card, .comment-card-image { border-radius: 17px; }
+  .comment-dialog-content { padding: 12px; }
+}
